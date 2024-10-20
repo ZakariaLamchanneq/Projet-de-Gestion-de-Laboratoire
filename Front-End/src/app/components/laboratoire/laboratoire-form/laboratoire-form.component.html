@@ -1,0 +1,42 @@
+<h2>Create New Laboratory</h2>
+<form [formGroup]="laboratoireForm" (ngSubmit)="onSubmit()">
+  <label for="nom">Name:</label>
+  <nz-input-group>
+    <input nz-input id="nom" formControlName="nom" />
+    <div *ngIf="laboratoireForm.controls['nom'].invalid && laboratoireForm.controls['nom'].touched">
+      Name is required.
+    </div>
+  </nz-input-group>
+
+  <label for="logo">Logo:</label>
+  <nz-input-group>
+    <input nz-input id="logo" formControlName="logo" />
+    <div *ngIf="laboratoireForm.controls['logo'].invalid && laboratoireForm.controls['logo'].touched">
+      Logo is required.
+    </div>
+  </nz-input-group>
+
+  <label for="nrc">NRC:</label>
+  <nz-input-group>
+    <input nz-input id="nrc" formControlName="nrc" />
+    <div *ngIf="laboratoireForm.controls['nrc'].invalid && laboratoireForm.controls['nrc'].touched">
+      NRC is required.
+    </div>
+  </nz-input-group>
+
+  <nz-input-group>
+    <label for="active">Active:</label>
+    <label nz-checkbox formControlName="active"></label>
+  </nz-input-group>
+
+  <nz-input-group>
+    <label for="dateActivation">Activation Date:</label>
+    <nz-date-picker formControlName="dateActivation" id="dateActivation"></nz-date-picker>
+    <div
+      *ngIf="laboratoireForm.controls['dateActivation'].invalid && laboratoireForm.controls['dateActivation'].touched">
+      Activation Date is required.
+    </div>
+  </nz-input-group>
+
+  <button nz-button nzType="primary" type="submit">Create Laboratory</button>
+</form>

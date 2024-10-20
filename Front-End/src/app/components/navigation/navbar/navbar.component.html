@@ -1,0 +1,37 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a routerLink="/">
+        <img [src]="logo" class="navbar-image" alt="logo"/>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <a routerLink="/home" nzIcon="home" nz-menu-item nzMatchRouter>Home</a>
+      <li nz-submenu nzOpen nzTitle="Laboratoire" nzIcon="dashboard">
+        <ul nzType="experiment" nzTheme="outline">
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/laboratoires">Laboratoires</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/create-laboratoire">Add Laboratoire</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+        </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
