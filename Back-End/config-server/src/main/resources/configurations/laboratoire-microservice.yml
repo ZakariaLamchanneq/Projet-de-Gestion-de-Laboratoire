@@ -1,0 +1,32 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+server:
+  port: 8090
+spring:
+  application:
+    name: laboratoire-microservice
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/laboratoires
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+application:
+  config:
+    utilisateurs-url: http://localhost:8070/api/utilisateurs
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

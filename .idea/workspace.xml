@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a0c305b4-7297-4545-96cf-975f03aab6c4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/GestionLaboratoireApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/controller/LaboratoireController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/controller/UtilisateurController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/model/Laboratoire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/model/Utilisateur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/repository/LaboratoireRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/repository/UtilisateurRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/service/LaboratoireService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/service/UtilisateurService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/test/java/Back_End/GestionLaboratoireApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="17" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2nvphPpHTGjg8pnDFmjC8R6mfx3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.spring-boot-microservices.zipkin: Compose Deployment.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Oussama/Downloads/WORK/PROJET_LIBRE/Projet-de-Gestion-de-Laboratoire/Back-End/utilisateur/pom.xml",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.zipkin">
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.configserver.ConfigServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="discovery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.discovery.DiscoveryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LaboratoireApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="laboratoire" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.laboratoire.LaboratoireApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtilisateurApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="utilisateur" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.utilisateur.UtilisateurApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="zipkin" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="services">
+            <list>
+              <option value="zipkin" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="../../Tutorials/spring-boot-microservices/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/Front-End/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="ng" />
+      </scripts>
+      <arguments value="serve" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.zipkin" />
+      <item itemvalue="npm.Angular CLI" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.DiscoveryApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.LaboratoireApplication" />
+      <item itemvalue="Spring Boot.UtilisateurApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.zipkin" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0c305b4-7297-4545-96cf-975f03aab6c4" name="Changes" comment="" />
+      <created>1729863526402</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729863526402</updated>
+      <workItem from="1729863532191" duration="7000" />
+      <workItem from="1729863825776" duration="233000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
