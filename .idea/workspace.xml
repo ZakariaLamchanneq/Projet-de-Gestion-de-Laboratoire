@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0c305b4-7297-4545-96cf-975f03aab6c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/GestionLaboratoireApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/controller/LaboratoireController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/controller/UtilisateurController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/model/Laboratoire.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/model/Utilisateur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/repository/LaboratoireRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/repository/UtilisateurRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/service/LaboratoireService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/com/gestionlabo/service/UtilisateurService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/test/java/Back_End/GestionLaboratoireApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/laboratoire.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/laboratoire.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +19,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -60,17 +45,31 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Docker.spring-boot-microservices.zipkin: Compose Deployment.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.DiscoveryApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "Spring Boot.LaboratoireApplication.executor": "Run",
+    "Spring Boot.UtilisateurApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Oussama/Downloads/WORK/PROJET_LIBRE/Projet-de-Gestion-de-Laboratoire/Back-End/utilisateur/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "ts.external.directory.path": "C:\\Users\\AORUS\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -120,7 +119,9 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="zipkin" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -181,6 +182,7 @@
       <updated>1729863526402</updated>
       <workItem from="1729863532191" duration="7000" />
       <workItem from="1729863825776" duration="233000" />
+      <workItem from="1729868926553" duration="2755000" />
     </task>
     <servers />
   </component>

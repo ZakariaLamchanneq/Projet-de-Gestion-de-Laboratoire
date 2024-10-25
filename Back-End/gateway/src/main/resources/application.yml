@@ -3,3 +3,16 @@ spring:
     name: gateway
   config:
     import: optional:configserver:http://localhost:8888
+
+
+#Configuration CORS to connect Front-End
+
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
