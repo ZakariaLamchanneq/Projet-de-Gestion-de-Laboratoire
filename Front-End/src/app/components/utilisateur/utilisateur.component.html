@@ -1,0 +1,63 @@
+<h2 class="title">Gestion Utilisateur</h2>
+
+<button nz-button nzType="primary" (click)="showAddUserModal()"  class="menu-item">
+  <span nz-icon nzType="user-add" nzTheme="outline"></span>
+  Ajouter un utilisateur
+</button>
+
+<nz-table
+  #nzTable
+  [nzData]="listOfDisplayData"
+  nzTableLayout="fixed"
+  class="table-shadow"
+  [nzPageSize]="5"
+  [nzShowPagination]="true"
+  [nzTotal]="listOfDisplayData.length"
+  [(nzPageIndex)]="pageIndex"
+  (nzPageIndexChange)="updatePaginatedData()">
+  <thead>
+  <tr>
+    <th nzCustomFilter>
+      Email
+      <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0" [nzDropdownMenu]="menu">
+        <span nz-icon nzType="search"></span>
+      </nz-filter-trigger>
+    </th>
+    <th>Nom Complet</th>
+    <th>Profession</th>
+    <th>Téléphone</th>
+    <th>Rôle</th>
+    <th>Laboratoire</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of paginatedData">
+    <td>{{ user.email }}</td>
+    <td>{{ user.nomComplet }}</td>
+    <td>{{ user.profession }}</td>
+    <td>{{ user.numTel }}</td>
+    <td>{{ user.role }}</td>
+    <td>{{ user.laboratoireId != null ? (laboratoireNames[user.laboratoireId] ) : 'Non affecté' }}</td>
+    <td>
+      <button (click)="editUser (user.id)" class="edit-button">
+        <span nz-icon nzType="edit" nzTheme="outline"></span>
+      </button>
+      <button (click)="deleteUser (user.id)" class="delete-button">
+        <span nz-icon nzType="delete" nzTheme="outline"></span>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
+
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <div class="ant-table-filter-dropdown">
+    <div class="search-box">
+      <input type="text" nz-input placeholder="Rechercher un utilisateur" [(ngModel)]="searchValue" />
+      <button nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button">Rechercher</button>
+      <button nz-button nzSize="small" (click)="reset()">Réinitialiser</button>
+    </div>
+  </div>
+</nz-dropdown-menu>

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/utilisateurs")
@@ -23,6 +24,12 @@ public class UtilisateurController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @GetMapping("/getUser/{id}")
+    public ResponseEntity<Optional<Utilisateur>> getUtilisateur(@PathVariable Long id) {
+        Optional<Utilisateur> utilisateur = utilisateurService.getUtilisateurById(id);
+        return new ResponseEntity<>(utilisateur, HttpStatus.OK);
+    }
+
     @GetMapping("/all")
     public ResponseEntity<List<Utilisateur>> getAllUtilisateurs() {
         List<Utilisateur> utilisateurs = utilisateurService.getAllUtilisateurs();
@@ -35,5 +42,28 @@ public class UtilisateurController {
         return new ResponseEntity<>(utilisateurs, HttpStatus.OK);
     }
 
-    // Implement update and delete methods
+    @PutMapping("/updateUtilisateur/{utilisateurId}")
+    public ResponseEntity<Utilisateur> updateUtilisateur(@PathVariable Long utilisateurId, @RequestBody Utilisateur updatedUser) {
+        try {
+            Utilisateur utilisateur = utilisateurService.updateUtilisateur(utilisateurId, updatedUser);
+            return ResponseEntity.ok(utilisateur);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+    }
+
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteUtilisateur(@PathVariable Long id) {
+        try {
+            utilisateurService.deleteUtilisateurById(id);
+            return ResponseEntity.noContent().build();
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(404).build();
+        }
+    }
+
+
+
+
 }

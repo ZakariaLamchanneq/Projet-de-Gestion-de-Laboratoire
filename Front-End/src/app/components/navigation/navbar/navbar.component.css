@@ -72,3 +72,13 @@ nz-content {
   transform: translateY(-2px); /* Slight lift on hover */
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  */
 }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.menu-item i {
+  margin-right: 8px;
+}
+

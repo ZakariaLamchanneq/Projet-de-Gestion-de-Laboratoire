@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Laboratoire } from '../../../models/laboratoire.model';
-import { LaboratoireService } from '../../../services/laboratoire.service';
+import { LaboratoireService } from '../../../services/laboratoireService/laboratoire.service';
 import { CommonModule } from '@angular/common';
 import { NzTableModule } from 'ng-zorro-antd/table'; // Import NG-ZORRO table module
 import { NzImageModule } from 'ng-zorro-antd/image'; // Import NG-ZORRO image module

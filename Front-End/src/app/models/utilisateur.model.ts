@@ -8,5 +8,5 @@ export interface Utilisateur {
   numTel: string;
   signature: string;
   role: string;
-  laboratoire: Laboratoire;
+  laboratoireId?: number;
 }

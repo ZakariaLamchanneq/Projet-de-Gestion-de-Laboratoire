@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LaboratoireListComponent } from './laboratoire-list.component';
-import { LaboratoireService } from '../../../services/laboratoire.service';
+import { LaboratoireService } from '../../../services/laboratoireService/laboratoire.service';
 import { provideHttpClient } from '@angular/common/http';
 
 describe('LaboratoireListComponent', () => {

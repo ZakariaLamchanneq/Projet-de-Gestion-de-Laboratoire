@@ -24,6 +24,12 @@ public class LaboratoireController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Laboratoire> getLaboratoireById(@PathVariable Long id) {
+        Laboratoire laboratoire = laboratoireService.findById(id);
+        return ResponseEntity.ok(laboratoire);
+    }
+
     @GetMapping("all")
     public ResponseEntity<List<Laboratoire>> getAllLaboratoires() {
         List<Laboratoire> laboratoires =  laboratoireService.getAllLaboratoires();

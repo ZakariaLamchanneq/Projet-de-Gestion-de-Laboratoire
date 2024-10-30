@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Laboratoire } from '../models/laboratoire.model';
+import { Laboratoire } from '../../models/laboratoire.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,14 @@ export class LaboratoireService {
   getLaboratoires(): Observable<Laboratoire[]> {
     return this.http.get<Laboratoire[]>(this.apiUrl+'/all');
   }
+  getLaboratoireById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
 
   createLaboratoire(laboratoire: Laboratoire): Observable<Laboratoire> {
     return this.http.post<Laboratoire>(this.apiUrl+'/add', laboratoire);
   }
+
 
   // Add update and delete methods as needed
 }

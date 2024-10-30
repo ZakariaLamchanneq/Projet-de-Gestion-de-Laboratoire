@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LaboratoireService } from '../../../services/laboratoire.service';
+import { LaboratoireService } from '../../../services/laboratoireService/laboratoire.service';
 import { FormBuilder, FormGroup,Validators, ReactiveFormsModule } from '@angular/forms';
 import { Laboratoire } from '../../../models/laboratoire.model';
 import { NzInputModule } from 'ng-zorro-antd/input';

@@ -1,0 +1,62 @@
+<div class="add-user-container">
+  <h2 class="form-title">Ajouter un Utilisateur</h2>
+
+  <div class="form-group">
+    <label class="menu-item">
+      <span nz-icon nzType="mail" nzTheme="outline"  class="icon"></span>
+      Email:
+    </label>
+    <input nz-input placeholder="Exemple@gmail.com" [(ngModel)]="newUser.email" />
+  </div>
+
+  <div class="form-group">
+    <label class="menu-item">
+      <span nz-icon nzType="user" class="icon"></span>
+      Nom Complet:
+    </label>
+    <input nz-input placeholder="Entrer votre nom : Smayka Alibou" [(ngModel)]="newUser.nomComplet" />
+  </div>
+
+  <div class="form-group">
+    <label class="menu-item">
+      <span nz-icon nzType="solution" class="icon"></span>
+      Profession:
+    </label>
+    <input nz-input placeholder="Entrer votre profession" [(ngModel)]="newUser.profession" />
+  </div>
+
+  <div class="form-group">
+    <label class="menu-item">
+      <span nz-icon nzType="phone" class="icon"></span>
+      Téléphone:
+    </label>
+    <input nz-input placeholder="Entre votre numéro de téléphone" [(ngModel)]="newUser.numTel" />
+  </div>
+
+  <div class="form-group">
+    <label class="menu-item">
+      <span nz-icon nzType="safety" class="icon"></span>
+      Rôle:
+    </label>
+    <select nz-select [(ngModel)]="newUser.role">
+      <option nzValue="Administrateur">Administrateur</option>
+      <option nzValue="Technicien">Technicien</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label class="menu-item">
+      <span nz-icon nzType="appstore" class="icon"></span>
+      Laboratoire:
+    </label>
+    <nz-select [(ngModel)]="newUser.laboratoireId" nzPlaceHolder="Sélectionner un laboratoire" required>
+      <nz-option *ngFor="let laboratoire of laboratoires" [nzValue]="laboratoire.id" [nzLabel]="laboratoire.nom"></nz-option>
+    </nz-select>
+  </div>
+
+
+  <div class="modal-footer">
+    <button nz-button nzType="default" (click)="handleCancel()">Annuler</button>
+    <button nz-button nzType="primary" (click)="handleOk()">Ajouter</button>
+  </div>
+</div>

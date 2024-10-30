@@ -6,6 +6,8 @@
         <img [src]="logo" class="navbar-image" alt="logo"/>
       </a>
     </div>
+
+
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <a routerLink="/home" nzIcon="home" nz-menu-item nzMatchRouter>Home</a>
       <li nz-submenu nzOpen nzTitle="Laboratoire" nzIcon="dashboard">
@@ -19,6 +21,20 @@
         </ul>
       </li>
     </ul>
+
+    <!--    Gestion Utilisateur-->
+
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+
+        <li nz-menu-item nzMatchRouter class="menu-item">
+          <a routerLink="/utilisateurs">
+            <i nz-icon nzType="team" nzTheme="outline"></i>
+            Utilisateurs
+          </a>
+        </li>
+
+    </ul>
+
   </nz-sider>
   <nz-layout>
     <nz-header>

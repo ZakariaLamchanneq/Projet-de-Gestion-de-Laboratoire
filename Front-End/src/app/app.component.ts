@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     // RouterModule,
     NavbarComponent,
+
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

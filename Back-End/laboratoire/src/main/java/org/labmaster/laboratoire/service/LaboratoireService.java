@@ -26,6 +26,11 @@ public class LaboratoireService {
     }
 
 
+    public Laboratoire findById(Long id) {
+        return laboratoireRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Laboratoire not found with id: " + id));
+    }
+
     public FullLaboratoireResponse getLaboratoiresWithUsers(Long laboratoireId) {
         var laboraoire = laboratoireRepository.findById(laboratoireId).orElse(
                 new Laboratoire("NOT_FOUND")
