@@ -1,4 +1,5 @@
 <nz-layout class="app-layout">
+
   <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null">
     <div class="sidebar-logo">
@@ -9,31 +10,28 @@
 
 
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <a routerLink="/home" nzIcon="home" nz-menu-item nzMatchRouter>Home</a>
-      <li nz-submenu nzOpen nzTitle="Laboratoire" nzIcon="dashboard">
-        <ul nzType="experiment" nzTheme="outline">
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/laboratoires">Laboratoires</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/create-laboratoire">Add Laboratoire</a>
-          </li>
-        </ul>
+      <li nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Home" [nzTooltipTrigger]="isCollapsed ? 'hover' : null">
+      <a routerLink="/home">
+        <span nz-icon nzType="home"></span>
+        <span>Home</span>
+      </a>
+      </li>
+      <li nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Laboratoires" [nzTooltipTrigger]="isCollapsed ? 'hover' : null">
+      <a routerLink="/laboratoires">
+        <span nz-icon nzType="experiment"></span>
+        <span>Laboratoires</span>
+      </a>
+      </li>
+      <li nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Utilisateurs" [nzTooltipTrigger]="isCollapsed ? 'hover' : null">
+      <a routerLink="/utilisateurs">
+        <span nz-icon nzType="team"></span>
+        <span>Utilisateurs</span>
+      </a>
       </li>
     </ul>
 
     <!--    Gestion Utilisateur-->
 
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-
-        <li nz-menu-item nzMatchRouter class="menu-item">
-          <a routerLink="/utilisateurs">
-            <i nz-icon nzType="team" nzTheme="outline"></i>
-            Utilisateurs
-          </a>
-        </li>
-
-    </ul>
 
   </nz-sider>
   <nz-layout>

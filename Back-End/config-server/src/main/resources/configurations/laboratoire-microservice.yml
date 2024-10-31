@@ -7,7 +7,7 @@ eureka:
 
 
 server:
-  port: 8090
+  port: 0 # Allow dynamic port allocation
 spring:
   application:
     name: laboratoire-microservice
@@ -24,7 +24,7 @@ spring:
 
 application:
   config:
-    utilisateurs-url: http://localhost:8070/api/utilisateurs
+    utilisateurs-url: http://localhost:8222/api/utilisateurs
 
 management:
   tracing:

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Back-End/.idea/Back-End.iml" filepath="$PROJECT_DIR$/Back-End/.idea/Back-End.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" filepath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" />
     </modules>
   </component>

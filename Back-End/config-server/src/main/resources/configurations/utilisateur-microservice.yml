@@ -7,7 +7,7 @@ eureka:
 
 
 server:
-  port: 8070
+  port: 0 # Allow dynamic port allocation
 spring:
   application:
     name: utilisateur-microservice

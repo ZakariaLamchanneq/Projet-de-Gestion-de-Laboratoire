@@ -14,4 +14,15 @@ public class Utilisateur {
     private String numTel;
     private String signature;
     private String role;
+
+    @Override
+    public String toString() {
+        return "Utilisateur{" +
+                "nomComplet='" + nomComplet + '\'' +
+                ", profession='" + profession + '\'' +
+                ", numTel='" + numTel + '\'' +
+                ", signature='" + signature + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
 }

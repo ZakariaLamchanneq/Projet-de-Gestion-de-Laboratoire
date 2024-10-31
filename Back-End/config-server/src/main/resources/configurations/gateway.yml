@@ -12,15 +12,18 @@ spring:
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true # To avoid case sensitivity
       routes:
-        - id: utilisateurs
-          uri: http://localhost:8070
-          predicates:
-            - Path=/api/utilisateurs/**
-        - id: laboratoires
-          uri: http://localhost:8090
+        - id: laboratoire-microservice
+          uri: lb://laboratoire-microservice
+#          uri: http://localhost:8070
           predicates:
             - Path=/api/laboratoires/**
+        - id: utilisateur-microservice
+#          uri: http://localhost:8090
+          uri: lb://utilisateur-microservice
+          predicates:
+            - Path=/api/utilisateurs/**
 
 management:
   tracing:

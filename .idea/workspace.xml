@@ -4,218 +4,149 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0c305b4-7297-4545-96cf-975f03aab6c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/DockerFile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/controller/LaboratoireControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/utilisateur/DockerFile" afterDir="false" />
+    <list default="true" id="78ff9cc8-3d27-49b3-87cb-2b2ecf8107b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/LaboratoireDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/model/LaboratoireTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/service/LaboratoireServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.idea/Back-End.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/client/UtilisateurClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/client/UtilisateurClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/controller/LaboratoireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/controller/LaboratoireController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/FullLaboratoireResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/FullLaboratoireResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Laboratoire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Laboratoire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Utilisateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/service/LaboratoireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/service/LaboratoireService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/controller/LaboratoireControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/controller/LaboratoireControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/controller/UtilisateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/controller/UtilisateurController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/service/UtilisateurService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/models/utilisateur.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/models/utilisateur.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/laboratoire.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/laboratoire.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/utilisateur.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/utilisateurService/utilisateur.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/utilisateur.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/utilisateurService/utilisateur.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/icons-provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/icons-provider.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/models/laboratoire.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/models/laboratoire.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.routes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/utilisateurService/utilisateur.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/utilisateurService/utilisateur.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/favicon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/theme.less" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/theme.less" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit5 Test Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Hikaru-e"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ZakariaLamchanneq/Projet-de-Gestion-de-Laboratoire.git",
+    "accountId": "f72a4332-5012-4a51-a548-12d9a34ea7db"
+  }
+}]]></component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="jdkForImporter" value="17" />
-        <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 8
-}</component>
-  <component name="ProjectId" id="2nvphPpHTGjg8pnDFmjC8R6mfx3" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2oAlAkZaSmykYXkefK2NONXMN6K" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Docker.spring-boot-microservices.zipkin: Compose Deployment.executor": "Run",
-    "JUnit.LaboratoireControllerTest.createLaboratoire.executor": "Run",
-    "JUnit.LaboratoireControllerTest.executor": "Run",
-    "JUnit.UtilisateurControllerTest.executor": "Run",
-    "JUnit.UtilisateurControllerTest.testCreateUtilisateur.executor": "Run",
-    "JUnit.UtilisateurControllerTest.testDeleteUtilisateur.executor": "Run",
-    "JUnit.UtilisateurControllerTest.testDeleteUtilisateur_NotFound.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.DiscoveryApplication.executor": "Run",
     "Spring Boot.GatewayApplication.executor": "Run",
     "Spring Boot.LaboratoireApplication.executor": "Run",
     "Spring Boot.UtilisateurApplication.executor": "Run",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/AORUS/JS-Technology-TPs/Book Reading tracker version Ts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "ts.external.directory.path": "C:\\Users\\AORUS\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\Oussama\\Downloads\\WORK\\PROJET_LIBRE\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Back-End\laboratoire" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Front-End\src" />
-      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Front-End\src\app\services\laboratoireService" />
-      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Front-End\src\app\services\utilisateurService" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="org.labmaster.utilisateur.controller" />
-      <recent name="org.labmaster.laboratoire.controller" />
-    </key>
-  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
-        <option value="MicronautRunConfigurationType" />
-        <option value="QuarkusRunConfigurationType" />
+        <option value="JUnit" />
         <option value="SpringBootApplicationConfigurationType" />
+        <option value="js.build_tools.npm" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UtilisateurControllerTest">
-    <configuration name="LaboratoireControllerTest.createLaboratoire" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="laboratoire" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.labmaster.laboratoire.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.labmaster.laboratoire.controller" />
-      <option name="MAIN_CLASS_NAME" value="org.labmaster.laboratoire.controller.LaboratoireControllerTest" />
-      <option name="METHOD_NAME" value="createLaboratoire" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UtilisateurControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="utilisateur" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.labmaster.utilisateur.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.labmaster.utilisateur.controller" />
-      <option name="MAIN_CLASS_NAME" value="org.labmaster.utilisateur.controller.UtilisateurControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UtilisateurControllerTest.testCreateUtilisateur" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="utilisateur" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.labmaster.utilisateur.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.labmaster.utilisateur.controller" />
-      <option name="MAIN_CLASS_NAME" value="org.labmaster.utilisateur.controller.UtilisateurControllerTest" />
-      <option name="METHOD_NAME" value="testCreateUtilisateur" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UtilisateurControllerTest.testDeleteUtilisateur" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="utilisateur" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.labmaster.utilisateur.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.labmaster.utilisateur.controller" />
-      <option name="MAIN_CLASS_NAME" value="org.labmaster.utilisateur.controller.UtilisateurControllerTest" />
-      <option name="METHOD_NAME" value="testDeleteUtilisateur" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UtilisateurControllerTest.testDeleteUtilisateur_NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="utilisateur" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.labmaster.utilisateur.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.labmaster.utilisateur.controller" />
-      <option name="MAIN_CLASS_NAME" value="org.labmaster.utilisateur.controller.UtilisateurControllerTest" />
-      <option name="METHOD_NAME" value="testDeleteUtilisateur_NotFound" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="npm.Angular CLI">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.configserver.ConfigServerApplication" />
@@ -223,14 +154,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="DiscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="discovery" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.discovery.DiscoveryApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.gateway.GatewayApplication" />
       <method v="2">
@@ -251,12 +182,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
     <configuration name="Angular CLI" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/Front-End/package.json" />
       <command value="run" />
@@ -269,52 +194,31 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.UtilisateurControllerTest" />
-      <item itemvalue="JUnit.UtilisateurControllerTest.testCreateUtilisateur" />
-      <item itemvalue="JUnit.UtilisateurControllerTest.testDeleteUtilisateur" />
-      <item itemvalue="JUnit.UtilisateurControllerTest.testDeleteUtilisateur_NotFound" />
-      <item itemvalue="JUnit.LaboratoireControllerTest.createLaboratoire" />
       <item itemvalue="npm.Angular CLI" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.DiscoveryApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
-      <item itemvalue="Spring Boot.LaboratoireApplication" />
       <item itemvalue="Spring Boot.UtilisateurApplication" />
+      <item itemvalue="Spring Boot.LaboratoireApplication" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.UtilisateurControllerTest" />
-        <item itemvalue="JUnit.UtilisateurControllerTest.testDeleteUtilisateur" />
-        <item itemvalue="JUnit.UtilisateurControllerTest.testDeleteUtilisateur_NotFound" />
-        <item itemvalue="JUnit.UtilisateurControllerTest.testCreateUtilisateur" />
-        <item itemvalue="JUnit.LaboratoireControllerTest.createLaboratoire" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a0c305b4-7297-4545-96cf-975f03aab6c4" name="Changes" comment="" />
-      <created>1729863526402</created>
+      <changelist id="78ff9cc8-3d27-49b3-87cb-2b2ecf8107b3" name="Changes" comment="" />
+      <created>1730320122761</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729863526402</updated>
-      <workItem from="1729863532191" duration="7000" />
-      <workItem from="1729863825776" duration="233000" />
-      <workItem from="1729868926553" duration="29716000" />
-      <workItem from="1730025194436" duration="5012000" />
-      <workItem from="1730042716319" duration="14337000" />
-      <workItem from="1730101754116" duration="6091000" />
-      <workItem from="1730138827514" duration="810000" />
-      <workItem from="1730139651554" duration="1668000" />
+      <updated>1730320122761</updated>
+      <workItem from="1730320124828" duration="4191000" />
     </task>
     <servers />
   </component>

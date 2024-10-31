@@ -1,5 +1,7 @@
 package org.labmaster.laboratoire.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Lob;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -14,7 +16,10 @@ public class FullLaboratoireResponse {
 
     private String nom;
 
-    private String logo;
+    @Lob
+    @Column(name = "logo", columnDefinition = "BLOB")
+    private byte[] logo; // Store image data as byte array
+
     private String nrc;
     private Boolean active;
     private LocalDate dateActivation;

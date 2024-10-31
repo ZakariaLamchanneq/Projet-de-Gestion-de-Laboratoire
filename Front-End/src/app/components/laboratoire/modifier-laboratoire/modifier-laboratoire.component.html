@@ -47,13 +47,17 @@
 
   <div class="form-group">
     <label for="dateActivation">Activation Date:</label>
-    <nz-date-picker formControlName="dateActivation" id="dateActivation"></nz-date-picker>
+    <nz-date-picker
+      formControlName="dateActivation"
+      id="dateActivation"
+      [nzFormat]="'yyyy-MM-dd'"
+    ></nz-date-picker>
     <div *ngIf="laboratoireForm.controls['dateActivation'].invalid && laboratoireForm.controls['dateActivation'].touched" class="error-message">
       Activation Date is required.
     </div>
   </div>
 
   <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="laboratoireForm.invalid">
-    {{ laboratoire ? 'Update' : 'Create' }} Laboratory
+    Modifier Laboratoire
   </button>
 </form>

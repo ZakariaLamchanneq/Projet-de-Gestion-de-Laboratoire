@@ -5,12 +5,12 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzImageModule } from 'ng-zorro-antd/image';
 
-
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {NzTooltipDirective} from 'ng-zorro-antd/tooltip';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-layout',
   standalone: true,
   imports: [
     RouterModule,
@@ -20,11 +20,15 @@ import { FormsModule } from '@angular/forms';
     NzImageModule,
     CommonModule,
     FormsModule,
+    NzTooltipDirective,
   ],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+  templateUrl: './layout.component.html',
+  styleUrl: './layout.component.css',
 })
-export class NavbarComponent {
+export class LayoutComponent {
+
   isCollapsed = false;
   logo = 'assets/images/logo1.png';
+
+
 }

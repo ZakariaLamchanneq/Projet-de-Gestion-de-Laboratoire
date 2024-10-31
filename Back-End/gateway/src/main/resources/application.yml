@@ -6,7 +6,6 @@ spring:
 
 
 #Configuration CORS to connect Front-End
-
   cloud:
     gateway:
       globalcors:

@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 @Entity
-@Getter
-@Setter
 public class Laboratoire {
 
     @Id
@@ -19,7 +19,9 @@ public class Laboratoire {
     @Column(nullable = false)
     private String nom;
 
-    private String logo;
+    @Lob
+    @Column(name = "logo", columnDefinition = "LONGBLOB")
+    private byte[] logo; // Store image data as byte array
     private String nrc;
     private Boolean active;
     private LocalDate dateActivation;
@@ -32,7 +34,7 @@ public class Laboratoire {
         this.nom = nom;
     }
 
-    public Laboratoire(String nom, String logo, String nrc, Boolean active, LocalDate dateActivation) {
+    public Laboratoire(String nom, byte[] logo, String nrc, Boolean active, LocalDate dateActivation) {
         this.nom = nom;
         this.logo = logo;
         this.nrc = nrc;
@@ -56,11 +58,11 @@ public class Laboratoire {
         this.nom = nom;
     }
 
-    public String getLogo() {
+    public byte[] getLogo() {
         return logo;
     }
 
-    public void setLogo(String logo) {
+    public void setLogo(byte[] logo) {
         this.logo = logo;
     }
 
@@ -86,5 +88,17 @@ public class Laboratoire {
 
     public void setDateActivation(LocalDate dateActivation) {
         this.dateActivation = dateActivation;
+    }
+
+    @Override
+    public String toString() {
+        return "Laboratoire{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", logo=" + Arrays.toString(logo) +
+                ", nrc='" + nrc + '\'' +
+                ", active=" + active +
+                ", dateActivation=" + dateActivation +
+                '}';
     }
 }
