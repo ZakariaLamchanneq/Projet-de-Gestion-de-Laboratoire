@@ -8,9 +8,9 @@ on:
 
 jobs:
   discovery:
-    runs-on: self-hosted
+    runs-on: [self-hosted, windows]
     steps:
-      - name: Checkout Code
+      - name: Check out code
         uses: actions/checkout@v2
 
       - name: Set up Java
@@ -19,16 +19,21 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Run SonarQube Scanner for Discovery
+      - name: Run SonarQube Scanner For Discovery Server
         run: |
           cd Back-End/discovery
-          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner -Dsonar.projectKey=labmaster.backend.discovery -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner ^
+            -Dsonar.projectKey=labmaster.backend.discovery ^
+            -Dsonar.sources=src/main/java ^
+            -Dsonar.java.binaries=target ^
+            -Dsonar.host.url=%SONAR_HOST_URL% ^
+            -Dsonar.login=%SONAR_TOKEN%
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   config_server:
-    runs-on: self-hosted
+    runs-on: [self-hosted, windows]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -42,13 +47,18 @@ jobs:
       - name: Run SonarQube Scanner for Config Server
         run: |
           cd Back-End/config-server
-          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner -Dsonar.projectKey=labmaster.backend.configserver -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner ^
+            -Dsonar.projectKey=labmaster.backend.configserver ^
+            -Dsonar.sources=src/main/java ^
+            -Dsonar.java.binaries=target ^
+            -Dsonar.host.url=%SONAR_HOST_URL% ^
+            -Dsonar.login=%SONAR_TOKEN%
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   laboratoire:
-    runs-on: self-hosted
+    runs-on: [self-hosted, windows]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -62,13 +72,18 @@ jobs:
       - name: Run SonarQube Scanner for Laboratoire
         run: |
           cd Back-End/laboratoire
-          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner -Dsonar.projectKey=labmaster.backend.laboratoire -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner ^
+            -Dsonar.projectKey=labmaster.backend.laboratoire ^
+            -Dsonar.sources=src/main/java ^
+            -Dsonar.java.binaries=target ^
+            -Dsonar.host.url=%SONAR_HOST_URL% ^
+            -Dsonar.login=%SONAR_TOKEN%
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   gateway:
-    runs-on: self-hosted
+    runs-on: [self-hosted, windows]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -82,13 +97,18 @@ jobs:
       - name: Run SonarQube Scanner for Gateway
         run: |
           cd Back-End/gateway
-          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner -Dsonar.projectKey=labmaster.backend.gateway -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner ^
+            -Dsonar.projectKey=labmaster.backend.gateway ^
+            -Dsonar.sources=src/main/java ^
+            -Dsonar.java.binaries=target ^
+            -Dsonar.host.url=%SONAR_HOST_URL% ^
+            -Dsonar.login=%SONAR_TOKEN%
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   utilisateur:
-    runs-on: self-hosted
+    runs-on: [self-hosted, windows]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -102,13 +122,18 @@ jobs:
       - name: Run SonarQube Scanner for Utilisateur
         run: |
           cd Back-End/utilisateur
-          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner -Dsonar.projectKey=labmaster.backend.utilisateur -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner ^
+            -Dsonar.projectKey=labmaster.backend.utilisateur ^
+            -Dsonar.sources=src/main/java ^
+            -Dsonar.java.binaries=target ^
+            -Dsonar.host.url=%SONAR_HOST_URL% ^
+            -Dsonar.login=%SONAR_TOKEN%
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   frontend:
-    runs-on: self-hosted
+    runs-on: [self-hosted, windows]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -121,7 +146,12 @@ jobs:
       - name: Run SonarQube Scanner for Frontend
         run: |
           cd Front-End
-          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner ^
+            -Dsonar.projectKey=labmaster.frontend ^
+            -Dsonar.sources=src/main/java ^
+            -Dsonar.java.binaries=target ^
+            -Dsonar.host.url=%SONAR_HOST_URL% ^
+            -Dsonar.login=%SONAR_TOKEN%
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
