@@ -19,6 +19,9 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+      - name: Add SonarQube Scanner to PATH
+        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+
       - name: Run SonarQube Scanner for Discovery
         run: |
           cd Back-End/discovery
@@ -43,6 +46,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
+
+      - name: Add SonarQube Scanner to PATH
+        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
 
       - name: Run SonarQube Scanner for Config Server
         run: |
@@ -69,6 +75,9 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+      - name: Add SonarQube Scanner to PATH
+        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+
       - name: Run SonarQube Scanner for Laboratoire
         run: |
           cd Back-End/laboratoire
@@ -94,9 +103,12 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+      - name: Add SonarQube Scanner to PATH
+        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+
       - name: Run SonarQube Scanner for Gateway
         run: |
-          cd Back-End/laboratoire
+          cd Back-End/gateway
           sonar-scanner \
             -Dsonar.projectKey=labmaster.backend.gateway \
             -Dsonar.sources=src/main/java \
@@ -119,9 +131,12 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+      - name: Add SonarQube Scanner to PATH
+        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+
       - name: Run SonarQube Scanner for Utilisateur
         run: |
-          cd Back-End/laboratoire
+          cd Back-End/utilisateur
           sonar-scanner \
             -Dsonar.projectKey=labmaster.backend.utilisateur \
             -Dsonar.sources=src/main/java \
@@ -142,6 +157,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22'
+
+      - name: Add SonarQube Scanner to PATH
+        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
 
       - name: Run SonarQube Scanner for Frontend
         run: |
