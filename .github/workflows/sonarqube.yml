@@ -20,7 +20,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Add SonarQube Scanner to PATH
-        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
 
       - name: Run SonarQube Scanner for Discovery
         run: |
@@ -48,7 +48,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Add SonarQube Scanner to PATH
-        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
 
       - name: Run SonarQube Scanner for Config Server
         run: |
@@ -76,7 +76,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Add SonarQube Scanner to PATH
-        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
 
       - name: Run SonarQube Scanner for Laboratoire
         run: |
@@ -104,7 +104,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Add SonarQube Scanner to PATH
-        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
 
       - name: Run SonarQube Scanner for Gateway
         run: |
@@ -132,7 +132,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Add SonarQube Scanner to PATH
-        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
 
       - name: Run SonarQube Scanner for Utilisateur
         run: |
@@ -159,7 +159,7 @@ jobs:
           node-version: '22'
 
       - name: Add SonarQube Scanner to PATH
-        run: echo "C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin" >> $GITHUB_PATH
+        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
 
       - name: Run SonarQube Scanner for Frontend
         run: |
