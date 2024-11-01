@@ -19,13 +19,10 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Add SonarQube Scanner to PATH
-        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
-
       - name: Run SonarQube Scanner for Discovery
         run: |
           cd Back-End/discovery
-          sonar-scanner \
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner \
             -Dsonar.projectKey=labmaster.backend.discovery \
             -Dsonar.sources=src/main/java \
             -Dsonar.java.binaries=target \
@@ -47,13 +44,10 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Add SonarQube Scanner to PATH
-        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
-
       - name: Run SonarQube Scanner for Config Server
         run: |
           cd Back-End/config-server
-          sonar-scanner \
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner \
             -Dsonar.projectKey=labmaster.backend.configserver \
             -Dsonar.sources=src/main/java \
             -Dsonar.java.binaries=target \
@@ -75,13 +69,10 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Add SonarQube Scanner to PATH
-        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
-
       - name: Run SonarQube Scanner for Laboratoire
         run: |
           cd Back-End/laboratoire
-          sonar-scanner \
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner \
             -Dsonar.projectKey=labmaster.backend.laboratoire \
             -Dsonar.sources=src/main/java \
             -Dsonar.java.binaries=target \
@@ -103,13 +94,10 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Add SonarQube Scanner to PATH
-        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
-
       - name: Run SonarQube Scanner for Gateway
         run: |
           cd Back-End/gateway
-          sonar-scanner \
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner \
             -Dsonar.projectKey=labmaster.backend.gateway \
             -Dsonar.sources=src/main/java \
             -Dsonar.java.binaries=target \
@@ -131,13 +119,10 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Add SonarQube Scanner to PATH
-        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
-
       - name: Run SonarQube Scanner for Utilisateur
         run: |
           cd Back-End/utilisateur
-          sonar-scanner \
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner \
             -Dsonar.projectKey=labmaster.backend.utilisateur \
             -Dsonar.sources=src/main/java \
             -Dsonar.java.binaries=target \
@@ -158,13 +143,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Add SonarQube Scanner to PATH
-        run: echo "C:\\Libraries\\sonar-scanner-6.2.1.4610-windows-x64\\bin" >> $GITHUB_PATH
-
       - name: Run SonarQube Scanner for Frontend
         run: |
           cd Front-End
-          sonar-scanner \
+          C:\Libraries\sonar-scanner-6.2.1.4610-windows-x64\bin\sonar-scanner \
             -Dsonar.projectKey=labmaster.frontend \
             -Dsonar.sources=src \
             -Dsonar.typescript.tsconfigPath=tsconfig.json \
