@@ -25,12 +25,14 @@ jobs:
           distribution: 'adopt'
 
       - name: Run SonarQube Scanner for Config Server
+        shell: powershell
         run: |
           cd Back-End/config-server
-          sonar-scanner -Dsonar.projectKey=labmaster.backend.configserver -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.token=$env:SONAR_TOKEN
+          sonar-scanner "-Dsonar.projectKey=labmaster.backend.configserver" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN"
           
           # For Testing purposes
-          # echo $env:SONAR_HOST_URL      
+          echo "SonarQube Host URL: $env:SONAR_HOST_URL"
+          echo "SonarQube Token: $env:SONAR_TOKEN"
 
   # discovery:
   #   runs-on: self-hosted
@@ -109,21 +111,21 @@ jobs:
   #         sonar-scanner -Dsonar.projectKey=labmaster.backend.gateway -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
 
 
-  # frontend:
-  #   runs-on: self-hosted
-  #   steps:
-  #     - name: Checkout Code
-  #       uses: actions/checkout@v2
+  frontend:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-  #     - name: Set up Node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: '22'
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
 
-  #     - name: Run SonarQube Scanner for Front-End
-  #       shell: powershell
-  #       run: |
-  #         cd Front-End
-  #         sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
+      - name: Run SonarQube Scanner for Front-End
+        shell: powershell
+        run: |
+          cd Front-End
+          sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
 
 
