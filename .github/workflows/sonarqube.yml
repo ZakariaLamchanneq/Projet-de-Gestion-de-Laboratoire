@@ -21,9 +21,10 @@ jobs:
           distribution: 'adopt'
 
       - name: Run SonarQube Scanner for Config Server
+        shell: powershell
         run: |
           cd Back-End/config-server
-          sonar-scanner -Dsonar.projectKey=labmaster.backend.configserver -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
+          sonar-scanner -Dsonar.projectKey=labmaster.backend.configserver -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
           # For testing purposes
           Write-Output $env:SONAR_HOST_URL
         env:
@@ -44,6 +45,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Run SonarQube Scanner For Discovery Server
+        shell: powershell
         run: |
           cd Back-End/discovery
           sonar-scanner -Dsonar.projectKey=labmaster.backend.discovery -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
@@ -64,6 +66,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Run SonarQube Scanner for Laboratoire
+        shell: powershell
         run: |
           cd Back-End/laboratoire
           sonar-scanner -Dsonar.projectKey=labmaster.backend.laboratoire -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
@@ -84,6 +87,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Run SonarQube Scanner for Utilisateur
+        shell: powershell
         run: |
           cd Back-End/utilisateur
           sonar-scanner -Dsonar.projectKey=labmaster.backend.utilisateur -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
@@ -104,6 +108,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Run SonarQube Scanner for Gateway
+        shell: powershell
         run: |
           cd Back-End/gateway
           sonar-scanner -Dsonar.projectKey=labmaster.backend.gateway -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
@@ -123,6 +128,7 @@ jobs:
           node-version: '22'
 
       - name: Run SonarQube Scanner for Front-End
+        shell: powershell
         run: |
           cd Front-End
           sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
