@@ -26,7 +26,7 @@ jobs:
           cd Back-End/config-server
           sonar-scanner -Dsonar.projectKey=labmaster.backend.configserver -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.token=$SONAR_TOKEN
           # For testing purposes
-          Write-Output $env:SONAR_HOST_URL
+          Write-Output $SONAR_HOST_URL
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
