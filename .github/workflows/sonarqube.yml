@@ -27,10 +27,10 @@ jobs:
       - name: Run SonarQube Scanner for Config Server
         run: |
           cd Back-End/config-server
-          sonar-scanner -Dsonar.projectKey="labmaster.backend.configserver" -Dsonar.sources="src/main/java" -Dsonar.java.binaries="target" -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.token=$env:SONAR_TOKEN
+          sonar-scanner -Dsonar.projectKey=labmaster.backend.configserver -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.token=$env:SONAR_TOKEN
           
           # For Testing purposes
-          echo $env:SONAR_HOST_URL
+          # echo $env:SONAR_HOST_URL      
 
   # discovery:
   #   runs-on: self-hosted
