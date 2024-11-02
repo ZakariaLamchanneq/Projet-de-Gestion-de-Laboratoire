@@ -5,68 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ff9cc8-3d27-49b3-87cb-2b2ecf8107b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/LaboratoireDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/model/LaboratoireTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/service/LaboratoireServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/Back-End.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/client/UtilisateurClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/client/UtilisateurClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/controller/LaboratoireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/controller/LaboratoireController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/FullLaboratoireResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/FullLaboratoireResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Laboratoire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Laboratoire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Utilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/service/LaboratoireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/service/LaboratoireService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/controller/LaboratoireControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/controller/LaboratoireControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/service/UtilisateurService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/icons-provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/icons-provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/models/laboratoire.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/models/laboratoire.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/utilisateurService/utilisateur.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/utilisateurService/utilisateur.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/theme.less" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/theme.less" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,22 +16,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Hikaru-e"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Hikaru-e&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/ZakariaLamchanneq/Projet-de-Gestion-de-Laboratoire.git",
+    "url": "https://github.com/Hikaru-e/Projet-de-Gestion-de-Laboratoire.git",
     "accountId": "f72a4332-5012-4a51-a548-12d9a34ea7db"
   }
 }]]></component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -99,10 +39,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2oAlAkZaSmykYXkefK2NONXMN6K" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -110,6 +50,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.laboratoire [clean].executor": "Run",
+    "Maven.laboratoire [install].executor": "Run",
+    "Maven.laboratoire [package].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -219,6 +162,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730320122761</updated>
       <workItem from="1730320124828" duration="4191000" />
+      <workItem from="1730497632677" duration="1312000" />
     </task>
     <servers />
   </component>
