@@ -7,33 +7,6 @@ on:
   pull_request:
 
 jobs:
-  discovery:
-    runs-on: [self-hosted, windows]
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-
-      - name: Add SonarQube to PATH
-        run: echo "C:\\Libraries\\sonarqube-10.6.0.92116\\bin\\windows-x86-64" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8
-
-      - name: Run SonarQube Scanner For Discovery Server
-        run: |
-          cd Back-End/discovery
-          sonar-scanner ^
-            -Dsonar.projectKey=labmaster.backend.discovery ^
-            -Dsonar.sources=src/main/java ^
-            -Dsonar.java.binaries=target ^
-            -Dsonar.host.url=%SONAR_HOST_URL% ^
-            -Dsonar.login=%SONAR_TOKEN%
-        env:
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   config_server:
     runs-on: [self-hosted, windows]
@@ -55,6 +28,35 @@ jobs:
           cd Back-End/config-server
           sonar-scanner ^
             -Dsonar.projectKey=labmaster.backend.configserver ^
+            -Dsonar.sources=src/main/java ^
+            -Dsonar.java.binaries=target ^
+            -Dsonar.host.url=%SONAR_HOST_URL% ^
+            -Dsonar.login=%SONAR_TOKEN%
+        env:
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
+  discovery:
+    runs-on: [self-hosted, windows]
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
+      - name: Add SonarQube to PATH
+        run: echo "C:\\Libraries\\sonarqube-10.6.0.92116\\bin\\windows-x86-64" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8
+
+      - name: Run SonarQube Scanner For Discovery Server
+        run: |
+          cd Back-End/discovery
+          sonar-scanner ^
+            -Dsonar.projectKey=labmaster.backend.discovery ^
             -Dsonar.sources=src/main/java ^
             -Dsonar.java.binaries=target ^
             -Dsonar.host.url=%SONAR_HOST_URL% ^
