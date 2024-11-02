@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ff9cc8-3d27-49b3-87cb-2b2ecf8107b3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sonarqube.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonarqube.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +22,12 @@
     &quot;assignee&quot;: &quot;Hikaru-e&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Hikaru-e/Projet-de-Gestion-de-Laboratoire.git",
-    "accountId": "f72a4332-5012-4a51-a548-12d9a34ea7db"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Hikaru-e/Projet-de-Gestion-de-Laboratoire.git&quot;,
+    &quot;accountId&quot;: &quot;f72a4332-5012-4a51-a548-12d9a34ea7db&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -50,9 +50,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.config-server [clean].executor": "Run",
+    "Maven.config-server [install].executor": "Run",
+    "Maven.config-server [package].executor": "Run",
+    "Maven.discovery [package].executor": "Run",
+    "Maven.gateway [package].executor": "Run",
     "Maven.laboratoire [clean].executor": "Run",
     "Maven.laboratoire [install].executor": "Run",
     "Maven.laboratoire [package].executor": "Run",
+    "Maven.laboratoire [verify].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -163,6 +169,7 @@
       <updated>1730320122761</updated>
       <workItem from="1730320124828" duration="4191000" />
       <workItem from="1730497632677" duration="1312000" />
+      <workItem from="1730588923378" duration="310000" />
     </task>
     <servers />
   </component>
