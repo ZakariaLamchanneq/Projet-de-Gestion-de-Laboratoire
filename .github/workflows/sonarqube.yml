@@ -28,8 +28,8 @@ jobs:
           # For testing purposes
           Write-Output $SONAR_HOST_URL
         env:
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: http://localhost:9000
+          SONAR_TOKEN: sqa_39f3a6ade210038bb4ad7ef57617f39ea3652246
 
 
   discovery:
@@ -49,9 +49,11 @@ jobs:
         run: |
           cd Back-End/discovery
           sonar-scanner -Dsonar.projectKey=labmaster.backend.discovery -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
+          # For testing purposes
+          Write-Output $SONAR_HOST_URL
         env:
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: http://localhost:9000
+          SONAR_TOKEN: sqa_39f3a6ade210038bb4ad7ef57617f39ea3652246
 
   laboratoire:
     runs-on: self-hosted
@@ -71,8 +73,8 @@ jobs:
           cd Back-End/laboratoire
           sonar-scanner -Dsonar.projectKey=labmaster.backend.laboratoire -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
         env:
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: http://localhost:9000
+          SONAR_TOKEN: sqa_39f3a6ade210038bb4ad7ef57617f39ea3652246
 
   utilisateur:
     runs-on: self-hosted
@@ -92,8 +94,8 @@ jobs:
           cd Back-End/utilisateur
           sonar-scanner -Dsonar.projectKey=labmaster.backend.utilisateur -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
         env:
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: http://localhost:9000
+          SONAR_TOKEN: sqa_39f3a6ade210038bb4ad7ef57617f39ea3652246
 
   gateway:
     runs-on: self-hosted
@@ -113,8 +115,8 @@ jobs:
           cd Back-End/gateway
           sonar-scanner -Dsonar.projectKey=labmaster.backend.gateway -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
         env:
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: http://localhost:9000
+          SONAR_TOKEN: sqa_39f3a6ade210038bb4ad7ef57617f39ea3652246
 
   frontend:
     runs-on: self-hosted
@@ -133,6 +135,6 @@ jobs:
           cd Front-End
           sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
         env:
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: http://localhost:9000
+          SONAR_TOKEN: sqa_39f3a6ade210038bb4ad7ef57617f39ea3652246
 
