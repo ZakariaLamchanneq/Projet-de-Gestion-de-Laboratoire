@@ -23,11 +23,7 @@ jobs:
       - name: Run SonarQube Scanner for Config Server
         run: |
           cd Back-End/config-server
-          sonar-scanner -Dsonar.projectKey=labmaster.backend.configserver &&
-            -Dsonar.sources=src/main/java &&
-            -Dsonar.java.binaries=target &&
-            -Dsonar.host.url=$env:SONAR_HOST_URL &&
-            -Dsonar.login=$env:SONAR_TOKEN
+          sonar-scanner -Dsonar.projectKey=labmaster.backend.configserver -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
           # For testing purposes
           echo $env:SONAR_HOST_URL
         env:
@@ -50,11 +46,7 @@ jobs:
       - name: Run SonarQube Scanner For Discovery Server
         run: |
           cd Back-End/discovery
-          sonar-scanner -Dsonar.projectKey=labmaster.backend.discovery &&
-            -Dsonar.sources=src/main/java &&
-            -Dsonar.java.binaries=target &&
-            -Dsonar.host.url=$env:SONAR_HOST_URL &&
-            -Dsonar.login=$env:SONAR_TOKEN
+          sonar-scanner -Dsonar.projectKey=labmaster.backend.discovery -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -74,11 +66,7 @@ jobs:
       - name: Run SonarQube Scanner for Laboratoire
         run: |
           cd Back-End/laboratoire
-          sonar-scanner -Dsonar.projectKey=labmaster.backend.laboratoire &&
-            -Dsonar.sources=src/main/java &&
-            -Dsonar.java.binaries=target &&
-            -Dsonar.host.url=$env:SONAR_HOST_URL &&
-            -Dsonar.login=$env:SONAR_TOKEN
+          sonar-scanner -Dsonar.projectKey=labmaster.backend.laboratoire -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -98,11 +86,7 @@ jobs:
       - name: Run SonarQube Scanner for Utilisateur
         run: |
           cd Back-End/utilisateur
-          sonar-scanner -Dsonar.projectKey=labmaster.backend.utilisateur &&
-            -Dsonar.sources=src/main/java &&
-            -Dsonar.java.binaries=target &&
-            -Dsonar.host.url=$env:SONAR_HOST_URL &&
-            -Dsonar.login=$env:SONAR_TOKEN
+          sonar-scanner -Dsonar.projectKey=labmaster.backend.utilisateur -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -122,11 +106,7 @@ jobs:
       - name: Run SonarQube Scanner for Gateway
         run: |
           cd Back-End/gateway
-          sonar-scanner -Dsonar.projectKey=labmaster.backend.gateway &&
-            -Dsonar.sources=src/main/java &&
-            -Dsonar.java.binaries=target &&
-            -Dsonar.host.url=$env:SONAR_HOST_URL &&
-            -Dsonar.login=$env:SONAR_TOKEN
+          sonar-scanner -Dsonar.projectKey=labmaster.backend.gateway -Dsonar.sources=src/main/java -Dsonar.java.binaries=target -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -145,11 +125,7 @@ jobs:
       - name: Run SonarQube Scanner for Front-End
         run: |
           cd Front-End
-          sonar-scanner -Dsonar.projectKey=labmaster.frontend &&
-            -Dsonar.sources=src &&
-            -Dsonar.typescript.tsconfigPath=tsconfig.json &&
-            -Dsonar.host.url=$env:SONAR_HOST_URL &&
-            -Dsonar.login=$env:SONAR_TOKEN
+          sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.login=$env:SONAR_TOKEN
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
