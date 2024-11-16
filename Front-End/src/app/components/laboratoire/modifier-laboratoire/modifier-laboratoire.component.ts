@@ -75,64 +75,64 @@ export class ModifierLaboratoireComponent implements OnInit{
   }
 
 
-  // onLogoSelected(event: Event): void {
-  //   const input = event.target as HTMLInputElement;
-  //   if (input.files && input.files[0]) {
-  //     const reader = new FileReader();
-  //     reader.onload = (e) => (this.logoPreview = e.target?.result ?? null);
-  //     reader.readAsDataURL(input.files[0]);
-  //     this.laboratoireForm.patchValue({ logo: input.files[0] });
-  //   }
-  // }
   onLogoSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
-    const file = input.files?.[0];
-
-    if (!file) {
-      return;
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e) => (this.logoPreview = e.target?.result ?? null);
+      reader.readAsDataURL(input.files[0]);
+      this.laboratoireForm.patchValue({ logo: input.files[0] });
     }
-
-    // Validate file type
-    if (!file.type.match(/image\/(png|jpeg|jpg)/)) {
-      this.message.error('Only PNG, JPEG and JPG files are allowed');
-      input.value = '';
-      return;
-    }
-
-    // Validate file size (e.g., 5MB)
-    const maxSize = 5 * 1024 * 1024;
-    if (file.size > maxSize) {
-      this.message.error('File size should not exceed 5MB');
-      input.value = '';
-      return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      try {
-        const base64String = reader.result as string;
-        // Remove data URL prefix if exists
-        const base64 = base64String.split(',')[1] || base64String;
-
-        this.logoPreview = `data:${file.type};base64,${base64}`;
-        this.laboratoireForm.patchValue({ logo: base64 });
-      } catch (error) {
-        this.message.error('Failed to process image');
-        console.error('Error processing image:', error);
-        this.logoPreview = null;
-        this.laboratoireForm.patchValue({ logo: null });
-      }
-    };
-
-    reader.onerror = () => {
-      this.message.error('Failed to read file');
-      this.logoPreview = null;
-      this.laboratoireForm.patchValue({ logo: null });
-    };
-
-    reader.readAsDataURL(file);
   }
+  // onLogoSelected(event: Event): void {
+  //   const input = event.target as HTMLInputElement;
+  //   const file = input.files?.[0];
+  //
+  //   if (!file) {
+  //     return;
+  //   }
+  //
+  //   // Validate file type
+  //   if (!file.type.match(/image\/(png|jpeg|jpg)/)) {
+  //     this.message.error('Only PNG, JPEG and JPG files are allowed');
+  //     input.value = '';
+  //     return;
+  //   }
+  //
+  //   // Validate file size (e.g., 5MB)
+  //   const maxSize = 5 * 1024 * 1024;
+  //   if (file.size > maxSize) {
+  //     this.message.error('File size should not exceed 5MB');
+  //     input.value = '';
+  //     return;
+  //   }
+  //
+  //   const reader = new FileReader();
+  //
+  //   reader.onload = () => {
+  //     try {
+  //       const base64String = reader.result as string;
+  //       // Remove data URL prefix if exists
+  //       const base64 = base64String.split(',')[1] || base64String;
+  //
+  //       this.logoPreview = `data:${file.type};base64,${base64}`;
+  //       this.laboratoireForm.patchValue({ logo: base64 });
+  //     } catch (error) {
+  //       this.message.error('Failed to process image');
+  //       console.error('Error processing image:', error);
+  //       this.logoPreview = null;
+  //       this.laboratoireForm.patchValue({ logo: null });
+  //     }
+  //   };
+  //
+  //   reader.onerror = () => {
+  //     this.message.error('Failed to read file');
+  //     this.logoPreview = null;
+  //     this.laboratoireForm.patchValue({ logo: null });
+  //   };
+  //
+  //   reader.readAsDataURL(file);
+  // }
 
   // onSubmit(): void {
   //   if (this.laboratoireForm.valid) {

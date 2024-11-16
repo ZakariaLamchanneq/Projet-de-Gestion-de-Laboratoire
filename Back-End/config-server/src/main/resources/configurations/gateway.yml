@@ -1,7 +1,12 @@
 
 eureka:
+  instance:
+    hostname: gateway
   client:
     register-with-eureka: false
+#    service-url:
+#      # defaultZone: http://localhost:8761/eureka
+#      defaultZone: http://discovery:8761/eureka/
 server:
   port: 8222
 spring:
@@ -16,11 +21,11 @@ spring:
       routes:
         - id: laboratoire-microservice
           uri: lb://laboratoire-microservice
-#          uri: http://localhost:8070
+#         uri: http://localhost:8070
           predicates:
             - Path=/api/laboratoires/**
         - id: utilisateur-microservice
-#          uri: http://localhost:8090
+#         uri: http://localhost:8090
           uri: lb://utilisateur-microservice
           predicates:
             - Path=/api/utilisateurs/**

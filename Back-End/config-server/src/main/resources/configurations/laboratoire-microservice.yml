@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: localhost
+    hostname: laboratoire-microservice
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${EUREKA_HOSTNAME:localhost}:8761/eureka
 
 
 server:
@@ -13,9 +13,10 @@ spring:
     name: laboratoire-microservice
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/laboratoires
+    url: jdbc:mysql://${MYSQL_HOSTNAME:localhost}:3306/laboratoires
     username: root
     password:
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -24,9 +25,62 @@ spring:
 
 application:
   config:
-    utilisateurs-url: http://localhost:8222/api/utilisateurs
+    utilisateurs-url: http://${GATEWAY_HOSTNAME:localhost}:8222/api/utilisateurs
 
 management:
   tracing:
     sampling:
       probability: 1.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#eureka:
+#  instance:
+##    hostname: localhost
+#     hostname: laboratoire-microservice
+#  client:
+#    service-url:
+##      defaultZone: http://localhost:8761/eureka
+#       defaultZone: http://discovery:8761/eureka/
+#
+#
+#server:
+#  port: 0 # Allow dynamic port allocation
+#spring:
+#  application:
+#    name: laboratoire-microservice
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+##    url: jdbc:mysql://localhost:3306/laboratoire_db
+#    url: jdbc:mysql://mysql:3306/laboratoire_db
+#    username: root
+#    password: rootpassword
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    database: mysql
+#    database-platform: org.hibernate.dialect.MySQLDialect
+#
+#application:
+#  config:
+##    utilisateurs-url: http://localhost:8222/api/utilisateurs
+#     utilisateurs-url: http://gateway:8222/api/utilisateurs
+#
+#management:
+#  tracing:
+#    sampling:
+#      probability: 1.0

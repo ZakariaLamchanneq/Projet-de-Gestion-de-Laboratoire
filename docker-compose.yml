@@ -1,0 +1,306 @@
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+#    command: --init-file=/docker-entrypoint-initdb.d/init.sql # This command is used to ensure the creation of the database and the user for some reason the other path in volume should do the job automatically but it didn't happen
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    #      MYSQL_USER: root
+    #      MYSQL_PASSWORD: "labadmin@123"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - lab-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "--silent" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+    #      PMA_PASSWORD: "labadmin@123"
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+
+    networks:
+      - lab-network
+
+  config-server:
+    container_name: config-server
+    build:
+      context: ./Back-End/config-server
+    ports:
+      - "8888:8888"
+    environment:
+      EUREKA_HOSTNAME: discovery
+      MYSQL_HOSTNAME: mysql
+      GATEWAY_HOSTNAME: gateway
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - lab-network
+
+  discovery:
+    container_name: discovery
+    build:
+      context: ./Back-End/discovery
+    ports:
+      - "8761:8761"
+    depends_on:
+      config-server:
+        condition: service_healthy
+    environment:
+      CONFIG_SERVER_URL: http://config-server:8888
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8761/actuator/health" ] # Adjust the health endpoint as needed
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - lab-network
+
+  gateway:
+    container_name: gateway
+    build:
+      context: ./Back-End/gateway
+    ports:
+      - "8222:8222"
+    depends_on:
+      - utilisateur-service
+    environment:
+      CONFIG_SERVER_URL: http://config-server:8888
+      EUREKA_HOSTNAME: discovery
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8222/actuator/health"] # Adjust the health endpoint as needed
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - lab-network
+
+  laboratoire-service:
+    container_name: laboratoire-service
+    build:
+      context: ./Back-End/laboratoire
+    environment:
+      CONFIG_SERVER_URL: http://config-server:8888
+      EUREKA_HOSTNAME: discovery
+      MYSQL_HOSTNAME: mysql
+    depends_on:
+      config-server:
+        condition: service_healthy
+      discovery:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    networks:
+      - lab-network
+
+  utilisateur-service:
+    container_name: utilisateur-service
+    build:
+      context: ./Back-End/utilisateur
+    environment:
+      CONFIG_SERVER_URL: http://config-server:8888
+      EUREKA_HOSTNAME: discovery
+      MYSQL_HOSTNAME: mysql
+    depends_on:
+      config-server:
+        condition: service_healthy
+      discovery:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    networks:
+      - lab-network
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./Front-End
+    ports:
+      - "4200:4200"
+    depends_on:
+      gateway:
+        condition: service_healthy
+    networks:
+      - lab-network
+
+
+
+volumes:
+  mysql_data:
+
+networks:
+  lab-network:
+    driver: bridge
+
+#version: '3.8'
+#services:
+#  mysql:
+#    container_name: mysql
+#    image: mysql:8.0 # Version de MySQL
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+#      MYSQL_USER: root
+#    #     MYSQL_DATABASE: utilisateur_db
+#    volumes:
+#      - mysql_data:/var/lib/mysql
+#      - ./mysql-init:/docker-entrypoint-initdb.d
+#    networks:
+#      - mynetwork
+#    healthcheck:
+#      test: [ "CMD", "mysqladmin", "ping", "--silent" ]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#
+#  phpmyadmin:
+#    image: phpmyadmin/phpmyadmin:latest
+#    ports:
+#      - "8080:80" # Access phpMyAdmin on port 8080
+#    environment:
+#      PMA_HOST: mysql
+#      PMA_USER: root
+##      PMA_PASSWORD: rootpassword # Ensure this matches your MySQL root password
+#    depends_on:
+#      - mysql
+#    networks:
+#      - mynetwork
+#
+#  config-server:
+#    container_name: config-server
+#    build:
+#      context: ./Back-End/config-server
+#    ports:
+#      - "8888:8888"
+#    networks:
+#      - mynetwork
+#    environment:
+#      EUREKA_HOSTNAME: discovery
+#      MYSQL_HOSTNAME: mysql
+#      GATEWAY_HOSTNAME: gateway
+##    volumes:
+##      - /Back-End/config-server/src/main/resources/configurations:/var/lib/config-repo
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#
+#  discovery:
+#    container_name: discovery
+#    build:
+#      context: ./Back-End/discovery
+#    ports:
+#      - "8761:8761"
+#    depends_on:
+#      config-server:
+#        condition: service_healthy
+#    environment:
+#      CONFIG_SERVER_URL: http://config-server:8888/
+#    healthcheck:
+#      test: [ "CMD", "curl", "-f", "http://localhost:8761/actuator/health" ] # Adjust the health endpoint as needed
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#    networks:
+#      - mynetwork
+#
+#  gateway:
+#    container_name: gateway
+#    build:
+#      context: ./Back-End/gateway
+#    ports:
+#      - "8222:8222" # Change the port if necessary
+#    depends_on:
+#      - utilisateur-microservice
+#
+#    environment:
+#      CONFIG_SERVER_URL: http://config-server:8888/
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:8222/actuator/health"] # Adjust the health endpoint as needed
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#    networks:
+#      - mynetwork
+#
+#  utilisateur-microservice:
+#    container_name: utilisateur-microservice
+#    build:
+#      context: ./Back-End/utilisateur
+#    depends_on:
+#      config-server:
+#        condition: service_healthy
+#      discovery:
+#        condition: service_healthy
+#      mysql:
+#        condition: service_healthy
+#    environment:
+#      CONFIG_SERVER_URL: http://config-server:8888/
+#    networks:
+#      - mynetwork
+#
+#  laboratoire-microservice:
+##    container_name:  laboratoire-microservice
+#    build:
+#      context: ./Back-End/laboratoire
+#    depends_on:
+#      config-server:
+#        condition: service_healthy
+#      discovery:
+#        condition: service_healthy
+#      mysql:
+#        condition: service_healthy
+#    environment:
+#      CONFIG_SERVER_URL: http://config-server:8888/
+#    networks:
+#      - mynetwork
+#
+#
+#
+#  frontend:
+#    build:
+#      context: ./Front-End
+#    ports:
+#      - "4200:4200"
+#    networks:
+#      - mynetwork
+#    depends_on:
+#      gateway:
+#        condition: service_healthy
+#
+#
+#
+#volumes:
+#  mysql_data:
+#
+#
+#networks:
+#  mynetwork:
+#    driver: bridge
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#

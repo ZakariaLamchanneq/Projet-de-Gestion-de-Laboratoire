@@ -5,68 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ff9cc8-3d27-49b3-87cb-2b2ecf8107b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/LaboratoireDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/model/LaboratoireTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/service/LaboratoireServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet-de-Gestion-de-Laboratoire.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/Back-End.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/discovery.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/discovery.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/discovery/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/discovery/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/DockerFile" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/client/UtilisateurClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/client/UtilisateurClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/controller/LaboratoireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/controller/LaboratoireController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/FullLaboratoireResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/FullLaboratoireResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Laboratoire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Laboratoire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/model/Utilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/service/LaboratoireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/service/LaboratoireService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/controller/LaboratoireControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/test/java/org/labmaster/laboratoire/controller/LaboratoireControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/service/UtilisateurService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-form/laboratoire-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/laboratoire-list/laboratoire-list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/icons-provider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/icons-provider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/models/laboratoire.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/models/laboratoire.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/pages/welcome/welcome.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/laboratoireService/laboratoire.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/services/utilisateurService/utilisateur.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/services/utilisateurService/utilisateur.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/theme.less" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/theme.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/DockerFile" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/modifier-laboratoire/modifier-laboratoire.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/modifier-laboratoire/modifier-laboratoire.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,33 +31,37 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Hikaru-e"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Hikaru-e&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ZakariaLamchanneq/Projet-de-Gestion-de-Laboratoire.git",
-    "accountId": "f72a4332-5012-4a51-a548-12d9a34ea7db"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ZakariaLamchanneq/Projet-de-Gestion-de-Laboratoire.git&quot;,
+    &quot;accountId&quot;: &quot;f72a4332-5012-4a51-a548-12d9a34ea7db&quot;
   }
-}]]></component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="jdkForImporter" value="17" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2oAlAkZaSmykYXkefK2NONXMN6K" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -110,10 +69,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Docker.docker-compose.yml.config-server: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.discovery: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.gateway: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.mysql: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.phpmyadmin: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.utilisateur-microservice: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.utilisateur-service: Compose Deployment.executor": "Run",
+    "JUnit.UtilisateurControllerTest.executor": "Run",
+    "Maven. [clean,install].executor": "Run",
+    "Maven. [clean,package,-DskipTests].executor": "Run",
+    "Maven.config-server [clean,install].executor": "Run",
+    "Maven.discovery [clean,install].executor": "Run",
+    "Maven.laboratoire [clean,install].executor": "Run",
+    "Maven.laboratoire [clean,package,-DskipTests].executor": "Run",
+    "Maven.utilisateur [clean,install].executor": "Run",
+    "Maven.utilisateur [clean,package,-DskipTests].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.DiscoveryApplication.executor": "Run",
@@ -123,20 +99,31 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/AORUS/Projet-de-Gestion-de-Laboratoire",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.Angular CLI.executor": "Run",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "ts.external.directory.path": "C:\\Users\\Oussama\\Downloads\\WORK\\PROJET_LIBRE\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\AORUS\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Back-End\discovery" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -146,7 +133,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI">
+  <component name="RunManager" selected="Docker.docker-compose.yml.utilisateur-service: Compose Deployment">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.configserver.ConfigServerApplication" />
@@ -182,6 +169,75 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.config-server: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="config-server" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.discovery: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="discovery" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.gateway: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="gateway" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.phpmyadmin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="phpmyadmin" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.utilisateur-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="utilisateur-service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="Angular CLI" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/Front-End/package.json" />
       <command value="run" />
@@ -194,6 +250,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Docker.docker-compose.yml.config-server: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.discovery: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.gateway: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.utilisateur-service: Compose Deployment" />
       <item itemvalue="npm.Angular CLI" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.DiscoveryApplication" />
@@ -201,14 +262,15 @@
       <item itemvalue="Spring Boot.UtilisateurApplication" />
       <item itemvalue="Spring Boot.LaboratoireApplication" />
     </list>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
-      </set>
-    </attachedChunks>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.utilisateur-service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.gateway: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.discovery: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.config-server: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -219,6 +281,14 @@
       <option name="presentableId" value="Default" />
       <updated>1730320122761</updated>
       <workItem from="1730320124828" duration="4191000" />
+      <workItem from="1730665535615" duration="3540000" />
+      <workItem from="1730730738788" duration="3932000" />
+      <workItem from="1730797178126" duration="49038000" />
+      <workItem from="1730967094500" duration="764000" />
+      <workItem from="1730969196753" duration="4955000" />
+      <workItem from="1731075996948" duration="1192000" />
+      <workItem from="1731095021045" duration="593000" />
+      <workItem from="1731516811030" duration="15930000" />
     </task>
     <servers />
   </component>
