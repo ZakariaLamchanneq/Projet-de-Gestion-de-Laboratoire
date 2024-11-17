@@ -77,8 +77,9 @@ services:
     ports:
       - "8222:8222"
     depends_on:
-      - utilisateur-service
+      - utilisateur-microservice
     environment:
+      GATEWAY_HOSTNAME: gateway
       CONFIG_SERVER_URL: http://config-server:8888
       EUREKA_HOSTNAME: discovery
     healthcheck:
@@ -89,8 +90,8 @@ services:
     networks:
       - lab-network
 
-  laboratoire-service:
-    container_name: laboratoire-service
+  laboratoire-microservice:
+    container_name: laboratoire-microservice
     build:
       context: ./Back-End/laboratoire
     environment:
@@ -107,8 +108,8 @@ services:
     networks:
       - lab-network
 
-  utilisateur-service:
-    container_name: utilisateur-service
+  utilisateur-microservice:
+    container_name: utilisateur-microservice
     build:
       context: ./Back-End/utilisateur
     environment:
@@ -130,14 +131,20 @@ services:
     build:
       context: ./Front-End
     ports:
-      - "4200:4200"
+      - "4200:80"
     depends_on:
       gateway:
         condition: service_healthy
     networks:
       - lab-network
 
-
+  # zipkin:
+  #   container_name: zipkin
+  #   image: openzipkin/zipkin
+  #   ports:
+  #     - "9411:9411"
+  #   networks:
+  #     - zipkin
 
 volumes:
   mysql_data:
@@ -145,6 +152,9 @@ volumes:
 networks:
   lab-network:
     driver: bridge
+  # zipkin:
+  #   driver: bridge
+
 
 #version: '3.8'
 #services:
