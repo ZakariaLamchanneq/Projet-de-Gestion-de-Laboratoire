@@ -1,6 +1,6 @@
 eureka:
   instance:
-    hostname: utilisateur-microservice
+    hostname: ${UTILISATEUR_HOSTNAME:localhost}
   client:
     service-url:
       defaultZone: http://${EUREKA_HOSTNAME:localhost}:8761/eureka

@@ -43,6 +43,8 @@ services:
       EUREKA_HOSTNAME: discovery
       MYSQL_HOSTNAME: mysql
       GATEWAY_HOSTNAME: gateway
+      LABORATOIRE_HOSTNAME: laboratoire-microservice
+      UTILISATEUR_HOSTNAME: utilisateur-microservice
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
       interval: 10s
@@ -98,6 +100,7 @@ services:
       CONFIG_SERVER_URL: http://config-server:8888
       EUREKA_HOSTNAME: discovery
       MYSQL_HOSTNAME: mysql
+      LABORATOIRE_HOSTNAME: laboratoire-microservice
     depends_on:
       config-server:
         condition: service_healthy
@@ -116,6 +119,7 @@ services:
       CONFIG_SERVER_URL: http://config-server:8888
       EUREKA_HOSTNAME: discovery
       MYSQL_HOSTNAME: mysql
+      UTILISATEUR_HOSTNAME: utilisateur-microservice
     depends_on:
       config-server:
         condition: service_healthy
