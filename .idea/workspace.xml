@@ -26,6 +26,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
+
     &quot;url&quot;: &quot;https://github.com/ZakariaLamchanneq/Projet-de-Gestion-de-Laboratoire.git&quot;,
     &quot;accountId&quot;: &quot;f72a4332-5012-4a51-a548-12d9a34ea7db&quot;
   }
@@ -34,6 +35,7 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,57 +55,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.docker-compose.yml.config-server: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.discovery: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.gateway: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.mysql: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.phpmyadmin: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.utilisateur-microservice: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.utilisateur-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UtilisateurControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [clean,package,-DskipTests].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.config-server [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.config-server [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.discovery [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.discovery [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.gateway [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.laboratoire [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.laboratoire [clean,package,-DskipTests].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.laboratoire [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.utilisateur [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.utilisateur [clean,package,-DskipTests].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.utilisateur [clean].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DiscoveryApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.LaboratoireApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UtilisateurApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/AORUS/Projet-de-Gestion-de-Laboratoire&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Angular CLI.executor&quot;: &quot;Run&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\AORUS\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.config-server [clean].executor": "Run",
+    "Maven.config-server [install].executor": "Run",
+    "Maven.config-server [package].executor": "Run",
+    "Maven.discovery [package].executor": "Run",
+    "Maven.gateway [package].executor": "Run",
+    "Maven.laboratoire [clean].executor": "Run",
+    "Maven.laboratoire [install].executor": "Run",
+    "Maven.laboratoire [package].executor": "Run",
+    "Maven.laboratoire [verify].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.DiscoveryApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "Spring Boot.LaboratoireApplication.executor": "Run",
+    "Spring Boot.UtilisateurApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "ts.external.directory.path": "C:\\Users\\Oussama\\Downloads\\WORK\\PROJET_LIBRE\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+
   }
 }</component>
   <component name="RecentsManager">
@@ -282,16 +270,8 @@
       <option name="presentableId" value="Default" />
       <updated>1730320122761</updated>
       <workItem from="1730320124828" duration="4191000" />
-      <workItem from="1730665535615" duration="3540000" />
-      <workItem from="1730730738788" duration="3932000" />
-      <workItem from="1730797178126" duration="49038000" />
-      <workItem from="1730967094500" duration="764000" />
-      <workItem from="1730969196753" duration="4955000" />
-      <workItem from="1731075996948" duration="1192000" />
-      <workItem from="1731095021045" duration="593000" />
-      <workItem from="1731516811030" duration="15930000" />
-      <workItem from="1732004919890" duration="3374000" />
-      <workItem from="1732009338613" duration="925000" />
+      <workItem from="1730497632677" duration="1312000" />
+      <workItem from="1730588923378" duration="310000" />
     </task>
     <servers />
   </component>
