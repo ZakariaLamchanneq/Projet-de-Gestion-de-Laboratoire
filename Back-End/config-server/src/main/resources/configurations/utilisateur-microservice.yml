@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${UTILISATEUR_HOSTNAME:localhost}
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${EUREKA_HOSTNAME:localhost}:8761/eureka
 
 
 server:
@@ -13,7 +13,7 @@ spring:
     name: utilisateur-microservice
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/utilisateurs
+    url: jdbc:mysql://${MYSQL_HOSTNAME:localhost}:3306/utilisateurs
     username: root
     password:
   jpa:
@@ -26,3 +26,42 @@ management:
   tracing:
     sampling:
       probability: 1.0
+
+
+
+
+
+
+
+
+
+#eureka:
+#  instance:
+#    hostname: utilisateur-microservice
+#  client:
+#    service-url:
+##      defaultZone: http://localhost:8761/eureka
+#       defaultZone: http://discovery:8761/eureka/
+#
+#
+#server:
+#  port: 0 # Allow dynamic port allocation
+#spring:
+#  application:
+#    name: utilisateur-microservice
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+##    url: jdbc:mysql://localhost:3306/utilisateur_db
+#    url: jdbc:mysql://mysql:3306/utilisateur_db
+#    username: root
+#    password: rootpassword
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    database: mysql
+#    database-platform: org.hibernate.dialect.MySQLDialect
+#
+#management:
+#  tracing:
+#    sampling:
+#      probability: 1.0

@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ff9cc8-3d27-49b3-87cb-2b2ecf8107b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sonarqube.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonarqube.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +26,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Hikaru-e/Projet-de-Gestion-de-Laboratoire.git&quot;,
+
+    &quot;url&quot;: &quot;https://github.com/ZakariaLamchanneq/Projet-de-Gestion-de-Laboratoire.git&quot;,
     &quot;accountId&quot;: &quot;f72a4332-5012-4a51-a548-12d9a34ea7db&quot;
   }
 }</component>
@@ -32,6 +35,10 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -84,8 +91,18 @@
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "ts.external.directory.path": "C:\\Users\\Oussama\\Downloads\\WORK\\PROJET_LIBRE\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
+
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Back-End\discovery" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -95,7 +112,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI">
+  <component name="RunManager" selected="Docker.docker-compose.yml.utilisateur-service: Compose Deployment">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.configserver.ConfigServerApplication" />
@@ -131,6 +148,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.config-server: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="config-server" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.discovery: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="discovery" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.gateway: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="gateway" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.phpmyadmin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="phpmyadmin" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.utilisateur-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="utilisateur-service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="Angular CLI" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/Front-End/package.json" />
       <command value="run" />
@@ -143,6 +231,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Docker.docker-compose.yml.config-server: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.discovery: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.gateway: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.utilisateur-service: Compose Deployment" />
       <item itemvalue="npm.Angular CLI" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.DiscoveryApplication" />
@@ -150,6 +243,15 @@
       <item itemvalue="Spring Boot.UtilisateurApplication" />
       <item itemvalue="Spring Boot.LaboratoireApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.utilisateur-service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.gateway: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.discovery: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.config-server: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
