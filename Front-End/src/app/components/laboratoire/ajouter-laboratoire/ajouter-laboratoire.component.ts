@@ -65,28 +65,16 @@ export class AjouterLaboratoireComponent implements OnInit {
     }
   }
 
-  // onSubmit(): void {
-  //   if (this.laboratoireForm.valid) {
-  //     this.loading = true;
-  //     const newLaboratoire = this.laboratoireForm.value;
-  //     this.laboratoireService.createLaboratoire(newLaboratoire).subscribe({
-  //       next: () => {
-  //         this.loading = false;
-  //         this.message.success('Laboratory created successfully!');
-  //         this.modalRef.close();
-  //       },
-  //       error: () => {
-  //         this.loading = false;
-  //         this.message.error('Failed to create laboratory.');
-  //       },
-  //     });
-  //   }
-  // }
+
 
   onSubmit(): void {
     if (this.laboratoireForm.valid) {
       this.loading = true;
       const formValues = this.laboratoireForm.value;
+
+      // For debuggin
+      console.log(formValues);
+
       // Convert dateActivation to a LocalDate compatible string (yyyy-MM-dd)
       const laboratoireData: Laboratoire = {
         ...this.laboratoireForm, // Keep existing data if in edit mode

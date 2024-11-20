@@ -160,7 +160,7 @@ export class ModifierLaboratoireComponent implements OnInit{
       this.loading = true;
       const formValues = this.laboratoireForm.value;
 
-      // Safe date handling
+      // Handle date formatting
       let formattedDate = null;
       if (formValues.dateActivation) {
         if (formValues.dateActivation instanceof Date) {
@@ -170,25 +170,62 @@ export class ModifierLaboratoireComponent implements OnInit{
         }
       }
 
+      // Convert base64 logo to File if no new file is selected
+      let logoFile: File | null = null;
+
+      if (formValues.logo instanceof File) {
+        // If user uploaded a new file, use it
+        logoFile = formValues.logo;
+      } else if (this.laboratoire.logo) {
+        // Handle raw base64 or prefixed base64
+        let base64Logo = this.laboratoire.logo;
+        if (!base64Logo.startsWith('data:image/')) {
+          // Guess MIME type based on initial bytes or default to image/jpeg
+          const mimeType = base64Logo.charAt(0) === '/' ? 'image/jpeg' : 'image/png';
+          base64Logo = `data:${mimeType};base64,${base64Logo}`;
+        }
+
+        try {
+          const base64Data = base64Logo.split(',')[1]; // Extract the actual base64 content
+          const byteString = atob(base64Data);
+          const arrayBuffer = new ArrayBuffer(byteString.length);
+          const uint8Array = new Uint8Array(arrayBuffer);
+
+          for (let i = 0; i < byteString.length; i++) {
+            uint8Array[i] = byteString.charCodeAt(i);
+          }
+
+          const blob = new Blob([uint8Array], { type: 'image/png' }); // Adjust MIME type if needed
+          logoFile = new File([blob], 'logo.png', { type: 'image/png' });
+        } catch (error) {
+          console.error('Error decoding base64 logo:', error);
+          this.message.error('Invalid logo format. Please upload a valid logo.');
+          this.loading = false;
+          return;
+        }
+      }
+
+      // Create Laboratoire object
       const laboratoireData: Laboratoire = {
         ...this.laboratoire,
         ...formValues,
-        dateActivation: formattedDate
+        logo: logoFile, // Ensure it's a File object
+        dateActivation: formattedDate,
       };
-
-      this.laboratoireService
-        .updateLaboratoire(this.laboratoire.id, laboratoireData)
-        .subscribe({
-          next: () => {
-            this.loading = false;
-            this.message.success('Laboratory updated successfully!');
-            this.modalRef.close('success');
-          },
-          error: () => {
-            this.loading = false;
-            this.message.error('Failed to update laboratory.');
-          }
-        });
+      console.log(laboratoireData);
+      // Call the service
+      this.laboratoireService.updateLaboratoire(this.laboratoire.id, laboratoireData).subscribe({
+        next: () => {
+          this.loading = false;
+          this.message.success('Laboratory updated successfully!');
+          this.modalRef.close('success');
+        },
+        error: () => {
+          this.loading = false;
+          this.message.error('Failed to update laboratory.');
+        },
+      });
     }
   }
+
 }
