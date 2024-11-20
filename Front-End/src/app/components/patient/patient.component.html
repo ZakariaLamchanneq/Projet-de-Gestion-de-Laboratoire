@@ -1,0 +1,68 @@
+<h2 class="title">Gestion Patients</h2>
+
+<button nz-button nzType="primary"  (click)="showAddPatientModal()" class="menu-item" >
+  <span nz-icon nzType="user-add" nzTheme="outline"></span>
+  Ajouter un patient
+</button>
+
+<nz-table ngSkipHydration #nzTable [nzData]="listOfDisplayData" nzTableLayout="fixed" class="table-shadow"
+          [nzPageSize]="5" [nzShowPagination]="true" [nzTotal]="listOfDisplayData.length" [(nzPageIndex)]="pageIndex"
+          (nzPageIndexChange)="updatePaginatedData()">
+  <thead>
+  <tr>
+    <th nzCustomFilter>
+      Nom Complet
+      <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0" [nzDropdownMenu]="menu">
+        <span nz-icon nzType="search"></span>
+      </nz-filter-trigger>
+    </th>
+    <th>Date Naissance</th>
+    <th>Lieu De Naissance</th>
+    <th>Sexe</th>
+    <th>Type Piece Identite</th>
+    <th>Numero Piece Identite</th>
+    <th>Adresse</th>
+    <th>Numero Telephone</th>
+    <th >Email</th>
+    <th>Action</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let patient of paginatedData">
+    <td>{{ patient.nomComplet }}</td>
+    <td>{{ patient.dateNaissance | date: 'dd/MM/yyyy' }}</td>
+    <td>{{ patient.lieuDeNaissance }}</td>
+    <td>
+      <nz-tag [nzColor]="patient.sexe === 'Homme' ? 'blue' : 'pink'">
+        {{ patient.sexe  }}
+      </nz-tag>
+    </td>
+    <td>{{ patient.typePieceIdentite }}</td>
+    <td>{{ patient.numPieceIdentite }}</td>
+    <td>{{ patient.adresse }}</td>
+    <td>{{ patient.numTel }}</td>
+    <td class="email-column">{{ patient.email }}</td>
+
+    <td>
+      <button (click)="editPatient(patient.id)" class="edit-button">
+        <span nz-icon nzType="edit" nzTheme="outline"></span>
+      </button>
+      <button (click)="deletePatient(patient.id)" class="delete-button" >
+        <span nz-icon nzType="delete" nzTheme="outline"></span>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
+
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <div class="ant-table-filter-dropdown">
+    <div class="search-box">
+      <input type="text" nz-input placeholder="Rechercher un patient" [(ngModel)]="searchValue" />
+      <button nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button">Rechercher</button>
+      <button nz-button nzSize="small" (click)="reset()">Réinitialiser</button>
+    </div>
+  </div>
+</nz-dropdown-menu>

@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ff9cc8-3d27-49b3-87cb-2b2ecf8107b3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/laboratoire-microservice.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/utilisateur-microservice.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +48,7 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="jdkForImporter" value="17" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -86,11 +94,12 @@
     &quot;Spring Boot.DiscoveryApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.LaboratoireApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PatientApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.UtilisateurApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/AORUS/Projet-de-Gestion-de-Laboratoire&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/AORUS/Projet-de-Gestion-de-Laboratoire/Back-End/patient/pom.xml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -149,6 +158,13 @@
     <configuration name="LaboratoireApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="laboratoire" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.laboratoire.LaboratoireApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="patient" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="patient.patient.PatientApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -249,6 +265,7 @@
       <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.utilisateur-service: Compose Deployment" />
       <item itemvalue="npm.Angular CLI" />
+      <item itemvalue="Spring Boot.PatientApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.DiscoveryApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
@@ -264,14 +281,6 @@
         <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -292,6 +301,8 @@
       <workItem from="1731516811030" duration="15930000" />
       <workItem from="1732004919890" duration="3374000" />
       <workItem from="1732009338613" duration="925000" />
+      <workItem from="1732027414365" duration="18110000" />
+      <workItem from="1732106881961" duration="122000" />
     </task>
     <servers />
   </component>

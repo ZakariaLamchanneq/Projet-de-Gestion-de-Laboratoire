@@ -11,6 +11,7 @@
         <module name="utilisateur" />
         <module name="gateway" />
         <module name="discovery" />
+        <module name="patient" />
         <module name="laboratoire" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
       <module name="discovery" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="laboratoire" options="-parameters" />
+      <module name="patient" options="-parameters" />
       <module name="utilisateur" options="-parameters" />
     </option>
   </component>

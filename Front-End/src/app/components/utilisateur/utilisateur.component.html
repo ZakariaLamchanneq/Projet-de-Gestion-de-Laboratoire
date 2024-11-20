@@ -1,4 +1,4 @@
-<h2 class="title">Gestion Utilisateur</h2>
+<h2 class="title">Gestion Utilisateurs</h2>
 
 <button nz-button nzType="primary" (click)="showAddUserModal()" class="menu-item">
   <span nz-icon nzType="user-add" nzTheme="outline"></span>
@@ -26,7 +26,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of paginatedData">
-      <td>{{ user.email }}</td>
+      <td class="email-column">{{ user.email }}</td>
       <td>{{ user.nomComplet }}</td>
       <td>{{ user.profession }}</td>
       <td>{{ user.numTel }}</td>
