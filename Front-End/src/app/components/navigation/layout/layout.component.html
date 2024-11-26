@@ -28,6 +28,12 @@
         <span>Utilisateurs</span>
       </a>
       </li>
+      <li nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Patients" [nzTooltipTrigger]="isCollapsed ? 'hover' : null">
+        <a routerLink="/patients">
+          <span nz-icon nzType="medicine-box" nzTheme="outline"></span>
+          <span>Patients</span>
+        </a>
+      </li>
     </ul>
 
     <!--    Gestion Utilisateur-->

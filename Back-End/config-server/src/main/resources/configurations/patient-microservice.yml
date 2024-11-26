@@ -1,0 +1,28 @@
+eureka:
+  instance:
+    hostname: ${PATIENT_HOSTNAME:localhost}
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOSTNAME:localhost}:8761/eureka
+
+
+server:
+  port: 0 # Allow dynamic port allocation
+spring:
+  application:
+    name: patient-microservice
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOSTNAME:localhost}:3306/patients
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

@@ -25,6 +25,7 @@
     "front-end": "file:",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
+    "list-of-moroccan-cities": "^1.0.4",
     "ng-zorro-antd": "^18.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

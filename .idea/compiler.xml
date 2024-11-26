@@ -9,18 +9,22 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="utilisateur" />
-        <module name="gateway" />
         <module name="discovery" />
+        <module name="patient" />
         <module name="laboratoire" />
+        <module name="analyse" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="analyse" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="discovery" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="laboratoire" options="-parameters" />
+      <module name="patient" options="-parameters" />
       <module name="utilisateur" options="-parameters" />
     </option>
   </component>

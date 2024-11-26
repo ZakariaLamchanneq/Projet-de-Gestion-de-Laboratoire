@@ -29,6 +29,10 @@ spring:
           uri: lb://utilisateur-microservice
           predicates:
             - Path=/api/utilisateurs/**
+        - id: patient-microservice
+          uri: lb://patient-microservice
+          predicates:
+            - Path=/api/patients/**
       # Configuration CORS to connect Front-End
       globalcors:
         cors-configurations:

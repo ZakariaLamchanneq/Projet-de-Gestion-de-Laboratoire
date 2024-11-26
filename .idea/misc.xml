@@ -9,6 +9,8 @@
         <option value="$PROJECT_DIR$/Back-End/laboratoire/pom.xml" />
         <option value="$PROJECT_DIR$/Back-End/utilisateur/pom.xml" />
         <option value="$PROJECT_DIR$/Back-End/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/Back-End/patient/pom.xml" />
+        <option value="$PROJECT_DIR$/Back-End/analyse/pom.xml" />
       </list>
     </option>
   </component>

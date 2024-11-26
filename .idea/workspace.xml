@@ -5,15 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ff9cc8-3d27-49b3-87cb-2b2ecf8107b3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/ajouter-laboratoire/ajouter-laboratoire.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/ajouter-laboratoire/ajouter-laboratoire.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/modifier-laboratoire/modifier-laboratoire.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/modifier-laboratoire/modifier-laboratoire.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/modifier-laboratoire/modifier-laboratoire.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/laboratoire/modifier-laboratoire/modifier-laboratoire.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/model/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/model/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,6 +55,7 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="jdkForImporter" value="17" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -53,64 +68,66 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.docker-compose.yml.config-server: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.discovery: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.gateway: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.mysql: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.phpmyadmin: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.utilisateur-microservice: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.utilisateur-service: Compose Deployment.executor": "Run",
-    "JUnit.UtilisateurControllerTest.executor": "Run",
-    "Maven. [clean,install].executor": "Run",
-    "Maven. [clean,package,-DskipTests].executor": "Run",
-    "Maven.config-server [clean,install].executor": "Run",
-    "Maven.config-server [clean].executor": "Run",
-    "Maven.discovery [clean,install].executor": "Run",
-    "Maven.discovery [clean].executor": "Run",
-    "Maven.gateway [clean].executor": "Run",
-    "Maven.laboratoire [clean,install].executor": "Run",
-    "Maven.laboratoire [clean,package,-DskipTests].executor": "Run",
-    "Maven.laboratoire [clean].executor": "Run",
-    "Maven.utilisateur [clean,install].executor": "Run",
-    "Maven.utilisateur [clean,package,-DskipTests].executor": "Run",
-    "Maven.utilisateur [clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ConfigServerApplication.executor": "Run",
-    "Spring Boot.DiscoveryApplication.executor": "Run",
-    "Spring Boot.GatewayApplication.executor": "Run",
-    "Spring Boot.LaboratoireApplication.executor": "Run",
-    "Spring Boot.UtilisateurApplication.executor": "Run",
-    "git-widget-placeholder": "laboratoires-feature",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Oussama/Downloads/WORK/PROJET_LIBRE/Projet-de-Gestion-de-Laboratoire",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Angular CLI.executor": "Run",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\Oussama\\Downloads\\WORK\\PROJET_LIBRE\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.yml.config-server: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.discovery: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.gateway: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.mysql: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.phpmyadmin: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.utilisateur-microservice: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.utilisateur-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtilisateurControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [clean,package,-DskipTests].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.config-server [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.config-server [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.discovery [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.discovery [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gateway [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.laboratoire [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.laboratoire [clean,package,-DskipTests].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.laboratoire [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.utilisateur [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.utilisateur [clean,package,-DskipTests].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.utilisateur [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LaboratoireApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PatientApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UtilisateurApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;branche1&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/AORUS/Projet-de-Gestion-de-Laboratoire/Back-End/analyse/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Angular CLI.executor&quot;: &quot;Run&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\AORUS\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Front-End\public\assets\images" />
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Back-End\discovery" />
     </key>
@@ -125,6 +142,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Docker.docker-compose.yml.utilisateur-service: Compose Deployment">
+    <configuration name="AnalyseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="analyse" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="analyse.analyse.AnalyseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.configserver.ConfigServerApplication" />
@@ -149,6 +173,13 @@
     <configuration name="LaboratoireApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="laboratoire" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.laboratoire.LaboratoireApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="patient" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="patient.patient.PatientApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -249,6 +280,8 @@
       <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.utilisateur-service: Compose Deployment" />
       <item itemvalue="npm.Angular CLI" />
+      <item itemvalue="Spring Boot.AnalyseApplication" />
+      <item itemvalue="Spring Boot.PatientApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.DiscoveryApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
@@ -264,14 +297,6 @@
         <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -292,7 +317,13 @@
       <workItem from="1731516811030" duration="15930000" />
       <workItem from="1732004919890" duration="3374000" />
       <workItem from="1732009338613" duration="925000" />
-      <workItem from="1732034200569" duration="14503000" />
+      <workItem from="1732027414365" duration="18110000" />
+      <workItem from="1732106881961" duration="8471000" />
+      <workItem from="1732126624132" duration="5065000" />
+      <workItem from="1732205999721" duration="1346000" />
+      <workItem from="1732377091578" duration="127000" />
+      <workItem from="1732523552319" duration="598000" />
+      <workItem from="1732524324112" duration="3280000" />
     </task>
     <servers />
   </component>
