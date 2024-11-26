@@ -22,6 +22,7 @@ public class Utilisateur {
     private String signature;
     private String role;
     private Long laboratoireId;
+    private String password;
 
 //    @ManyToOne
 //    @JoinColumn(name = "laboratoire_id")
@@ -30,13 +31,18 @@ public class Utilisateur {
     public Utilisateur() {
     }
 
-    public Utilisateur(String email, String nomComplet, String profession, String numTel, String signature, String role, Long laboratoireId) {
-        this.email = email;
-        this.nomComplet = nomComplet;
-        this.profession = profession;
-        this.numTel = numTel;
-        this.signature = signature;
-        this.role = role;
-        this.laboratoireId = laboratoireId;
+    @Override
+    public String toString() {
+        return "Utilisateur{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", nomComplet='" + nomComplet + '\'' +
+                ", profession='" + profession + '\'' +
+                ", numTel='" + numTel + '\'' +
+                ", signature='" + signature + '\'' +
+                ", role='" + role + '\'' +
+                ", laboratoireId=" + laboratoireId +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

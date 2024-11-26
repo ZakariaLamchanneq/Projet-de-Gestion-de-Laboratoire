@@ -9,18 +9,25 @@
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/model/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/model/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -96,10 +103,10 @@
     &quot;Spring Boot.LaboratoireApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.PatientApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.UtilisateurApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;branche1&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/AORUS/Projet-de-Gestion-de-Laboratoire/Back-End/patient/pom.xml&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/AORUS/Projet-de-Gestion-de-Laboratoire/Back-End/analyse/pom.xml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -120,6 +127,7 @@
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Front-End\public\assets\images" />
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Back-End\discovery" />
     </key>
@@ -134,6 +142,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Docker.docker-compose.yml.utilisateur-service: Compose Deployment">
+    <configuration name="AnalyseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="analyse" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="analyse.analyse.AnalyseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.labmaster.configserver.ConfigServerApplication" />
@@ -265,6 +280,7 @@
       <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.utilisateur-service: Compose Deployment" />
       <item itemvalue="npm.Angular CLI" />
+      <item itemvalue="Spring Boot.AnalyseApplication" />
       <item itemvalue="Spring Boot.PatientApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.DiscoveryApplication" />
@@ -302,7 +318,12 @@
       <workItem from="1732004919890" duration="3374000" />
       <workItem from="1732009338613" duration="925000" />
       <workItem from="1732027414365" duration="18110000" />
-      <workItem from="1732106881961" duration="122000" />
+      <workItem from="1732106881961" duration="8471000" />
+      <workItem from="1732126624132" duration="5065000" />
+      <workItem from="1732205999721" duration="1346000" />
+      <workItem from="1732377091578" duration="127000" />
+      <workItem from="1732523552319" duration="598000" />
+      <workItem from="1732524324112" duration="3280000" />
     </task>
     <servers />
   </component>

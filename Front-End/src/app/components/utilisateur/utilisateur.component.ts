@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 import {ModifierUtilisateurComponent} from './modifier-utilisateur/modifier-utilisateur.component';
 import {LaboratoireService} from '../../services/laboratoireService/laboratoire.service';
 import {catchError, map, Observable, of} from 'rxjs';
+import {LayoutComponent} from '../navigation/layout/layout.component';
 
 @Component({
   selector: 'app-utilisateur',
@@ -35,6 +36,7 @@ import {catchError, map, Observable, of} from 'rxjs';
     NzFilterTriggerComponent,
     NzThAddOnComponent,
     NzIconDirective,
+    LayoutComponent,
 
 
   ],

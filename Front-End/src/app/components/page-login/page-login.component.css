@@ -1,0 +1,178 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  animation: fadeIn 1.5s ease-out; /* Animation de la page */
+}
+
+.login-left, .login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-left {
+  flex-direction: column;
+  background: linear-gradient(to right, rgba(24, 144, 255, 0.45), rgba(255, 77, 79, 0.45));
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1s ease-out; /* Animation du formulaire */
+}
+
+.login-left h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInText 1.5s ease-out forwards 0.5s; /* Animation de texte */
+}
+
+.login-left p {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-left form {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeInForm 1s ease-out forwards 1s; /* Animation des champs */
+}
+
+.login-left form label {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.login-left form input {
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.login-left form input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.login-left .btn {
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-left .btn-signin {
+  background-color: #4a90e2;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-left .btn-signin:hover {
+  background-color: #357ab7;
+}
+
+.login-left .btn-google {
+  background-color: #db4437;
+  color: white;
+}
+
+.login-left .btn-apple {
+  background-color: #000000;
+  color: white;
+}
+
+.login-right {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-info {
+  text-align: center;
+}
+
+.login-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.login-info p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #777;
+}
+
+.login-info img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.login-info img:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  max-width: 200px;
+  margin-bottom: 20px;
+  align-self: center;
+  animation: heartbeat 1.5s ease-in-out infinite; /* Animation du battement de cœur */
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInForm {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
