@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { JwtModule} from '@auth0/angular-jwt';
 import {JwtInterceptor} from './services/AuthService/JwtInterceptor';
+import {provideHttpClientTesting} from '@angular/common/http/testing';
 
 registerLocaleData(fr);
 

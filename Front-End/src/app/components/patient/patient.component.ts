@@ -6,7 +6,7 @@ import {NzDropdownMenuComponent} from 'ng-zorro-antd/dropdown';
 import {NzFilterTriggerComponent, NzTableComponent, NzThAddOnComponent} from 'ng-zorro-antd/table';
 import {NzIconDirective} from 'ng-zorro-antd/icon';
 import {NzInputDirective} from 'ng-zorro-antd/input';
-import {Patient} from '../../models/patient.model';
+import {Patient} from '../../models/patient/patient.model';
 import {PatientService} from '../../services/patientService/patient.service';
 import {NzModalModule, NzModalService} from 'ng-zorro-antd/modal';
 import {NzMessageService} from 'ng-zorro-antd/message';

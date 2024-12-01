@@ -2,18 +2,17 @@ package org.labmaster.laboratoire.service;
 
 import lombok.RequiredArgsConstructor;
 import org.labmaster.laboratoire.client.UtilisateurClient;
+import org.labmaster.laboratoire.dto.laboratoire.LaboratoireDTO;
+import org.labmaster.laboratoire.dto.laboratoire.FullLaboratoireResponse;
 import org.labmaster.laboratoire.exception.ResourceNotFoundException;
-import org.labmaster.laboratoire.model.FullLaboratoireResponse;
 import org.labmaster.laboratoire.model.Laboratoire;
 import org.labmaster.laboratoire.repository.LaboratoireRepository;
-import org.labmaster.laboratoire.model.Utilisateur;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Base64;
 
 @Service
 @RequiredArgsConstructor
@@ -23,60 +22,122 @@ public class LaboratoireService {
     private final UtilisateurClient utilisateurClient;
 
     // Create
-    public Laboratoire createLaboratoire(Laboratoire laboratoire){
-        return laboratoireRepository.save(laboratoire);
+    public LaboratoireDTO createLaboratoire(LaboratoireDTO laboratoireDTO){
+        Laboratoire laboratoire = toEntity(laboratoireDTO);
+        Laboratoire savedLaboratoire = laboratoireRepository.save(laboratoire);
+        return toDTO(savedLaboratoire);
     }
 
     // Fetch all
-    public List<Laboratoire> getAllLaboratoires() {
-        return laboratoireRepository.findAll();
+    public List<LaboratoireDTO> getAllLaboratoires() {
+        return laboratoireRepository.findAll()
+                .stream()
+                .map(this::toDTO)
+                .toList();
     }
-
 
     // Search by Id
-    public Optional<Laboratoire> getLaboratoireById(Long id) {
-        return laboratoireRepository.findById(id);
+    public Optional<LaboratoireDTO> getLaboratoireById(Long id) {
+        return laboratoireRepository.findById(id)
+                .map(this::toDTO);
     }
 
-    // Update
-    public Laboratoire updateLaboratoire(Long id, Laboratoire laboratoireDetails) {
+    // Update method needs modification
+    public LaboratoireDTO updateLaboratoire(Long id, LaboratoireDTO laboratoireDTO) {
         Laboratoire laboratoire = laboratoireRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Laboratoire not found with id " + id));
 
-        laboratoire.setNom(laboratoireDetails.getNom());
-        laboratoire.setNrc(laboratoireDetails.getNrc());
-        laboratoire.setActive(laboratoireDetails.getActive());
-        laboratoire.setDateActivation(laboratoireDetails.getDateActivation());
+        laboratoire.setNom(laboratoireDTO.getNom());
+        laboratoire.setNrc(laboratoireDTO.getNrc());
+        laboratoire.setActive(laboratoireDTO.getActive());
+        laboratoire.setDateActivation(laboratoireDTO.getDateActivation());
 
         // Update the logo if it's provided
-        if (laboratoireDetails.getLogo() != null) {
-            laboratoire.setLogo(laboratoireDetails.getLogo());
+        if (laboratoireDTO.getLogo() != null && !laboratoireDTO.getLogo().isEmpty()) {
+            String base64Image = laboratoireDTO.getLogo();
+
+            // Remove the data URL prefix if it exists
+            if (base64Image.startsWith("data:image/png;base64,")) {
+                base64Image = base64Image.substring("data:image/png;base64,".length());
+            }
+
+            // Decode the Base64 string to byte array
+            byte[] logoBytes = Base64.getDecoder().decode(base64Image);
+            laboratoire.setLogo(logoBytes);
         }
 
-        return laboratoireRepository.save(laboratoire);
+        Laboratoire updatedLaboratoire = laboratoireRepository.save(laboratoire);
+        return toDTO(updatedLaboratoire);
     }
 
     // Delete
-    public void deleteLaboratoire(Long id) {
+    public boolean deleteLaboratoire(Long id) {
         if (!laboratoireRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Laboratoire not found with id " + id);
+            return false;
         }
         laboratoireRepository.deleteById(id);
+        return true;  // Return true if deletion was successful
     }
 
     // Find Laboratoire and its users by Id
     public FullLaboratoireResponse getLaboratoiresWithUsers(Long laboratoireId) {
-        var laboraoire = laboratoireRepository.findById(laboratoireId).orElse(
+        var laboratoire = laboratoireRepository.findById(laboratoireId).orElse(
                 new Laboratoire("NOT_FOUND")
         );
         var utilisateurs = utilisateurClient.getUtilisateursByLaboratoire(laboratoireId);
 
         return FullLaboratoireResponse.builder()
-                .nom(laboraoire.getNom())
-                .nrc(laboraoire.getNrc())
-                .logo(laboraoire.getLogo())
-                .active(laboraoire.getActive())
-                .dateActivation(laboraoire.getDateActivation())
-                .utilisateurs(utilisateurs).build();
+                .nom(laboratoire.getNom())
+                .nrc(laboratoire.getNrc())
+                .logo(laboratoire.getLogo())  // Return the raw bytes
+                .active(laboratoire.getActive())
+                .dateActivation(laboratoire.getDateActivation())
+                .utilisateurs(utilisateurs)
+                .build();
+    }
+
+    // Convert entity to DTO with Base64 logo conversion
+    private LaboratoireDTO toDTO(Laboratoire laboratoire) {
+        LaboratoireDTO dto = new LaboratoireDTO();
+        dto.setId(laboratoire.getId());
+        dto.setNom(laboratoire.getNom());
+        dto.setNrc(laboratoire.getNrc());
+        dto.setActive(laboratoire.getActive());
+        dto.setDateActivation(laboratoire.getDateActivation());
+
+        // Convert byte[] logo to Base64 string for DTO (only for response)
+        if (laboratoire.getLogo() != null && laboratoire.getLogo().length > 0) {
+            String base64Logo = "data:image/png;base64," +
+                    Base64.getEncoder().encodeToString(laboratoire.getLogo());
+            dto.setLogo(base64Logo);  // Set the full Base64 data URL
+        }
+
+        return dto;
+    }
+
+    // Convert DTO to entity
+    private Laboratoire toEntity(LaboratoireDTO dto) {
+        Laboratoire laboratoire = new Laboratoire();
+        laboratoire.setId(dto.getId());
+        laboratoire.setNom(dto.getNom());
+        laboratoire.setNrc(dto.getNrc());
+        laboratoire.setActive(dto.getActive());
+        laboratoire.setDateActivation(dto.getDateActivation());
+
+        // If the logo is a full Base64 data URL, extract the Base64 part
+        if (dto.getLogo() != null && !dto.getLogo().isEmpty()) {
+            String base64Image = dto.getLogo();
+
+            // Remove the data URL prefix if it exists
+            if (base64Image.startsWith("data:image/png;base64,")) {
+                base64Image = base64Image.substring("data:image/png;base64,".length());
+            }
+
+            // Decode the Base64 string to byte array
+            byte[] logoBytes = Base64.getDecoder().decode(base64Image);
+            laboratoire.setLogo(logoBytes);
+        }
+
+        return laboratoire;
     }
 }

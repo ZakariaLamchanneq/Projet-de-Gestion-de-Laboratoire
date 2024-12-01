@@ -15,15 +15,28 @@
   </div>
 
   <div class="form-group">
-    <label for="logo">Logo:</label>
-    <input type="file" (change)="onLogoSelected($event)" accept="image/*" />
+    <label for="logo">Logo: </label>
+    <nz-upload
+      [nzShowUploadList]="false"
+      [nzBeforeUpload]="beforeUpload"
+      (nzChange)="handleUploadChange($event)"
+      [nzAccept]="'image/*'"
+    >
+      <button nz-button>
+        <span nz-icon nzType="upload"></span> Click to Upload
+      </button>
+    </nz-upload>
     <div *ngIf="logoPreview" class="logo-preview">
       <img [src]="logoPreview" alt="Laboratory Logo" style="width: 100px; height: auto;" />
     </div>
-    <div *ngIf="laboratoireForm.controls['logo'].invalid && laboratoireForm.controls['logo'].touched" class="error-message">
+    <div
+      *ngIf="laboratoireForm.controls['logo'].invalid && laboratoireForm.controls['logo'].touched"
+      class="error-message"
+    >
       Logo is required.
     </div>
   </div>
+
 
   <div class="form-group">
     <label for="nrc">NRC:</label>
@@ -41,13 +54,15 @@
   </div>
 
   <div class="form-group">
-    <label for="active">Active:</label>
+    <label for="active">Active: </label>
     <nz-switch formControlName="active"></nz-switch>
   </div>
 
   <div class="form-group">
-    <label for="dateActivation">Activation Date:</label>
-    <nz-date-picker formControlName="dateActivation" id="dateActivation"></nz-date-picker>
+    <label for="dateActivation">Activation Date: </label>
+    <nz-date-picker formControlName="dateActivation"
+                    id="dateActivation"
+                    [nzFormat]="'dd-MM-yyyy'"></nz-date-picker>
     <div *ngIf="laboratoireForm.controls['dateActivation'].invalid && laboratoireForm.controls['dateActivation'].touched" class="error-message">
       Activation Date is required.
     </div>

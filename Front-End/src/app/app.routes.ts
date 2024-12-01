@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
-import { LaboratoireFormComponent } from './components/laboratoire/laboratoire-form/laboratoire-form.component';
 import {UtilisateurComponent} from './components/utilisateur/utilisateur.component';
 import { LaboratoireComponent } from './components/laboratoire/laboratoire.component';
 import {PatientComponent} from './components/patient/patient.component';
 import {PageLoginComponent} from './components/page-login/page-login.component';
 import {LayoutComponent} from './components/navigation/layout/layout.component';
+import {AdresseComponent} from './components/adresse/adresse.component';
+import {ContactLaboratoireComponent} from './components/contact-laboratoire/contact-laboratoire.component';
 import {AuthGuard} from './services/AuthService/AuthGuard';
 
 export const routes: Routes = [
@@ -21,6 +22,8 @@ export const routes: Routes = [
       { path: 'laboratoires',  component: LaboratoireComponent },
       { path: 'utilisateurs', component: UtilisateurComponent  },
       { path: 'patients', component: PatientComponent},
+      { path: 'adresses', component: AdresseComponent },
+      { path: 'contacts-laboratoire', component: ContactLaboratoireComponent },
     ]
   },
 

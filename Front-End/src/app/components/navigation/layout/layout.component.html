@@ -22,6 +22,18 @@
         <span>Laboratoires</span>
       </a>
       </li>
+      <li *ngIf="role === 'TECHNICIEN' || role === 'ADMINISTRATEUR'" nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Adresses" [nzTooltipTrigger]="isCollapsed ? 'hover' : null">
+        <a routerLink="/adresses">
+          <span nz-icon nzType="environment"></span>
+          <span>Adresses</span>
+        </a>
+      </li>
+      <li *ngIf="role === 'TECHNICIEN' || role === 'ADMINISTRATEUR'" nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Contacts Laboratoire" [nzTooltipTrigger]="isCollapsed ? 'hover' : null">
+        <a routerLink="/contacts-laboratoire">
+          <span nz-icon nzType="contacts"></span>
+          <span>Contacts Laboratoire</span>
+        </a>
+      </li>
       <li *ngIf=" role === 'ADMINISTRATEUR'"nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Utilisateurs" [nzTooltipTrigger]="isCollapsed ? 'hover' : null">
       <a routerLink="/utilisateurs">
         <span nz-icon nzType="team"></span>

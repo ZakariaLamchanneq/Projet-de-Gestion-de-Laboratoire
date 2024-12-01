@@ -1,0 +1,35 @@
+<h2 class="title">Addresses List</h2>
+
+<button nz-button nzType="primary" (click)="openCreateForm()" class="menu-item">
+  <span nz-icon nzType="plus"></span> Add Address
+</button>
+
+<nz-table #basicTable [nzData]="adresses" [nzBordered]="true" [nzLoading]="loading">
+  <thead>
+  <tr>
+    <th nzWidth="20%">Street Number</th>
+    <th nzWidth="25%">Street Name</th>
+    <th nzWidth="20%">Postal Code</th>
+    <th nzWidth="20%">City</th>
+    <th nzWidth="15%">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let adresse of basicTable.data" nzHover>
+    <td>{{ adresse.numVoie }}</td>
+    <td>{{ adresse.nomVoie }}</td>
+    <td>{{ adresse.codePostal }}</td>
+    <td>{{ adresse.ville }}</td>
+    <td>
+      <nz-button-group>
+        <button nz-button nzType="primary" (click)="openEditForm(adresse)">
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button nz-button (click)="deleteAdresse(adresse.id)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      </nz-button-group>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

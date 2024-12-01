@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {NzMessageService} from 'ng-zorro-antd/message';
 import {UtilisateurService} from '../../../services/utilisateurService/utilisateur.service';
-import {Utilisateur} from '../../../models/utilisateur.model';
+import {Utilisateur} from '../../../models/utilisateur/utilisateur.model';
 import {NgIf} from '@angular/common';
 import {NzModalRef} from 'ng-zorro-antd/modal';
 import {Router} from '@angular/router';
