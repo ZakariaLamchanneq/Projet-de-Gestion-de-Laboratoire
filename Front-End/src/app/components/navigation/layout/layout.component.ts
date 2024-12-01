@@ -8,6 +8,7 @@ import { NzImageModule } from 'ng-zorro-antd/image';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {NzTooltipDirective} from 'ng-zorro-antd/tooltip';
+import {AuthService} from '../../../services/AuthService/auth-service.service';
 
 @Component({
   selector: 'app-layout',
@@ -29,6 +30,10 @@ export class LayoutComponent {
 
   isCollapsed = false;
   logo = 'assets/images/logo1.png';
+  role: string | null = null;
 
+  constructor(private authService: AuthService) {
+    this.role = this.authService.getRole();
+  }
 
 }

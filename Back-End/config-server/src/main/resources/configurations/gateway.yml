@@ -49,14 +49,17 @@ spring:
           uri: lb://patient-microservice
           predicates:
             - Path=/api/patients/**
-      # Configuration CORS to connect Front-End
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: "http://${FRONTEND_HOSTNAME:localhost}:4200"
-            allowedMethods: "*"
-            allowedHeaders: "*"
-            allowCredentials: true  
+#      # Configuration CORS to connect Front-End
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "http://${FRONTEND_HOSTNAME:localhost}:4200"
+#            allowedMethods: "*"
+#            allowedHeaders: "*"
+#            allowCredentials: true
+application:
+  config:
+    utilisateurs-url: http://${GATEWAY_HOSTNAME:localhost}:8222/api/utilisateurs
 
 management:
   tracing:
