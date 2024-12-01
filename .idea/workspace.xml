@@ -5,16 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ff9cc8-3d27-49b3-87cb-2b2ecf8107b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/FeignResponseDecoderConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/UserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/UtilisateurClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/model/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/model/UserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/src/app/services/AuthService/AuthGuard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/src/app/services/AuthService/JwtInterceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/src/app/services/AuthService/auth-service.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/src/app/services/AuthService/auth-service.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/model/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/model/Utilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/config-server/src/main/resources/configurations/gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/gateway/src/main/java/org/labmaster/gateway/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/LaboratoireApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/laboratoire/src/main/java/org/labmaster/laboratoire/LaboratoireApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/patient/src/main/java/patient/patient/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/patient/src/main/java/patient/patient/controller/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/controller/UtilisateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/controller/UtilisateurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/repository/UtilisateurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/repository/UtilisateurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/service/UtilisateurService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/utilisateur/utilisateur.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/navigation/layout/layout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/page-login/page-login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/page-login/page-login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/app/components/page-login/page-login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/app/components/page-login/page-login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +86,9 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2oAlAkZaSmykYXkefK2NONXMN6K" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -84,6 +109,7 @@
     &quot;Maven.config-server [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.discovery [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.discovery [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gateway [clean,install,-U].executor&quot;: &quot;Run&quot;,
     &quot;Maven.gateway [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.laboratoire [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.laboratoire [clean,package,-DskipTests].executor&quot;: &quot;Run&quot;,
@@ -97,16 +123,17 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AnalyseApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.DiscoveryApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.LaboratoireApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.PatientApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.UtilisateurApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;branche1&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;pageLogin&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/AORUS/Projet-de-Gestion-de-Laboratoire/Back-End/analyse/pom.xml&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/AORUS/Projet-de-Gestion-de-Laboratoire/Back-End/utilisateur/src/main/java/org/labmaster/utilisateur/model&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -117,19 +144,24 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\AORUS\\Projet-de-Gestion-de-Laboratoire\\Front-End\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Back-End\utilisateur\src\main\java\org\labmaster\utilisateur\model" />
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Front-End\src\app\services\AuthService" />
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Front-End\public\assets\images" />
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire" />
       <recent name="C:\Users\AORUS\Projet-de-Gestion-de-Laboratoire\Back-End\discovery" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.labmaster.gateway" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -323,7 +355,13 @@
       <workItem from="1732205999721" duration="1346000" />
       <workItem from="1732377091578" duration="127000" />
       <workItem from="1732523552319" duration="598000" />
-      <workItem from="1732524324112" duration="3280000" />
+      <workItem from="1732524324112" duration="20219000" />
+      <workItem from="1732699077652" duration="21086000" />
+      <workItem from="1732741056508" duration="4397000" />
+      <workItem from="1732802768208" duration="3555000" />
+      <workItem from="1732835160386" duration="3331000" />
+      <workItem from="1732872734759" duration="1348000" />
+      <workItem from="1732976789289" duration="12487000" />
     </task>
     <servers />
   </component>

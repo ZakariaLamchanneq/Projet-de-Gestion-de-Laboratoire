@@ -9,9 +9,9 @@ import patient.patient.dto.PatientDTO;
 import patient.patient.service.PatientService;
 
 import java.util.List;
-
 @RestController
 @RequestMapping("/api/patients")
+
 public class PatientController {
 
     @Autowired
