@@ -25,5 +25,4 @@ export const icons = [
   SearchOutline,
   EditOutline,
   DeleteOutline,
-
 ];

@@ -1,5 +1,3 @@
-import { Laboratoire } from "./laboratoire.model";
-
 export interface Utilisateur {
   id?: number;
   email: string;

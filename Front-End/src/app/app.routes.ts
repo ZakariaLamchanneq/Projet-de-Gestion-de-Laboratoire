@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { LaboratoireFormComponent } from './components/laboratoire/laboratoire-form/laboratoire-form.component';
 import {UtilisateurComponent} from './components/utilisateur/utilisateur.component';
 import { LaboratoireComponent } from './components/laboratoire/laboratoire.component';
 import {PatientComponent} from './components/patient/patient.component';

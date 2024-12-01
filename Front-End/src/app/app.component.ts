@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RouterModule, RouterOutlet} from '@angular/router';
+import {RouterOutlet} from '@angular/router';
 import { LayoutComponent } from "./components/navigation/layout/layout.component";
 import {PageLoginComponent} from './components/page-login/page-login.component';
 
@@ -7,9 +7,6 @@ import {PageLoginComponent} from './components/page-login/page-login.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    // RouterModule,
-    LayoutComponent,
-    PageLoginComponent,
     RouterOutlet
   ],
   templateUrl: './app.component.html',

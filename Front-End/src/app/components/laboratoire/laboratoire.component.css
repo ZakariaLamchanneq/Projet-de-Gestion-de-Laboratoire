@@ -1,0 +1,142 @@
+
+
+table {
+  font-size: 14px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+th {
+  background-color: #fafafa;
+  font-weight: bold;
+  color: #595959;
+}
+
+.table-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #111111;
+  text-align: center;
+  margin: 0 auto 20px auto;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.4s ease, transform 0.4s ease;
+  background: linear-gradient(to right, #1890ff, #ff4d4f);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.title:hover {
+  transform: translateY(-5px);
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(to right, #1890ff, #ff4d4f);
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.title:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.menu-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  background: linear-gradient(to right, rgba(24, 144, 255, 0.55), rgba(255, 77, 79, 0.55));
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+}
+
+.menu-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(to right, #1890ff, #ff4d4f);
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.menu-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.menu-item:active {
+  transform: translateY(0);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.edit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.3s;
+}
+
+.edit-button:hover {
+  color: blue;
+}
+
+.edit-button span {
+  font-size: 18px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.3s;
+}
+
+.delete-button:hover {
+  color: red;
+}
+
+.delete-button span {
+  font-size: 18px;
+}

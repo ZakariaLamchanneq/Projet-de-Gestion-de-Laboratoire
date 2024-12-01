@@ -16,7 +16,15 @@
 
   <div class="form-group">
     <label for="logo">Logo:</label>
-    <input type="file" (change)="onLogoSelected($event)" accept="image/*" />
+    <nz-upload
+      [nzBeforeUpload]="beforeUpload"
+      [nzShowUploadList]="false"
+      [nzAccept]="'image/*'"
+    >
+      <button nz-button type="button">
+        <i nz-icon nzType="upload"></i> Click to Upload Logo
+      </button>
+    </nz-upload>
     <div *ngIf="logoPreview" class="logo-preview">
       <img [src]="logoPreview" alt="Laboratory Logo" style="width: 100px; height: auto;" />
     </div>
@@ -50,14 +58,14 @@
     <nz-date-picker
       formControlName="dateActivation"
       id="dateActivation"
-      [nzFormat]="'yyyy-MM-dd'"
+      [nzFormat]="'dd-MM-yyyy'"
     ></nz-date-picker>
     <div *ngIf="laboratoireForm.controls['dateActivation'].invalid && laboratoireForm.controls['dateActivation'].touched" class="error-message">
       Activation Date is required.
     </div>
   </div>
 
-  <button nz-button nzType="primary" type="submit" [nzLoading]="loading"[disabled]="laboratoireForm.invalid ">
+  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="laboratoireForm.invalid">
     Modifier Laboratoire
   </button>
 </form>

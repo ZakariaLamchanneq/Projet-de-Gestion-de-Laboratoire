@@ -1,4 +1,4 @@
-package org.labmaster.laboratoire.model;
+package org.labmaster.laboratoire.dto.laboratoire;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Lob;

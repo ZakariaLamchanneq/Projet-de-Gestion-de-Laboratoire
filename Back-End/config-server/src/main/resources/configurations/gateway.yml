@@ -18,17 +18,33 @@ spring:
           enabled: true
           lower-case-service-id: true # To avoid case sensitivity
       routes:
-      
-        - id: laboratoire-microservice
+
+#        - id: laboratoire-microservice
+#          uri: lb://laboratoire-microservice
+#          predicates:
+#            - Path=/api/laboratoires/**
+
+        - id: laboratoire-endpoints
           uri: lb://laboratoire-microservice
-#         uri: http://localhost:8070
           predicates:
             - Path=/api/laboratoires/**
+
+        - id: adresse-endpoints
+          uri: lb://laboratoire-microservice
+          predicates:
+            - Path=/api/adresses/**
+
+        - id: contacts-endpoints
+          uri: lb://laboratoire-microservice
+          predicates:
+            - Path=/api/contacts-laboratoires/**
+
         - id: utilisateur-microservice
 #         uri: http://localhost:8090
           uri: lb://utilisateur-microservice
           predicates:
             - Path=/api/utilisateurs/**
+
         - id: patient-microservice
           uri: lb://patient-microservice
           predicates:

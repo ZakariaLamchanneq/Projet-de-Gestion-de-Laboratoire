@@ -14,7 +14,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzImageViewComponent } from 'ng-zorro-antd/experimental/image';
 import { ModifierLaboratoireComponent } from './modifier-laboratoire/modifier-laboratoire.component';
 import { AjouterLaboratoireComponent } from './ajouter-laboratoire/ajouter-laboratoire.component';
-import { LaboratoireFormComponent } from './laboratoire-form/laboratoire-form.component';
+import {NzIconDirective} from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-laboratoire',
@@ -28,6 +28,7 @@ import { LaboratoireFormComponent } from './laboratoire-form/laboratoire-form.co
     NzModalModule,
     NzButtonModule,
     NzImageViewComponent,
+    NzIconDirective,
   ],
   templateUrl: './laboratoire.component.html',
   styleUrls: ['./laboratoire.component.css'],
@@ -61,10 +62,11 @@ export class LaboratoireComponent implements OnInit {
     });
   }
 
+
   getLogoUrl(laboratoire: Laboratoire): string {
-    const temp = laboratoire.logo;
-    return temp ? 'data:image/png;base64,' + temp : '';
+    return laboratoire.logo || ''; // Will use the full Base64 URL from the backend
   }
+
 
   // Open the form for creating a new laboratory
   openCreateForm(): void {

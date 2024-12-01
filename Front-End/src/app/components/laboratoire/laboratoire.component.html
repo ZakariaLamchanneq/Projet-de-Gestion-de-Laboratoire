@@ -1,23 +1,22 @@
-<h2 style="text-align: center; margin-bottom: 20px;">Laboratories List</h2>
+<h2 class="title">Laboratories List</h2>
 
 <!-- Button to open the modal -->
-<button ngSkipHydration nz-button nzType="primary" (click)="openCreateForm()" class="menu-item">
-  <span nz-icon nzType="experiment">
-    Ajouter Un Laboratoire
-  </span>
+<button ngSkipHydration nz-button nzType="primary" ngSize="large" (click)="openCreateForm()" class="menu-item">
+  <span nz-icon nzType="experiment" ></span>
+    Ajouter un laboratoire
+
 </button>
 
-
 <!-- Skip Hydration added here to fix the issue of double loading parameters -->
-<nz-table ngSkipHydration #basicTable [nzData]="laboratoires" [nzBordered]="true" [nzSize]="'middle'"
+<nz-table ngSkipHydration #basicTable [nzData]="laboratoires" [nzBordered]="true"  class="table-shadow"
   [nzLoading]="loading">
   <thead>
     <tr>
       <th nzWidth="25%">Name</th>
       <th nzWidth="25%">Logo</th>
       <th nzWidth="25%">NRC</th>
-      <th nzWidth="15%">Status</th>
-      <th nzWidth="15%">Activation Date</th>
+      <th nzWidth="10%">Status</th>
+      <th nzWidth="20%">Activation Date</th>
       <th nzWidth="15%">Actions</th>
     </tr>
   </thead>
@@ -25,18 +24,32 @@
     <tr *ngFor="let laboratoire of basicTable.data" nzHover>
       <td>{{ laboratoire.nom }}</td>
       <td>
-        <nz-image [nzSrc]="getLogoUrl(laboratoire)" [nzAlt]="laboratoire.nom" nzWidth="50" nzHeight="50"></nz-image>
 
+        <nz-image
+          [nzSrc]="getLogoUrl(laboratoire)"
+          [nzAlt]="laboratoire.nom"
+          nzWidth="50"
+          nzHeight="50"
+        ></nz-image>
+        <span *ngIf="!getLogoUrl(laboratoire)">No logo available</span>
       </td>
       <td>{{ laboratoire.nrc }}</td>
       <td>
         <nz-tag [nzColor]="laboratoire.active ? 'green' : 'red'">{{ laboratoire.active ? 'Active' : 'Inactive'
           }}</nz-tag>
       </td>
-      <td>{{ laboratoire.dateActivation | date: 'shortDate' }}</td>
+<!--      <td>{{ laboratoire.dateActivation | date: 'dd/MM/yyyy' }}</td>-->
+      <td>{{ laboratoire.dateActivation | date: 'dd/MM/yyyy' }}</td>
       <td>
-        <button nz-button nzType="primary" nzSize="small" (click)="openEditForm(laboratoire)">Edit</button>
-        <button nz-button nzSize="small" (click)="deleteLaboratoire(laboratoire.id)">Delete</button>
+        <nz-button-group>
+        <button nz-button nzType="primary"  (click)="openEditForm(laboratoire)">
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button nz-button (click)="deleteLaboratoire(laboratoire.id)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+        </nz-button-group>
+
       </td>
     </tr>
   </tbody>

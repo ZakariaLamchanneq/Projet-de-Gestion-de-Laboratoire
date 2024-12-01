@@ -14,6 +14,8 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { CommonModule } from '@angular/common';
 import { Laboratoire } from '../../../models/laboratoire.model';
+import {NzUploadComponent} from 'ng-zorro-antd/upload';
+import { NzUploadFile } from 'ng-zorro-antd/upload';
 
 @Component({
   selector: 'app-ajouter-laboratoire',
@@ -25,6 +27,7 @@ import { Laboratoire } from '../../../models/laboratoire.model';
     NzSwitchModule,
     NzDatePickerModule,
     NzButtonModule,
+    NzUploadComponent,
   ],
   templateUrl: './ajouter-laboratoire.component.html',
   styleUrls: ['./ajouter-laboratoire.component.css'],
@@ -50,18 +53,38 @@ export class AjouterLaboratoireComponent implements OnInit {
       nom: ['', Validators.required],
       nrc: ['', Validators.required],
       logo: [null, Validators.required],
-      active: [false],
-      dateActivation: [null],
+      active: [false, Validators.required],
+      dateActivation: [null, Validators.required],
     });
   }
 
-  onLogoSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e) => (this.logoPreview = e.target?.result ?? null);
-      reader.readAsDataURL(input.files[0]);
-      this.laboratoireForm.patchValue({ logo: input.files[0] });
+  beforeUpload = (file: NzUploadFile): boolean => {
+    const isImage = file.type?.startsWith('image/');
+    if (!isImage) {
+      this.message.error('You can only upload image files!');
+      return false;
+    }
+
+    // Convert NzUploadFile to native File if necessary
+    const nativeFile = file as unknown as File;
+
+    // Set the file to the form control
+    this.laboratoireForm.patchValue({ logo: nativeFile });
+
+    // Create a preview
+    const reader = new FileReader();
+    reader.onload = (e) => (this.logoPreview = e.target?.result ?? null);
+    reader.readAsDataURL(nativeFile);
+
+    return false; // Prevent auto-upload
+  };
+
+
+  handleUploadChange(event: any): void {
+    if (event.file.status === 'removed') {
+      // Reset the form control and preview if the file is removed
+      this.logoPreview = null;
+      this.laboratoireForm.patchValue({ logo: null });
     }
   }
 
@@ -72,29 +95,35 @@ export class AjouterLaboratoireComponent implements OnInit {
       this.loading = true;
       const formValues = this.laboratoireForm.value;
 
-      // For debuggin
-      console.log(formValues);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64Logo = reader.result as string;
+        formValues.logo = base64Logo.split(',')[1]; // Remove metadata prefix (e.g., "data:image/png;base64,")
 
-      // Convert dateActivation to a LocalDate compatible string (yyyy-MM-dd)
-      const laboratoireData: Laboratoire = {
-        ...this.laboratoireForm, // Keep existing data if in edit mode
-        ...formValues,
-        dateActivation: formValues.dateActivation
-          ? formValues.dateActivation.toISOString().split('T')[0]
-          : null,
+        const laboratoireData: Laboratoire = {
+          ...formValues,
+          dateActivation: formValues.dateActivation
+            ? formValues.dateActivation.toISOString().split('T')[0]
+            : null,
+        };
+
+        // Submit the form data
+        this.laboratoireService.createLaboratoire(laboratoireData).subscribe({
+          next: () => {
+            this.loading = false;
+            this.message.success('Laboratory created successfully!');
+            this.laboratoireForm.reset();
+            this.modalRef.close('success');
+          },
+          error: () => {
+            this.loading = false;
+            this.message.error('Failed to create laboratory.');
+          },
+        });
       };
-      this.laboratoireService.createLaboratoire(laboratoireData).subscribe({
-        next: () => {
-          this.loading = false;
-          this.message.success('Laboratory created successfully!');
-          this.laboratoireForm.reset();
-          this.modalRef.close();
-        },
-        error: () => {
-          this.loading = false;
-          this.message.error('Failed to create laboratory.');
-        },
-      });
+
+      reader.readAsDataURL(formValues.logo); // Convert file to base64
     }
   }
+
 }
