@@ -2,22 +2,23 @@
   <div class="login-left">
     <img src="assets/images/logo1.png" alt="Logo" class="logo">
 
-    <form (submit)="login()">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
       <h2>Welcome Back!</h2>
 
       <label for="email">
         <span nz-icon nzType="user" nzTheme="outline"></span>
         Email
       </label>
-      <input type="email" id="email" name="email" placeholder="test@atheros.ai">
+      <input type="email" id="email" formControlName="email" placeholder="test@atheros.ai">
 
       <label for="password">
         <span nz-icon nzType="lock" nzTheme="outline"></span>
         Password
       </label>
+      <input type="password" id="password" formControlName="password" placeholder="******">
 
-      <input type="password" id="password" name="password" placeholder="******">
       <button type="submit" class="btn btn-signin">Sign In</button>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
     </form>
     <p>Don't have an account? <a href="#">Sign Up Now</a></p>
   </div>

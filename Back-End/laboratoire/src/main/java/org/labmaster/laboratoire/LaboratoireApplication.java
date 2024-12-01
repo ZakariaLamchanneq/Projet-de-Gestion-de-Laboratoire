@@ -9,6 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class LaboratoireApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(LaboratoireApplication.class, args);
 	}
 
