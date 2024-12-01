@@ -13,9 +13,10 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { CommonModule } from '@angular/common';
-import { Laboratoire } from '../../../models/laboratoire.model';
+import { Laboratoire } from '../../../models/laboratoire/laboratoire.model';
 import {NzUploadComponent} from 'ng-zorro-antd/upload';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
+import {NzIconDirective} from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-ajouter-laboratoire',
@@ -28,6 +29,7 @@ import { NzUploadFile } from 'ng-zorro-antd/upload';
     NzDatePickerModule,
     NzButtonModule,
     NzUploadComponent,
+    NzIconDirective,
   ],
   templateUrl: './ajouter-laboratoire.component.html',
   styleUrls: ['./ajouter-laboratoire.component.css'],

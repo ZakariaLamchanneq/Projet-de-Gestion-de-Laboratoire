@@ -11,6 +11,7 @@ import { registerLocaleData } from '@angular/common';
 import fr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {provideHttpClientTesting} from '@angular/common/http/testing';
 
 registerLocaleData(fr);
 

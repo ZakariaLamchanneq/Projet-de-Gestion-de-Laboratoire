@@ -7,7 +7,7 @@ import {NzInputDirective} from 'ng-zorro-antd/input';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
-import {Patient} from '../../../models/patient.model';
+import {Patient} from '../../../models/patient/patient.model';
 import {PatientService} from '../../../services/patientService/patient.service';
 import {NzDatePickerComponent} from 'ng-zorro-antd/date-picker';
 

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { LaboratoireService } from '../../../services/laboratoireService/laboratoire.service';
-import { Laboratoire } from '../../../models/laboratoire.model';
+import { Laboratoire } from '../../../models/laboratoire/laboratoire.model';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -10,6 +10,7 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import {NzUploadFile, NzUploadModule} from 'ng-zorro-antd/upload';
 import { CommonModule } from '@angular/common';
+import {NzIconDirective} from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-modifier-laboratoire',
@@ -22,6 +23,7 @@ import { CommonModule } from '@angular/common';
     NzDatePickerModule,
     NzButtonModule,
     NzUploadModule,
+    NzIconDirective,
   ],
   templateUrl: './modifier-laboratoire.component.html',
   styleUrls: ['./modifier-laboratoire.component.css'],

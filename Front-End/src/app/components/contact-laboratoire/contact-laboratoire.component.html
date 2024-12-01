@@ -1,0 +1,37 @@
+<h2 class="title">Contacts List</h2>
+
+<button nz-button nzType="primary" (click)="openCreateForm()" class="menu-item">
+  <span nz-icon nzType="plus"></span> Add Contact
+</button>
+
+<nz-table #basicTable [nzData]="contacts" [nzBordered]="true" [nzLoading]="loading">
+  <thead>
+  <tr>
+    <th nzWidth="15%">Phone</th>
+    <th nzWidth="15%">Fax</th>
+    <th nzWidth="25%">Email</th>
+    <th nzWidth="15%">Laboratoire ID</th>
+    <th nzWidth="15%">Adresse ID</th>
+    <th nzWidth="15%">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let contact of basicTable.data" nzHover>
+    <td>{{ contact.numTel }}</td>
+    <td>{{ contact.fax }}</td>
+    <td>{{ contact.email }}</td>
+    <td>{{ contact.fkIdLaboratoire }}</td>
+    <td>{{ contact.fkIdAdresse }}</td>
+    <td>
+      <nz-button-group>
+        <button nz-button nzType="primary" (click)="openEditForm(contact)">
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button nz-button (click)="deleteContact(contact.id)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      </nz-button-group>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
