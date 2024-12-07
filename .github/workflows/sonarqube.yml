@@ -71,7 +71,7 @@ jobs:
         shell: powershell
         run: |
           cd Back-End/laboratoire
-          sonar-scanner "-Dsonar.projectKey=labmaster.backend.laboratoire" "-Dsonar.sources=src/main/java" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.login=$env:SONAR_TOKEN"
+          sonar-scanner "-Dsonar.projectKey=labmaster.backend.laboratoire" "-Dsonar.sources=src/main/java" -Dsonar.exclusions=**/test/**,src/main/resources/**" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.login=$env:SONAR_TOKEN" 
 
 
   utilisateur:
@@ -90,7 +90,7 @@ jobs:
         shell: powershell
         run: |
           cd Back-End/utilisateur
-          sonar-scanner "-Dsonar.projectKey=labmaster.backend.utilisateur" "-Dsonar.sources=src/main/java" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.login=$env:SONAR_TOKEN"
+          sonar-scanner "-Dsonar.projectKey=labmaster.backend.utilisateur" "-Dsonar.sources=src/main/java" -Dsonar.exclusions=**/test/**,src/main/resources/**" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.login=$env:SONAR_TOKEN"
 
   gateway:
     runs-on: self-hosted
@@ -108,7 +108,7 @@ jobs:
         shell: powershell
         run: |
           cd Back-End/gateway
-          sonar-scanner "-Dsonar.projectKey=labmaster.backend.gateway" "-Dsonar.sources=src/main/java" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.login=$env:SONAR_TOKEN"
+          sonar-scanner "-Dsonar.projectKey=labmaster.backend.gateway" "-Dsonar.sources=src/main/java" -Dsonar.exclusions=**/test/**,src/main/resources/**" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.login=$env:SONAR_TOKEN"
 
 
   frontend:
