@@ -1,13 +1,12 @@
 package org.labmaster.laboratoire.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.List;
 
 @Setter
 @Getter
@@ -28,6 +27,10 @@ public class Laboratoire {
     private Boolean active;
     private LocalDate dateActivation;
 
+    @OneToMany(mappedBy = "laboratoire", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ContactLaboratoire> contacts;
+
+
     public Laboratoire() {
         this.nom="null";
     }
@@ -44,6 +47,16 @@ public class Laboratoire {
         this.dateActivation = dateActivation;
     }
 
+    public Laboratoire(Long id, String nom, byte[] logo, String nrc, Boolean active, LocalDate dateActivation, List<ContactLaboratoire> contacts) {
+        this.id = id;
+        this.nom = nom;
+        this.logo = logo;
+        this.nrc = nrc;
+        this.active = active;
+        this.dateActivation = dateActivation;
+        this.contacts = contacts;
+    }
+
     @Override
     public String toString() {
         return "Laboratoire{" +
@@ -53,6 +66,7 @@ public class Laboratoire {
                 ", nrc='" + nrc + '\'' +
                 ", active=" + active +
                 ", dateActivation=" + dateActivation +
+                ", contacts=" + contacts +
                 '}';
     }
 }

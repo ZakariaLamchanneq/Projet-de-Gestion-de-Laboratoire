@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: patient-microservice
+  config:
+    #    import: optional:configserver:http://localhost:8888
+    #     import: optional:configserver:http://config-server:8888
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}

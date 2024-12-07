@@ -1,0 +1,66 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+  <div class="form-group">
+    <label for="numTel">
+      <i nz-icon nzType="phone"></i>
+      <b> Phone:</b>
+    </label>
+    <nz-input-group >
+      <input nz-input id="numTel" formControlName="numTel" />
+
+    </nz-input-group>
+    <div *ngIf="contactForm.controls['numTel'].invalid && contactForm.controls['numTel'].touched" class="error-message">
+      Phone is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fax">
+      <i nz-icon nzType="printer"></i>
+      <b> Fax:</b>
+    </label>
+    <nz-input-group >
+      <input nz-input id="fax" formControlName="fax" />
+    </nz-input-group>
+    <div *ngIf="contactForm.controls['fax'].invalid && contactForm.controls['fax'].touched" class="error-message">
+      Fax is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">
+      <i nz-icon nzType="mail"></i>
+      <b> Email:</b>
+    </label>
+    <nz-input-group >
+      <input nz-input id="email" formControlName="email" />
+
+    </nz-input-group>
+    <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="error-message">
+      Valid email is invalid.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fkIdLaboratoire"><b>Laboratoire: </b></label>
+    <nz-select id="fkIdLaboratoire" formControlName="fkIdLaboratoire" nzShowSearch nzPlaceHolder="Select Laboratoire">
+      <nz-option *ngFor="let laboratoire of laboratoires" [nzValue]="laboratoire.id" [nzLabel]="laboratoire.nom"></nz-option>
+    </nz-select>
+    <div *ngIf="contactForm.controls['fkIdLaboratoire'].invalid && contactForm.controls['fkIdLaboratoire'].touched" class="error-message">
+      Laboratoire is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fkIdAdresse"><b>Adresse: </b></label>
+    <nz-select id="fkIdAdresse" formControlName="fkIdAdresse" nzShowSearch nzPlaceHolder="Select Adresse">
+      <nz-option *ngFor="let adresse of adresses" [nzValue]="adresse.id" [nzLabel]="adresse.nomVoie"></nz-option>
+    </nz-select>
+    <div *ngIf="contactForm.controls['fkIdAdresse'].invalid && contactForm.controls['fkIdAdresse'].touched" class="error-message">
+      Adresse is required.
+    </div>
+  </div>
+
+  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="contactForm.invalid">
+    Create Contact
+  </button>
+</form>

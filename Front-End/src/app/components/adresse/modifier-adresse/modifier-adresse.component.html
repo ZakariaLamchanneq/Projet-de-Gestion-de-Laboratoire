@@ -1,0 +1,70 @@
+<form [formGroup]="adresseForm" (ngSubmit)="onSubmit()" class="adresse-form">
+  <div class="form-group">
+    <label for="numVoie">
+      <i nz-icon nzType="number"></i>
+      <b> Street Number:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="numVoie" formControlName="numVoie" />
+    </nz-input-group>
+    <div *ngIf="adresseForm.controls['numVoie'].invalid && adresseForm.controls['numVoie'].touched" class="error-message">
+      Street Number is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="nomVoie">
+      <i nz-icon nzType="idcard"></i>
+      <b> Street Name:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="nomVoie" formControlName="nomVoie" />
+    </nz-input-group>
+    <div *ngIf="adresseForm.controls['nomVoie'].invalid && adresseForm.controls['nomVoie'].touched" class="error-message">
+      Street Name is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="codePostal">
+      <i nz-icon nzType="mail"></i>
+      <b> Postal Code:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="codePostal" formControlName="codePostal" />
+    </nz-input-group>
+    <div *ngIf="adresseForm.controls['codePostal'].invalid && adresseForm.controls['codePostal'].touched" class="error-message">
+      Postal Code is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="ville">
+      <i nz-icon nzType="home"></i>
+      <b> City:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="ville" formControlName="ville" />
+    </nz-input-group>
+    <div *ngIf="adresseForm.controls['ville'].invalid && adresseForm.controls['ville'].touched" class="error-message">
+      City is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="commune">
+      <i nz-icon nzType="global"></i>
+      <b> Commune:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="commune" formControlName="commune" />
+    </nz-input-group>
+    <div *ngIf="adresseForm.controls['commune'].invalid && adresseForm.controls['commune'].touched" class="error-message">
+      Commune is required.
+    </div>
+  </div>
+
+  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="adresseForm.invalid">
+    Update Address
+  </button>
+</form>

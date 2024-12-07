@@ -1,0 +1,103 @@
+
+<div class="modal-wrapper" (click)="closeModal($event)">
+  <div class="add-patient-container" (click)="$event.stopPropagation()">
+    <h2 class="form-title">Ajouter un Patient</h2>
+
+    <form nz-form [nzLayout]="'vertical'" class="patient-form">
+
+      <div class="form-group">
+        <label nz-form-label class="menu-item">
+          <span nz-icon nzType="mail" nzTheme="outline"></span>
+          Email :
+        </label>
+          <input nz-input placeholder="Exemple@gmail.com" [(ngModel)]="newPatient.email" name="email" />
+      </div>
+      <div class="form-group">
+        <label nz-form-label class="menu-item">
+          <span nz-icon nzType="user"></span>
+          Nom Complet :
+        </label>
+          <input nz-input placeholder="Entrer le nom complet" [(ngModel)]="newPatient.nomComplet" name="nomComplet" />
+      </div>
+
+      <div class="form-group">
+
+        <label nz-form-label>
+          <span nz-icon nzType="calendar" class="icon"></span>
+          Date de Naissance :
+        </label>
+        <nz-date-picker
+          [nzFormat]="dateFormat"
+          [(ngModel)]="newPatient.dateNaissance"
+          name="dateNaissance">
+        </nz-date-picker>
+      </div>
+
+      <div class="form-group">
+        <label nz-form-label>
+          <span nz-icon nzType="environment" class="icon"></span>
+          Lieu de Naissance:
+        </label>
+        <input nz-input placeholder="Entrer le lieu de naissance" [(ngModel)]="newPatient.lieuDeNaissance" name="lieuDeNaissance" />
+      </div>
+
+      <div class="form-group">
+        <label nz-form-label>
+          <span nz-icon nzType="user" class="icon"></span>
+          Sexe :
+        </label>
+        <nz-select [(ngModel)]="newPatient.sexe" name="sexe" class="wide-picker">
+          <nz-option nzValue="Homme" nzLabel="Homme"></nz-option>
+          <nz-option nzValue="Femme" nzLabel="Femme"></nz-option>
+        </nz-select>
+      </div>
+
+      <div class="form-group">
+        <label nz-form-label class="menu-item">
+          <span nz-icon nzType="safety" class="icon"></span>
+          Type de Pièce d'Identité :
+        </label>
+        <nz-select
+          [(ngModel)]="newPatient.typePieceIdentite"
+          name="typePieceIdentite"
+          placeholder="Sélectionnez un type de pièce d'identité"
+          class="wide-picker">
+          <nz-option nzValue="CIN" nzLabel="CIN"></nz-option>
+          <nz-option nzValue="Passeport" nzLabel="Passeport"></nz-option>
+          <nz-option nzValue="Carte de Séjour" nzLabel="Carte de Séjour"></nz-option>
+        </nz-select>
+
+      </div>
+
+
+      <div class="form-group">
+        <label nz-form-label>
+          <span nz-icon nzType="idcard" class="icon"></span>
+          Numéro de Pièce d'Identité :
+        </label>
+        <input nz-input placeholder="Entrer le numéro de pièce d'identité" [(ngModel)]="newPatient.numPieceIdentite" type="number" name="numPieceIdentite" />
+      </div>
+
+      <div class="form-group">
+        <label nz-form-label>
+          <span nz-icon nzType="home" class="icon"></span>
+          Adresse :
+        </label>
+        <input nz-input placeholder="Entrer l'adresse" [(ngModel)]="newPatient.adresse" name="adresse" />
+      </div>
+
+      <div class="form-group">
+        <label nz-form-label>
+          <span nz-icon nzType="phone" class="icon"></span>
+          Téléphone :
+        </label>
+        <input nz-input placeholder="Entrer votre numéro de téléphone" [(ngModel)]="newPatient.numTel" type="number" name="numTel" />
+      </div>
+
+      <div class="modal-footer">
+        <button nz-button nzType="default" (click)="handleCancel()">Annuler</button>
+        <button nz-button nzType="primary" (click)="handleOk()">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>

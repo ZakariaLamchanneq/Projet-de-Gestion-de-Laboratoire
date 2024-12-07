@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import { Utilisateur } from '../../models/utilisateur.model';
+import { Utilisateur } from '../../models/utilisateur/utilisateur.model';
 import {NzFilterTriggerComponent, NzTableComponent, NzThAddOnComponent} from 'ng-zorro-antd/table';
 import {NgForOf} from '@angular/common';
 import {ModalOptions, NzModalComponent, NzModalContentDirective, NzModalService} from 'ng-zorro-antd/modal';
@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 import {ModifierUtilisateurComponent} from './modifier-utilisateur/modifier-utilisateur.component';
 import {LaboratoireService} from '../../services/laboratoireService/laboratoire.service';
 import {catchError, map, Observable, of} from 'rxjs';
+import {LayoutComponent} from '../navigation/layout/layout.component';
 
 @Component({
   selector: 'app-utilisateur',
@@ -35,6 +36,7 @@ import {catchError, map, Observable, of} from 'rxjs';
     NzFilterTriggerComponent,
     NzThAddOnComponent,
     NzIconDirective,
+    LayoutComponent,
 
 
   ],
