@@ -1,7 +1,7 @@
 import {Component, OnInit, Output} from '@angular/core';
 import {NzInputDirective, NzInputGroupComponent} from 'ng-zorro-antd/input';
 import {FormsModule} from '@angular/forms';
-import {Utilisateur} from '../../../models/utilisateur.model';
+import {Utilisateur} from '../../../models/utilisateur/utilisateur.model';
 import {UtilisateurService} from '../../../services/utilisateurService/utilisateur.service';
 import {NzModalRef} from 'ng-zorro-antd/modal';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
@@ -10,7 +10,7 @@ import {NzMenuDirective, NzMenuItemComponent} from 'ng-zorro-antd/menu';
 import {NzIconDirective} from 'ng-zorro-antd/icon';
 import { Router } from '@angular/router';
 import {NzNotificationService} from 'ng-zorro-antd/notification';
-import {Laboratoire} from '../../../models/laboratoire.model';
+import {Laboratoire} from '../../../models/laboratoire/laboratoire.model';
 import {LaboratoireService} from '../../../services/laboratoireService/laboratoire.service';
 import {NgForOf} from '@angular/common';
 import {NzOptionComponent, NzSelectComponent} from 'ng-zorro-antd/select';

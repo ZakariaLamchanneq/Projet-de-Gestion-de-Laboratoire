@@ -1,6 +1,6 @@
 package org.labmaster.laboratoire.client;
 
-import org.labmaster.laboratoire.model.Utilisateur;
+import org.labmaster.laboratoire.dto.laboratoire.Utilisateur;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

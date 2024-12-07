@@ -1,12 +1,16 @@
 package org.labmaster.utilisateur.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.labmaster.utilisateur.model.LoginRequest;
+import org.labmaster.utilisateur.model.UserResponse;
 import org.labmaster.utilisateur.model.Utilisateur;
+import org.labmaster.utilisateur.repository.UtilisateurRepository;
 import org.labmaster.utilisateur.service.UtilisateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +21,8 @@ import java.util.Optional;
 public class UtilisateurController {
     @Autowired
     private final UtilisateurService utilisateurService;
+    @Autowired
+    private final UtilisateurRepository utilisateurRepository;
 
     @PostMapping("/add")
     public ResponseEntity<?> createUtilisateur(@RequestBody Utilisateur utilisateur) {
@@ -63,7 +69,20 @@ public class UtilisateurController {
         }
     }
 
+    @PostMapping("/verify")
+    public ResponseEntity<?> verifyUser(@RequestBody LoginRequest request) {
+        try {
+            Utilisateur utilisateur = utilisateurService.verifyCredentials(request.getEmail(), request.getPassword());
 
+            UserResponse response = new UserResponse();
+            response.setEmail(utilisateur.getEmail());
+            response.setRole(utilisateur.getRole());
+
+            return ResponseEntity.ok(response);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
+    }
 
 
 }

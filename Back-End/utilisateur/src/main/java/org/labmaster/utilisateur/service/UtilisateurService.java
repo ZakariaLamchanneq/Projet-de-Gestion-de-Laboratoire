@@ -53,4 +53,14 @@ public class UtilisateurService {
     public Optional<Utilisateur> getUtilisateurById(Long id) {
         return utilisateurRepository.findById(id);
     }
+
+    public Utilisateur verifyCredentials(String email, String password) {
+        Optional<Utilisateur> utilisateur = utilisateurRepository.findByEmail(email);
+
+        if (utilisateur.isPresent() && utilisateur.get().getPassword().equals(password)) {
+            return utilisateur.get();
+        }
+
+        throw new RuntimeException("Invalid credentials");
+    }
 }

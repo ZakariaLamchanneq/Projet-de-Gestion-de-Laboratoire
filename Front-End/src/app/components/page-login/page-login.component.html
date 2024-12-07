@@ -1,0 +1,32 @@
+<div class="login-container">
+  <div class="login-left">
+    <img src="assets/images/logo1.png" alt="Logo" class="logo">
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <h2>Welcome Back!</h2>
+
+      <label for="email">
+        <span nz-icon nzType="user" nzTheme="outline"></span>
+        Email
+      </label>
+      <input type="email" id="email" formControlName="email" placeholder="test@atheros.ai">
+
+      <label for="password">
+        <span nz-icon nzType="lock" nzTheme="outline"></span>
+        Password
+      </label>
+      <input type="password" id="password" formControlName="password" placeholder="******">
+
+      <button type="submit" class="btn btn-signin">Sign In</button>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </form>
+    <p>Don't have an account? <a href="#">Sign Up Now</a></p>
+  </div>
+  <div class="login-right">
+    <div class="login-info">
+      <h3>Discover LabMaster</h3>
+      <p>LabMaster is a comprehensive laboratory management application designed to streamline your workflows and enhance productivity. Trusted by professionals since 2010, it brings over a decade of expertise to your fingertips.</p>
+      <img src="assets/images/image1.jpg" alt="Dashboard example">
+    </div>
+  </div>
+</div>
