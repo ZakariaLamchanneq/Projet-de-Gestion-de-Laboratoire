@@ -125,22 +125,43 @@ jobs:
           cd Back-End/gateway
           sonar-scanner "-Dsonar.projectKey=labmaster.backend.gateway" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target/classes" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN"
 
+  patient:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-#  frontend:
-#    runs-on: self-hosted
-#    steps:
-#      - name: Checkout Code
-#        uses: actions/checkout@v2
-#
-#      - name: Set up Node
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: '22'
-#
-#      - name: Run SonarQube Scanner for Front-End
-#        shell: powershell
-#        run: |
-#          cd Front-End
-#          sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.token=$env:SONAR_TOKEN
-#
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
+      - name: Build Project with Maven
+        run: mvn clean package -DskipTests --file Back-End/patient/pom.xml
+
+      - name: Run SonarQube Scanner for Patient
+        shell: powershell
+        run: |
+          cd Back-End/patient
+          sonar-scanner "-Dsonar.projectKey=labmaster.backend.patient" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target/classes" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN"
+
+
+  frontend:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Run SonarQube Scanner for Front-End
+        shell: powershell
+        run: |
+          cd Front-End
+          sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.token=$env:SONAR_TOKEN
+
 
