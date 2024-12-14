@@ -11,12 +11,9 @@ import {NzInputModule} from 'ng-zorro-antd/input';
 import {NzUploadFile, NzUploadModule} from 'ng-zorro-antd/upload';
 import {NzSwitchModule} from 'ng-zorro-antd/switch';
 import {NzDatePickerModule} from 'ng-zorro-antd/date-picker';
-import {NzSelectModule} from 'ng-zorro-antd/select';
 import {NzButtonModule} from 'ng-zorro-antd/button';
 import {NzIconDirective} from 'ng-zorro-antd/icon';
 import {Laboratoire} from '../../../models/laboratoire/laboratoire.model';
-import {Adresse} from '../../../models/adresse/adresse.model';
-import {ContactLaboratoire} from '../../../models/contactLaboratoire/contact-laboratoire.model';
 import {catchError, switchMap} from 'rxjs/operators';
 import {of} from 'rxjs';
 
@@ -31,7 +28,6 @@ import {of} from 'rxjs';
     NzUploadModule,
     NzSwitchModule,
     NzDatePickerModule,
-    NzSelectModule,
     NzButtonModule,
     NzIconDirective,
   ],
@@ -45,11 +41,6 @@ export class AjouterLaboratoireComponent implements OnInit {
   index = 0;
   loading = false;
   logoPreview: string | ArrayBuffer | null = null;
-  laboratoires: Laboratoire[] = [];
-  adresses: Adresse[] = [];
-  contacts: ContactLaboratoire[] = [];
-  showNewAdresseForm = false;
-  showNewContactForm = false;
 
   constructor(
     private fb: FormBuilder,
@@ -65,9 +56,6 @@ export class AjouterLaboratoireComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadLaboratoires();
-    this.loadAdresses();
-    this.loadContacts();
   }
 
   onIndexChange(event: number): void {
@@ -86,7 +74,6 @@ export class AjouterLaboratoireComponent implements OnInit {
 
   createAdresseForm(): FormGroup {
     return this.fb.group({
-      existingAdresse: [null],
       numVoie: ['', Validators.required],
       nomVoie: ['', Validators.required],
       codePostal: ['', Validators.required],
@@ -97,7 +84,6 @@ export class AjouterLaboratoireComponent implements OnInit {
 
   createContactForm(): FormGroup {
     return this.fb.group({
-      existingContact: [null],
       numTel: ['', Validators.required],
       fax: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -128,40 +114,9 @@ export class AjouterLaboratoireComponent implements OnInit {
     }
   }
 
-  loadLaboratoires(): void {
-    this.laboratoireService.getLaboratoires().subscribe({
-      next: (data) => this.laboratoires = data,
-      error: () => this.message.error('Failed to load laboratoires.')
-    });
-  }
-
-  loadAdresses(): void {
-    this.adresseService.getAllAdresses().subscribe({
-      next: (data) => this.adresses = data,
-      error: () => this.message.error('Failed to load adresses.')
-    });
-  }
-
-  loadContacts(): void {
-    this.contactLaboratoireService.getAllContactsLaboratoire().subscribe({
-      next: (data) => this.contacts = data,
-      error: () => this.message.error('Failed to load contacts.')
-    });
-  }
-
-  toggleNewAdresseForm(): void {
-    this.showNewAdresseForm = !this.showNewAdresseForm;
-  }
-
-  toggleNewContactForm(): void {
-    this.showNewContactForm = !this.showNewContactForm;
-  }
-
-
   allFormsValid(): boolean {
     return this.laboratoireForm.valid && this.adresseForm.valid && this.contactForm.valid;
   }
-
 
   onSubmit(): void {
     if (this.allFormsValid()) {
@@ -225,4 +180,3 @@ export class AjouterLaboratoireComponent implements OnInit {
     }
   }
 }
-

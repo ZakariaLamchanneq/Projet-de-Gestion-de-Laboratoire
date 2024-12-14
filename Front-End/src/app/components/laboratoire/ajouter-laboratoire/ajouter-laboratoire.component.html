@@ -73,57 +73,48 @@
   <div *ngIf="index === 1" [formGroup]="adresseForm">
     <!-- Address Add Form -->
     <div class="form-group">
-      <label for="existingAdresse">Select Address:</label>
-      <nz-select id="existingAdresse" formControlName="existingAdresse" nzShowSearch nzPlaceHolder="Select Address" (ngModelChange)="onAdresseChange($event)">
-        <nz-option *ngFor="let adresse of adresses" [nzValue]="adresse.id" [nzLabel]="adresse.nomVoie"></nz-option>
-      </nz-select>
+      <label for="numVoie">Street Number:</label>
+      <nz-input-group>
+        <input nz-input id="numVoie" formControlName="numVoie" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['numVoie'].invalid && adresseForm.controls['numVoie'].touched" class="error-message">
+        Street Number is required.
+      </div>
     </div>
-    <button nz-button nzType="default" (click)="toggleNewAdresseForm()">Create New Address</button>
-    <div *ngIf="showNewAdresseForm">
-      <div class="form-group">
-        <label for="numVoie">Street Number:</label>
-        <nz-input-group>
-          <input nz-input id="numVoie" formControlName="numVoie" />
-        </nz-input-group>
-        <div *ngIf="adresseForm.controls['numVoie'].invalid && adresseForm.controls['numVoie'].touched" class="error-message">
-          Street Number is required.
-        </div>
+    <div class="form-group">
+      <label for="nomVoie">Street Name:</label>
+      <nz-input-group>
+        <input nz-input id="nomVoie" formControlName="nomVoie" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['nomVoie'].invalid && adresseForm.controls['nomVoie'].touched" class="error-message">
+        Street Name is required.
       </div>
-      <div class="form-group">
-        <label for="nomVoie">Street Name:</label>
-        <nz-input-group>
-          <input nz-input id="nomVoie" formControlName="nomVoie" />
-        </nz-input-group>
-        <div *ngIf="adresseForm.controls['nomVoie'].invalid && adresseForm.controls['nomVoie'].touched" class="error-message">
-          Street Name is required.
-        </div>
+    </div>
+    <div class="form-group">
+      <label for="codePostal">Postal Code:</label>
+      <nz-input-group>
+        <input nz-input id="codePostal" formControlName="codePostal" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['codePostal'].invalid && adresseForm.controls['codePostal'].touched" class="error-message">
+        Postal Code is required.
       </div>
-      <div class="form-group">
-        <label for="codePostal">Postal Code:</label>
-        <nz-input-group>
-          <input nz-input id="codePostal" formControlName="codePostal" />
-        </nz-input-group>
-        <div *ngIf="adresseForm.controls['codePostal'].invalid && adresseForm.controls['codePostal'].touched" class="error-message">
-          Postal Code is required.
-        </div>
+    </div>
+    <div class="form-group">
+      <label for="ville">City:</label>
+      <nz-input-group>
+        <input nz-input id="ville" formControlName="ville" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['ville'].invalid && adresseForm.controls['ville'].touched" class="error-message">
+        City is required.
       </div>
-      <div class="form-group">
-        <label for="ville">City:</label>
-        <nz-input-group>
-          <input nz-input id="ville" formControlName="ville" />
-        </nz-input-group>
-        <div *ngIf="adresseForm.controls['ville'].invalid && adresseForm.controls['ville'].touched" class="error-message">
-          City is required.
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="commune">Commune:</label>
-        <nz-input-group>
-          <input nz-input id="commune" formControlName="commune" />
-        </nz-input-group>
-        <div *ngIf="adresseForm.controls['commune'].invalid && adresseForm.controls['commune'].touched" class="error-message">
-          Commune is required.
-        </div>
+    </div>
+    <div class="form-group">
+      <label for="commune">Commune:</label>
+      <nz-input-group>
+        <input nz-input id="commune" formControlName="commune" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['commune'].invalid && adresseForm.controls['commune'].touched" class="error-message">
+        Commune is required.
       </div>
     </div>
   </div>
@@ -131,39 +122,30 @@
   <div *ngIf="index === 2" [formGroup]="contactForm">
     <!-- Contact Add Form -->
     <div class="form-group">
-      <label for="existingContact">Select Contact:</label>
-      <nz-select id="existingContact" formControlName="existingContact" nzShowSearch nzPlaceHolder="Select Contact" (ngModelChange)="onContactChange($event)">
-        <nz-option *ngFor="let contact of contacts" [nzValue]="contact.id" [nzLabel]="contact.email"></nz-option>
-      </nz-select>
+      <label for="numTel">Phone:</label>
+      <nz-input-group>
+        <input nz-input id="numTel" formControlName="numTel" />
+      </nz-input-group>
+      <div *ngIf="contactForm.controls['numTel'].invalid && contactForm.controls['numTel'].touched" class="error-message">
+        Phone is required.
+      </div>
     </div>
-    <button nz-button nzType="default" (click)="toggleNewContactForm()">Create New Contact</button>
-    <div *ngIf="showNewContactForm">
-      <div class="form-group">
-        <label for="numTel">Phone:</label>
-        <nz-input-group>
-          <input nz-input id="numTel" formControlName="numTel" />
-        </nz-input-group>
-        <div *ngIf="contactForm.controls['numTel'].invalid && contactForm.controls['numTel'].touched" class="error-message">
-          Phone is required.
-        </div>
+    <div class="form-group">
+      <label for="fax">Fax:</label>
+      <nz-input-group>
+        <input nz-input id="fax" formControlName="fax" />
+      </nz-input-group>
+      <div *ngIf="contactForm.controls['fax'].invalid && contactForm.controls['fax'].touched" class="error-message">
+        Fax is required.
       </div>
-      <div class="form-group">
-        <label for="fax">Fax:</label>
-        <nz-input-group>
-          <input nz-input id="fax" formControlName="fax" />
-        </nz-input-group>
-        <div *ngIf="contactForm.controls['fax'].invalid && contactForm.controls['fax'].touched" class="error-message">
-          Fax is required.
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <nz-input-group>
-          <input nz-input id="email" formControlName="email" />
-        </nz-input-group>
-        <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="error-message">
-          Valid email is required.
-        </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <nz-input-group>
+        <input nz-input id="email" formControlName="email" />
+      </nz-input-group>
+      <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="error-message">
+        Valid email is required.
       </div>
     </div>
   </div>
