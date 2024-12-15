@@ -94,7 +94,6 @@ export class ModifierLaboratoireComponent implements OnInit {
 
   createContactForm(): FormGroup {
     return this.fb.group({
-      id: ['', Validators.required],
       numTel: ['', Validators.required],
       fax: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -188,8 +187,7 @@ export class ModifierLaboratoireComponent implements OnInit {
 
         this.laboratoireService.updateLaboratoire(updatedLaboratoire.id, updatedLaboratoire).pipe(
           switchMap((laboratoire) => {
-            const adresseData = { id: this.adresseForm.value.id, ...this.adresseForm.value, fkIdLaboratoire: laboratoire.id };
-            console.log('Updating address with data:', adresseData); // Log the address data
+            const adresseData = { ...this.adresseForm.value};
             return this.adresseService.updateAdresse(adresseData.id, adresseData).pipe(
               switchMap((adresse) => {
                 const contactData = {
@@ -197,8 +195,6 @@ export class ModifierLaboratoireComponent implements OnInit {
                   fkIdLaboratoire: laboratoire.id,
                   fkIdAdresse: adresse.id,
                 };
-                console.log('Updating contact with data:', contactData); // Log the contact data
-                console.log(contactData); // Log the contact ID
                 return this.contactLaboratoireService.updateContactLaboratoire(contactData.contactId, contactData);
               }),
               catchError((error) => {

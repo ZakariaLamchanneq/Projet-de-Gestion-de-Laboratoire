@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import patient.patient.dto.PatientDTO;
 import patient.patient.service.PatientService;
+import patient.patient.service.KafkaProducerService;
 
 import java.util.List;
 @RestController
@@ -14,12 +15,23 @@ import java.util.List;
 
 public class PatientController {
 
+    private final KafkaProducerService kafkaProducerService;
+
     @Autowired
     private PatientService patientService;
+
+    public PatientController(KafkaProducerService kafkaProducerService) {
+        this.kafkaProducerService = kafkaProducerService;
+    }
 
     @PostMapping("/add")
     public ResponseEntity<PatientDTO> createPatient (@RequestBody PatientDTO patientDto){
         PatientDTO createdPatient = patientService.createPatient(patientDto);
+
+        // Send Kafka messages for email and SMS
+        kafkaProducerService.sendEmailMessage(createdPatient.getEmail());
+        kafkaProducerService.sendSmsMessage(String.valueOf(createdPatient.getNumTel()));
+
         return new ResponseEntity<>( createdPatient,HttpStatus.OK);
     }
 
