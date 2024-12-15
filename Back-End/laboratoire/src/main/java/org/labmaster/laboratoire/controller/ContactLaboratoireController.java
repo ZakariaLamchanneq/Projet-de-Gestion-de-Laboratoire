@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/contacts-laboratoires")
 @RequiredArgsConstructor
@@ -47,6 +49,18 @@ public class ContactLaboratoireController {
             System.out.println("Error fetching contactLaboratoire with ID " + id + ": " + e.getMessage());
             e.printStackTrace();
             return new ResponseEntity<>("Failed to retrieve contactLaboratoire", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/find-all/{laboratoireId}")
+    public ResponseEntity<?> getContactsByLaboratoireId(@PathVariable Long laboratoireId) {
+        try {
+            List<ContactLaboratoireDTO> contacts = contactLaboratoireService.getContactsLaboratoireById(laboratoireId);
+            return new ResponseEntity<>(contacts, HttpStatus.OK);
+        } catch (Exception e) {
+            System.out.println("Error fetching contacts for laboratoire with ID " + laboratoireId + ": " + e.getMessage());
+            e.printStackTrace();
+            return new ResponseEntity<>("Failed to retrieve contacts", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

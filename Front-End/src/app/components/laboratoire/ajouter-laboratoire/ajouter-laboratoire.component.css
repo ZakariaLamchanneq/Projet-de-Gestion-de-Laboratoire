@@ -1,10 +1,11 @@
 .laboratoire-form {
-  max-width: 600px; /* Set a max width for the form */
+  max-width: 800px; /* Set a max width for the form */
   margin: 0 auto; /* Center the form */
   padding: 8px;
 }
 
 .form-group {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
