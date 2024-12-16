@@ -1,9 +1,11 @@
 <div class="login-container">
-  <div class="login-left">
+  <div class="login-left" >
     <img src="assets/images/logo1.png" alt="Logo" class="logo">
 
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <h2>Welcome Back!</h2>
+<!--    <form [formGroup]="loginForm" (ngSubmit)="login()">-->
+    <form *ngIf="!isPasswordResetMode; else resetForm" [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <h2>Welcome Back!</h2>
 
       <label for="email">
         <span nz-icon nzType="user" nzTheme="outline"></span>
@@ -20,7 +22,35 @@
       <button type="submit" class="btn btn-signin">Sign In</button>
       <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
     </form>
-    <p>Don't have an account? <a href="#">Sign Up Now</a></p>
+
+
+    <!-- Password Reset Form -->
+    <ng-template #resetForm>
+      <form [formGroup]="resetFormGroup" (ngSubmit)="requestReset()">
+
+        <h2>Reset Password</h2>
+
+        <label for="reset-email">
+          <span nz-icon nzType="mail" nzTheme="outline"></span>
+          Email
+        </label>
+        <input type="email" id="reset-email" formControlName="email" placeholder="Enter your email">
+
+        <button type="submit" class="btn btn-signin">Send Reset Link</button>
+
+        <p *ngIf="resetMessage" class="success">{{ resetMessage }}</p>
+        <p *ngIf="resetError" class="error">{{ resetError }}</p>
+        <p *ngIf="isEmailSent">Check your email for the reset link.</p> <!-- Success message -->
+
+        <p><a href="#" (click)="switchToLogin()">Back to Login</a></p>
+      </form>
+    </ng-template>
+
+
+    <p *ngIf="!isPasswordResetMode">
+      Did you forget your password? <a href="#" (click)="switchToReset(); $event.preventDefault();">Reset Now</a>
+    </p>
+
   </div>
   <div class="login-right">
     <div class="login-info">
@@ -29,4 +59,5 @@
       <img src="assets/images/image1.jpg" alt="Dashboard example">
     </div>
   </div>
+
 </div>

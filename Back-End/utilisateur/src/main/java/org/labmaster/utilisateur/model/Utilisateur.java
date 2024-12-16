@@ -24,9 +24,7 @@ public class Utilisateur {
     private Long laboratoireId;
     private String password;
 
-//    @ManyToOne
-//    @JoinColumn(name = "laboratoire_id")
-//    private Laboratoire laboratoire;
+
 
     public Utilisateur() {
     }

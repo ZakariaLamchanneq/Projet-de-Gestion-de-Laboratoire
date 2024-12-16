@@ -2,17 +2,21 @@ package org.labmaster.utilisateur.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.labmaster.utilisateur.model.LoginRequest;
+import org.labmaster.utilisateur.model.PasswordResetRequest;
 import org.labmaster.utilisateur.model.UserResponse;
 import org.labmaster.utilisateur.model.Utilisateur;
 import org.labmaster.utilisateur.repository.UtilisateurRepository;
+import org.labmaster.utilisateur.service.EmailService;
+import org.labmaster.utilisateur.service.PasswordResetService;
 import org.labmaster.utilisateur.service.UtilisateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -23,6 +27,57 @@ public class UtilisateurController {
     private final UtilisateurService utilisateurService;
     @Autowired
     private final UtilisateurRepository utilisateurRepository;
+
+
+    @Autowired
+    private PasswordResetService resetService;
+
+    @Autowired
+    private EmailService emailService;
+
+    @PostMapping("/reset")
+    public ResponseEntity<?> resetPassword(@RequestBody PasswordResetRequest resetRequest) {
+        Optional<String> emailOpt = resetService.validateToken(resetRequest.getToken());
+
+        if (emailOpt.isPresent()) {
+            String email = emailOpt.get();
+
+            // Call the service to reset the password for the user with this email
+            boolean passwordReset = utilisateurService.resetPassword(email, resetRequest.getNewPassword());
+
+            if (passwordReset) {
+                return ResponseEntity.ok(Collections.singletonMap("message", "Password successfully reset."));
+            } else {
+                return ResponseEntity.badRequest().body(Collections.singletonMap("error", "Failed to reset password."));
+            }
+        } else {
+            return ResponseEntity.badRequest().body(Collections.singletonMap("error", "Invalid or expired token."));
+        }
+    }
+
+
+
+
+    @PostMapping("/request")
+    public ResponseEntity<?> requestReset(@RequestBody Map<String, String> requestBody) {
+        String email = requestBody.get("email");
+
+        if (email == null || email.isEmpty()) {
+            return ResponseEntity.badRequest().body(Collections.singletonMap("error", "Email is required.")); // JSON format
+        }
+
+        String token = resetService.createResetToken(email);
+        Boolean emailSent = emailService.sendResetEmail(email, token);
+
+        if (emailSent) {
+            return ResponseEntity.ok(Collections.singletonMap("message", "Reset link sent to email.")); // Return as JSON object
+        } else {
+            return ResponseEntity.badRequest().body(Collections.singletonMap("error", "Email not found in the database.")); // Return as JSON object
+        }
+    }
+
+
+
 
     @PostMapping("/add")
     public ResponseEntity<?> createUtilisateur(@RequestBody Utilisateur utilisateur) {
@@ -83,6 +138,7 @@ public class UtilisateurController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
+
 
 
 }

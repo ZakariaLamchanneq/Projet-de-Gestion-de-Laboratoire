@@ -24,6 +24,8 @@ public class WebSecurityConfig {
                 .authorizeExchange(exchange -> exchange
                         .pathMatchers("/auth/login").permitAll() // Allow login for everyone
                         .pathMatchers("/api/utilisateurs/verify").permitAll() // Allow verification
+                        .pathMatchers("/api/utilisateurs/request").permitAll()
+                        .pathMatchers("/api/utilisateurs/reset").permitAll()
                         .pathMatchers("/api/utilisateurs/**").hasRole("ADMINISTRATEUR") // Only ADMIN role
                         .pathMatchers("/api/patients/**").hasAnyRole("ADMINISTRATEUR", "TECHNICIEN") // Access for ADMIN or TECHNICIAN
                         .pathMatchers("/api/laboratoires/**").hasRole("ADMINISTRATEUR") // Access for ADMIN only
@@ -32,6 +34,7 @@ public class WebSecurityConfig {
                 .addFilterAt(corsWebFilter(), SecurityWebFiltersOrder.CORS) // Ensure CORS is processed
                 .addFilterAt(jwtAuthenticationFilter(), SecurityWebFiltersOrder.AUTHENTICATION) // Add JWT filter
                 .build();
+
     }
 
     @Bean
