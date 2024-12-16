@@ -46,6 +46,7 @@
           <span>Patients</span>
         </a>
       </li>
+
     </ul>
 
     <!--    Gestion Utilisateur-->
@@ -54,11 +55,33 @@
   </nz-sider>
   <nz-layout>
     <nz-header>
+
+<!--      <div class="app-header">-->
+<!--        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">-->
+<!--          <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>-->
+<!--        </span>-->
+<!--        <nz-avatar nzIcon="user" ></nz-avatar>-->
+
+<!--      </div>-->
+
       <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
-        </span>
+  <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+    <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+  </span>
+        <a nz-dropdown [nzDropdownMenu]="menu" [nzClickHide]="false" [(nzVisible)]="visible">
+          <nz-avatar nzIcon="user" nzSize="large"></nz-avatar>
+        </a>
+
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item>Profile</li>
+            <li nz-menu-item>Settings</li>
+            <li nz-menu-item (click)="logout()">Logout</li>
+          </ul>
+        </nz-dropdown-menu>
       </div>
+
+
     </nz-header>
     <nz-content>
       <div class="inner-content">

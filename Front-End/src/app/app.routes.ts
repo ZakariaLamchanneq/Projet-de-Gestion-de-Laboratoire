@@ -7,6 +7,7 @@ import {LayoutComponent} from './components/navigation/layout/layout.component';
 import {AdresseComponent} from './components/adresse/adresse.component';
 import {ContactLaboratoireComponent} from './components/contact-laboratoire/contact-laboratoire.component';
 import {AuthGuard} from './services/AuthService/AuthGuard';
+import {ResetPasswordComponent} from './components/reset-password/reset-password.component';
 
 export const routes: Routes = [
   // Redirect the root to /home
@@ -26,6 +27,7 @@ export const routes: Routes = [
       { path: 'contacts-laboratoire', component: ContactLaboratoireComponent },
     ]
   },
+  { path: 'reset-password', component: ResetPasswordComponent },
 
   { path: '**', redirectTo: '' },
 ];

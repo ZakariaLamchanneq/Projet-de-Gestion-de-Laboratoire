@@ -3,6 +3,7 @@ package org.labmaster.utilisateur.service;
 import lombok.RequiredArgsConstructor;
 import org.labmaster.utilisateur.model.Utilisateur;
 import org.labmaster.utilisateur.repository.UtilisateurRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +12,9 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class UtilisateurService {
+
     private final UtilisateurRepository utilisateurRepository;
+
 
     public Utilisateur createUtilisateur(Utilisateur utilisateur) {
         return utilisateurRepository.save(utilisateur);
@@ -63,4 +66,19 @@ public class UtilisateurService {
 
         throw new RuntimeException("Invalid credentials");
     }
+
+    public boolean resetPassword(String email, String newPassword) {
+        Optional<Utilisateur> userOpt = utilisateurRepository.findByEmail(email);
+
+        if (userOpt.isPresent()) {
+            Utilisateur user = userOpt.get();
+            // Set the new password (you should hash it before saving)
+            user.setPassword(newPassword);  // You should hash this password using a secure hashing function
+            utilisateurRepository.save(user);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

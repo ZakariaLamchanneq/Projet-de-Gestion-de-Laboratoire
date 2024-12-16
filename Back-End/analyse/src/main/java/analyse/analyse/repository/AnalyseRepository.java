@@ -1,4 +1,10 @@
 package analyse.analyse.repository;
 
-public interface AnalyseRepository {
+import analyse.analyse.model.Analyse;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AnalyseRepository extends JpaRepository<Analyse,Long> {
+
+
+
 }

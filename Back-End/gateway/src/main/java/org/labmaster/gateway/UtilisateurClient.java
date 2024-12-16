@@ -10,4 +10,5 @@ public interface UtilisateurClient {
 
     @PostMapping("/verify")
     ResponseEntity<UserResponse> verifyUser(@RequestBody LoginRequest request);
+
 }

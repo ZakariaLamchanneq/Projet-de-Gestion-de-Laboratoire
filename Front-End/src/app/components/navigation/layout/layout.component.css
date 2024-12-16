@@ -17,8 +17,8 @@
 }
 
 .header-trigger {
-  height: 64px;
-  padding: 20px 24px;
+  /*height: 64px;*/
+  /*padding: 20px 24px;*/
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s, padding 0s;
@@ -34,13 +34,44 @@ nz-header {
   z-index: 2;
 }
 
+/*.app-header {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: space-between; !* Espace entre les éléments *!*/
+/*  height: 64px;*/
+/*  padding: 0 16px; !* Espacement interne *!*/
+/*  background: #fff;*/
+/*  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);*/
+/*}*/
+
+
+/*nz-avatar {*/
+/*  background-color: #87d068;*/
+/*  cursor: pointer;*/
+/*}*/
+
+
 .app-header {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 64px;
-  padding: 0;
+  padding: 0 16px;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 }
+
+nz-avatar {
+  background-color: #87d068;
+  cursor: pointer;
+}
+
+a[nz-dropdown] {
+  display: inline-block;
+}
+
+
+
 
 nz-content {
   margin: 24px;

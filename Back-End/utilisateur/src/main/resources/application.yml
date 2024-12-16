@@ -3,3 +3,15 @@ spring:
     name: utilisateur-microservice
   config:
     import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "zakarialam19@gmail.com"
+    password: "nfof mduz vkqj ibqp"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

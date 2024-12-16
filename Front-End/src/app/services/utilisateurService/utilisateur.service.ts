@@ -11,6 +11,17 @@ export class UtilisateurService {
 
   constructor(private http: HttpClient) { }
 
+
+  resetPasswordNew(token: string, newPassword: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/reset`, { token, newPassword });
+  }
+
+
+  resetPassword(email: string): Observable<any> {
+    return this.http.post(this.apiUrl + '/request', { email: email });
+  }
+
+
   getUtilisateurById(utilisateurId: number):Observable<Utilisateur>{
     return this.http.get<Utilisateur>(`${this.apiUrl}/getUser/${utilisateurId}`);
   }
