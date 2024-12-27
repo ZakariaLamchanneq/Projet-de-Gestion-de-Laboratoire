@@ -1,4 +1,4 @@
-package org.example.messagingservice.model;
+package patient.patient.model;
 
 import lombok.Data;
 
@@ -8,4 +8,9 @@ import java.io.Serializable;
 public class SmsEvent implements Serializable {
     private String phoneNumber;
     private String message;
+
+    public SmsEvent(String phoneNumber, String message) {
+        this.phoneNumber = phoneNumber;
+        this.message = message;
+    }
 }

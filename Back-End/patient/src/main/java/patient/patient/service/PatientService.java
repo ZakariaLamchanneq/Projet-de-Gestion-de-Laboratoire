@@ -1,10 +1,13 @@
 package patient.patient.service;
 
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import patient.patient.dto.PatientDTO;
+import patient.patient.model.EmailEvent;
 import patient.patient.model.Patient;
+import patient.patient.model.SmsEvent;
 import patient.patient.repository.PatientRepository;
 
 import java.util.List;
@@ -16,9 +19,25 @@ public class PatientService {
     @Autowired
     private PatientRepository patientRepository;
 
+    @Autowired
+    private KafkaProducerService kafkaProducerService;
+
+
+    @Transactional
     public PatientDTO createPatient (PatientDTO patientDto){
         Patient patient = convertToEntity(patientDto);
         patientRepository.save(patient);
+        // Send Kafka messages for email and SMS
+        EmailEvent emailEvent = new EmailEvent(patient.getEmail(), "Welcome!", "Your account has been successfully created.");
+        SmsEvent smsEvent = new SmsEvent(String.valueOf(patient.getNumTel()),"Welcome! Your account has been successfully created.");
+
+        try {
+            kafkaProducerService.sendEmail(emailEvent.getRecipient(), emailEvent.getSubject(), emailEvent.getBody());
+            kafkaProducerService.sendSms(smsEvent.getPhoneNumber(), smsEvent.getMessage());
+            System.out.println("Kafka messages sent successfully for patient: " + patient.getEmail());
+        } catch (Exception e) {
+            System.err.println("Failed to send Kafka messages for patient: " + patient.getEmail());
+        }
         return convertToDTO(patient);
     }
 

@@ -58,10 +58,9 @@
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
 
-		<!-- Spring Kafka Dependency -->
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
 		<!-- Feign Client Dependency -->

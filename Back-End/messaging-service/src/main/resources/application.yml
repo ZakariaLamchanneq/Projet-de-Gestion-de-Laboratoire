@@ -2,9 +2,9 @@ spring:
   application:
     name : messaging-service
   kafka:
-    bootstrap-servers: localhost:9092 # Replace with Kafka broker address
+    bootstrap-servers: localhost:9092
     consumer:
-      group-id: email-group
+      group-id: messagerie-group
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -19,11 +19,9 @@ spring:
           auth: true
           starttls:
             enable: true
-
 twilio:
   account-sid: AC957845433950f2ef1ea4efd89f5f5e47
   auth-token: 1384406e93856e1e6cb6b627604fb92a
   phone-number: +12184177434
-
 server:
   port: 9876
