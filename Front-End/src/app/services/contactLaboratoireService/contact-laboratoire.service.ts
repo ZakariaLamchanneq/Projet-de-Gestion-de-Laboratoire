@@ -15,6 +15,10 @@ export class ContactLaboratoireService {
     return this.http.get<ContactLaboratoire>(`${this.apiUrl}/find/${id}`);
   }
 
+  getContactsByLaboratoireId(laboratoireId: number): Observable<ContactLaboratoire[]> {
+    return this.http.get<ContactLaboratoire[]>(`${this.apiUrl}/find-all/${laboratoireId}`);
+  }
+
   getAllContactsLaboratoire(): Observable<ContactLaboratoire[]> {
     return this.http.get<ContactLaboratoire[]>(`${this.apiUrl}/all`);
   }
