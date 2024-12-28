@@ -1,21 +1,24 @@
 name: SonarQube Analysis
 
-
 on:
-  push:
-    branches:
-      - main
-      - sonarqube
-  pull_request:
-
-env:
-  SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
+  workflow_run:
+    workflows: ["Main CI Pipeline"]
+    types:
+      - completed
 
 jobs:
-
-  config_server:
+  backend-analysis:
+    name: Backend SonarQube Analysis
     runs-on: self-hosted
+    strategy:
+      matrix:
+        service:
+          - config-server
+          - discovery
+          - laboratoire
+          - utilisateur
+          - gateway
+          - patient
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -26,142 +29,40 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Build Project with Maven
-        run: mvn clean package -DskipTests --file Back-End/config-server/pom.xml
+      - name: Build Service
+        run: mvn clean package -DskipTests --file Back-End/${{ matrix.service }}/pom.xml
 
-      - name: Run SonarQube Scanner for Config Server
-        shell: powershell
+      - name: Run SonarQube Analysis
+        shell: bash
         run: |
-          cd Back-End/config-server
-          sonar-scanner "-Dsonar.projectKey=labmaster.backend.configserver" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target/classes" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN"
-          
-          # For Testing purposes
-#          echo "SonarQube Host URL: $env:SONAR_HOST_URL"
-#          echo "SonarQube Token: $env:SONAR_TOKEN"
+          cd Back-End/${{ matrix.service }}
+          sonar-scanner -Dsonar.projectKey=labmaster.backend.${{ matrix.service }} \
+            -Dsonar.sources=src/main/java \
+            -Dsonar.java.binaries=target/classes \
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
-  discovery:
-    runs-on: self-hosted
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-
-      - name: Build Project with Maven
-        run: mvn clean package -DskipTests --file Back-End/discovery/pom.xml
-
-      - name: Run SonarQube Scanner For Discovery Server
-        shell: powershell
-        run: |
-          cd Back-End/discovery
-          sonar-scanner "-Dsonar.projectKey=labmaster.backend.discovery" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target/classes" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN"
-
-
-  laboratoire:
+  frontend-analysis:
+    name: Frontend SonarQube Analysis
     runs-on: self-hosted
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-
-      - name: Build Project with Maven
-        run: mvn clean package -DskipTests --file Back-End/laboratoire/pom.xml
-
-      - name: Run SonarQube Scanner for Laboratoire
-        shell: powershell
-        run: |
-          cd Back-End/laboratoire
-          sonar-scanner "-Dsonar.projectKey=labmaster.backend.laboratoire" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target/classes" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN" 
-
-
-  utilisateur:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-
-      - name: Build Project with Maven
-        run: mvn clean package -DskipTests --file Back-End/utilisateur/pom.xml
-
-      - name: Run SonarQube Scanner for Utilisateur
-        shell: powershell
-        run: |
-          cd Back-End/utilisateur
-          sonar-scanner "-Dsonar.projectKey=labmaster.backend.utilisateur" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target/classes" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN"
-
-  gateway:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-
-      - name: Build Project with Maven
-        run: mvn clean package -DskipTests --file Back-End/gateway/pom.xml
-
-      - name: Run SonarQube Scanner for Gateway
-        shell: powershell
-        run: |
-          cd Back-End/gateway
-          sonar-scanner "-Dsonar.projectKey=labmaster.backend.gateway" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target/classes" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN"
-
-  patient:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-
-      - name: Build Project with Maven
-        run: mvn clean package -DskipTests --file Back-End/patient/pom.xml
-
-      - name: Run SonarQube Scanner for Patient
-        shell: powershell
-        run: |
-          cd Back-End/patient
-          sonar-scanner "-Dsonar.projectKey=labmaster.backend.patient" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target/classes" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN"
-
-
-  frontend:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Set up Node
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '22'
 
-      - name: Run SonarQube Scanner for Front-End
-        shell: powershell
+      - name: Install Dependencies
+        run: npm install --prefix Front-End
+
+      - name: Run SonarQube Analysis
+        shell: bash
         run: |
           cd Front-End
-          sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.token=$env:SONAR_TOKEN
-
-
+          sonar-scanner -Dsonar.projectKey=labmaster.frontend \
+            -Dsonar.sources=src \
+            -Dsonar.typescript.tsconfigPath=tsconfig.json \
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
