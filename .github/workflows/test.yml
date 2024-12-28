@@ -1,0 +1,79 @@
+name: Main CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - testing
+  pull_request:
+
+env:
+  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+  DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+jobs:
+  backend:
+    name: Backend Testing
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service:
+          - config-server
+          - discovery
+          - laboratoire
+          - utilisateur
+          - gateway
+          - patient
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
+      - name: Run Tests
+        run: mvn clean test -f Back-End/${{ matrix.service }}/pom.xml
+
+      - name: Build Service
+        run: mvn clean package -DskipTests --file Back-End/${{ matrix.service }}/pom.xml
+
+  frontend:
+    name: Frontend Testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install Dependencies
+        run: npm install --prefix Front-End
+
+      - name: Run Tests
+        run: npm test --prefix Front-End
+
+      - name: Build Frontend
+        run: npm run build --prefix Front-End
+
+  docker:
+    name: Build and Push Docker Images
+    runs-on: ubuntu-latest
+    needs: [backend, frontend]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        run: echo ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+
+      - name: Build and Push Docker Images
+        run: |
+          docker-compose -f docker-compose.yml build
+          docker-compose -f docker-compose.yml push
