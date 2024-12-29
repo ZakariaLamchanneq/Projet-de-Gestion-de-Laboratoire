@@ -1,74 +1,156 @@
 <form [formGroup]="laboratoireForm" (ngSubmit)="onSubmit()" class="laboratoire-form">
-  <div class="form-group">
-    <label for="nom">Name:</label>
-    <nz-input-group>
-      <input
-        nz-input
-        id="nom"
-        formControlName="nom"
-        [ngClass]="{ 'input-error': laboratoireForm.controls['nom'].invalid && laboratoireForm.controls['nom'].touched }"
-      />
-      <div *ngIf="laboratoireForm.controls['nom'].invalid && laboratoireForm.controls['nom'].touched" class="error-message">
-        Name is required.
+  <nz-steps nzType="navigation" [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
+    <nz-step nzTitle="Step 1" nzStatus="Laboratoire" nzIcon="experiment"></nz-step>
+    <nz-step nzTitle="Step 2" nzStatus="Address" nzIcon="home"></nz-step>
+    <nz-step nzTitle="Step 3" nzStatus="Contact" nzIcon="phone"></nz-step>
+  </nz-steps>
+
+  <div *ngIf="index === 0">
+    <!-- Laboratory Add Form -->
+    <div class="form-group">
+      <label for="nom">Name:</label>
+      <nz-input-group>
+        <input
+          nz-input
+          id="nom"
+          formControlName="nom"
+          [ngClass]="{ 'input-error': laboratoireForm.controls['nom'].invalid && laboratoireForm.controls['nom'].touched }"
+        />
+        <div *ngIf="laboratoireForm.controls['nom'].invalid && laboratoireForm.controls['nom'].touched" class="error-message">
+          Name is required.
+        </div>
+      </nz-input-group>
+    </div>
+    <div class="form-group">
+      <label for="logo">Logo: </label>
+      <nz-upload
+        [nzShowUploadList]="false"
+        [nzBeforeUpload]="beforeUpload"
+        (nzChange)="handleUploadChange($event)"
+        [nzAccept]="'image/*'"
+      >
+        <button nz-button>
+          <span nz-icon nzType="upload"></span> Click to Upload
+        </button>
+      </nz-upload>
+      <div *ngIf="logoPreview" class="logo-preview">
+        <img [src]="logoPreview" alt="Laboratory Logo" style="width: 100px; height: auto;" />
       </div>
-    </nz-input-group>
-  </div>
-
-  <div class="form-group">
-    <label for="logo">Logo: </label>
-    <nz-upload
-      [nzShowUploadList]="false"
-      [nzBeforeUpload]="beforeUpload"
-      (nzChange)="handleUploadChange($event)"
-      [nzAccept]="'image/*'"
-    >
-      <button nz-button>
-        <span nz-icon nzType="upload"></span> Click to Upload
-      </button>
-    </nz-upload>
-    <div *ngIf="logoPreview" class="logo-preview">
-      <img [src]="logoPreview" alt="Laboratory Logo" style="width: 100px; height: auto;" />
-    </div>
-    <div
-      *ngIf="laboratoireForm.controls['logo'].invalid && laboratoireForm.controls['logo'].touched"
-      class="error-message"
-    >
-      Logo is required.
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <label for="nrc">NRC:</label>
-    <nz-input-group>
-      <input
-        nz-input
-        id="nrc"
-        formControlName="nrc"
-        [ngClass]="{ 'input-error': laboratoireForm.controls['nrc'].invalid && laboratoireForm.controls['nrc'].touched }"
-      />
-      <div *ngIf="laboratoireForm.controls['nrc'].invalid && laboratoireForm.controls['nrc'].touched" class="error-message">
-        NRC is required.
+      <div
+        *ngIf="laboratoireForm.controls['logo'].invalid && laboratoireForm.controls['logo'].touched"
+        class="error-message"
+      >
+        Logo is required.
       </div>
-    </nz-input-group>
-  </div>
-
-  <div class="form-group">
-    <label for="active">Active: </label>
-    <nz-switch formControlName="active"></nz-switch>
-  </div>
-
-  <div class="form-group">
-    <label for="dateActivation">Activation Date: </label>
-    <nz-date-picker formControlName="dateActivation"
-                    id="dateActivation"
-                    [nzFormat]="'dd-MM-yyyy'"></nz-date-picker>
-    <div *ngIf="laboratoireForm.controls['dateActivation'].invalid && laboratoireForm.controls['dateActivation'].touched" class="error-message">
-      Activation Date is required.
+    </div>
+    <div class="form-group">
+      <label for="nrc">NRC:</label>
+      <nz-input-group>
+        <input
+          nz-input
+          id="nrc"
+          formControlName="nrc"
+          [ngClass]="{ 'input-error': laboratoireForm.controls['nrc'].invalid && laboratoireForm.controls['nrc'].touched }"
+        />
+        <div *ngIf="laboratoireForm.controls['nrc'].invalid && laboratoireForm.controls['nrc'].touched" class="error-message">
+          NRC is required.
+        </div>
+      </nz-input-group>
+    </div>
+    <div class="form-group">
+      <label for="active">Active: </label>
+      <nz-switch formControlName="active"></nz-switch>
+    </div>
+    <div class="form-group">
+      <label for="dateActivation">Activation Date: </label>
+      <nz-date-picker formControlName="dateActivation" id="dateActivation" [nzFormat]="'dd-MM-yyyy'"></nz-date-picker>
+      <div *ngIf="laboratoireForm.controls['dateActivation'].invalid && laboratoireForm.controls['dateActivation'].touched" class="error-message">
+        Activation Date is required.
+      </div>
     </div>
   </div>
 
-  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="laboratoireForm.invalid">
-    Creer Laboratoire
+  <div *ngIf="index === 1" [formGroup]="adresseForm">
+    <!-- Address Add Form -->
+    <div class="form-group">
+      <label for="numVoie">Street Number:</label>
+      <nz-input-group>
+        <input nz-input id="numVoie" formControlName="numVoie" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['numVoie'].invalid && adresseForm.controls['numVoie'].touched" class="error-message">
+        Street Number is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="nomVoie">Street Name:</label>
+      <nz-input-group>
+        <input nz-input id="nomVoie" formControlName="nomVoie" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['nomVoie'].invalid && adresseForm.controls['nomVoie'].touched" class="error-message">
+        Street Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="codePostal">Postal Code:</label>
+      <nz-input-group>
+        <input nz-input id="codePostal" formControlName="codePostal" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['codePostal'].invalid && adresseForm.controls['codePostal'].touched" class="error-message">
+        Postal Code is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ville">City:</label>
+      <nz-input-group>
+        <input nz-input id="ville" formControlName="ville" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['ville'].invalid && adresseForm.controls['ville'].touched" class="error-message">
+        City is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="commune">Commune:</label>
+      <nz-input-group>
+        <input nz-input id="commune" formControlName="commune" />
+      </nz-input-group>
+      <div *ngIf="adresseForm.controls['commune'].invalid && adresseForm.controls['commune'].touched" class="error-message">
+        Commune is required.
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="index === 2" [formGroup]="contactForm">
+    <!-- Contact Add Form -->
+    <div class="form-group">
+      <label for="numTel">Phone:</label>
+      <nz-input-group>
+        <input nz-input id="numTel" formControlName="numTel" />
+      </nz-input-group>
+      <div *ngIf="contactForm.controls['numTel'].invalid && contactForm.controls['numTel'].touched" class="error-message">
+        Phone is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fax">Fax:</label>
+      <nz-input-group>
+        <input nz-input id="fax" formControlName="fax" />
+      </nz-input-group>
+      <div *ngIf="contactForm.controls['fax'].invalid && contactForm.controls['fax'].touched" class="error-message">
+        Fax is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <nz-input-group>
+        <input nz-input id="email" formControlName="email" />
+      </nz-input-group>
+      <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="error-message">
+        Valid email is required.
+      </div>
+    </div>
+  </div>
+
+  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="!allFormsValid()">
+    Submit
   </button>
 </form>

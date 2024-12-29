@@ -33,6 +33,13 @@ public class ContactLaboratoireService {
                 .map(this::toDTO);
     }
 
+    public List<ContactLaboratoireDTO> getContactsLaboratoireById(Long id) {
+        return contactLaboratoireRepository.findByLaboratoireId(id)
+                .stream()
+                .map(this::toDTO)
+                .toList();
+    }
+
     public ContactLaboratoireDTO createContactLaboratoire(ContactLaboratoireDTO contactLaboratoireDTO) {
         ContactLaboratoire contactLaboratoire = toEntity(contactLaboratoireDTO);
         ContactLaboratoire savedContact = contactLaboratoireRepository.save(contactLaboratoire);
