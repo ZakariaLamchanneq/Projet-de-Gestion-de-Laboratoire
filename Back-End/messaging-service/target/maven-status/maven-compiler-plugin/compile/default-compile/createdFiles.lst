@@ -1,4 +1,5 @@
 org\example\messagingservice\service\KafkaConsumerService.class
+org\example\messagingservice\config\ThymeleafConfig.class
 org\example\messagingservice\model\SmsEvent.class
 org\example\messagingservice\model\EmailEvent.class
 org\example\messagingservice\service\SmsService.class

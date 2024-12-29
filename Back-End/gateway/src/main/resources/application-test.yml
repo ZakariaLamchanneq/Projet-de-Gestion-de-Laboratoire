@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      enabled: false # Disable Spring Cloud Config for testing
+    gateway:
+      discovery:
+        locator:
+          enabled: false # Disable service discovery for testing
+      routes:
+        - id: laboratoire-endpoints
+          uri: http://localhost:8081 # Mock or local service
+          predicates:
+            - Path=/api/laboratoires/**
+        - id: adresse-endpoints
+          uri: http://localhost:8081 # Mock or local service
+          predicates:
+            - Path=/api/adresses/**
+        - id: contacts-endpoints
+          uri: http://localhost:8081 # Mock or local service
+          predicates:
+            - Path=/api/contacts-laboratoires/**
+        - id: utilisateur-microservice
+          uri: http://localhost:8082 # Mock or local service
+          predicates:
+            - Path=/api/utilisateurs/**
+        - id: patient-microservice
+          uri: http://localhost:8083 # Mock or local service
+          predicates:
+            - Path=/api/patients/**
+eureka:
+  client:
+    enabled: false # Disable Eureka client
+server:
+  port: 0 # Use a random port for testing
+
+# Mock application-specific URLs
+application:
+  config:
+    utilisateurs-url: http://localhost:8082/api/utilisateurs
+
+management:
+  endpoints:
+    enabled-by-default: false # Disable unnecessary management endpoints during tests
