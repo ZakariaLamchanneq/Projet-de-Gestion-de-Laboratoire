@@ -57,7 +57,7 @@ jobs:
         run: npm install --prefix Front-End
 
       - name: Run Tests
-        run: npm test --prefix Front-End
+        run: npm test --prefix Front-End -- --config Front-End/jest.config.js
 
       - name: Build Frontend
         run: npm run build --prefix Front-End
