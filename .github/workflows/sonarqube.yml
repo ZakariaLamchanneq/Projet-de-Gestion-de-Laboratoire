@@ -1,10 +1,11 @@
 name: SonarQube Analysis
 
 on:
-  workflow_run:
-    workflows: ["Main CI Pipeline"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
+      - testing
+  pull_request:
 
 jobs:
   backend-analysis:
