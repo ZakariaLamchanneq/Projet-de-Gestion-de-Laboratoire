@@ -1,6 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModifierUtilisateurComponent } from './modifier-utilisateur.component';
+import {ModifierUtilisateurComponent} from './modifier-utilisateur.component';
+import {UtilisateurService} from '../../../services/utilisateurService/utilisateur.service';
+import {provideHttpClient, withFetch} from '@angular/common/http';
+import {NzModalRef} from 'ng-zorro-antd/modal';
 
 describe('ModifierUtilisateurComponent', () => {
   let component: ModifierUtilisateurComponent;
@@ -8,9 +11,14 @@ describe('ModifierUtilisateurComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModifierUtilisateurComponent]
+      imports: [ModifierUtilisateurComponent],
+      providers: [UtilisateurService,
+        provideHttpClient(withFetch()),
+        {provide: NzModalRef, useValue: {}}
+      ]
+
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ModifierUtilisateurComponent);
     component = fixture.componentInstance;
