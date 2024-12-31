@@ -132,13 +132,38 @@ public class UtilisateurController {
             UserResponse response = new UserResponse();
             response.setEmail(utilisateur.getEmail());
             response.setRole(utilisateur.getRole());
-
+            response.setLaboratoireId(utilisateur.getLaboratoireId());
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
 
+    @GetMapping("/non-archives")
+    public ResponseEntity<List<Utilisateur>> getUtilisateursNonArchives() {
+        List<Utilisateur> utilisateurs = utilisateurService.getUtilisateursNonArchives();
 
+        return new ResponseEntity<>(utilisateurs, HttpStatus.OK);
+
+    }
+
+    @GetMapping("/archives")
+    public ResponseEntity<List<Utilisateur>> getUtilisateursArchives() {
+        List<Utilisateur> utilisateurs = utilisateurService.getUtilisateursArchives();
+        return new ResponseEntity<>(utilisateurs, HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}/archive")
+    public ResponseEntity<Utilisateur> archiveUtilisateur(@PathVariable Long id) {
+        Utilisateur utilisateur = utilisateurService.archiveUtilisateur(id);
+
+        return new ResponseEntity<>(utilisateur, HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}/unarchive")
+    public ResponseEntity<Utilisateur> unarchiveUtilisateur(@PathVariable Long id) {
+        Utilisateur utilisateur = utilisateurService.unarchiveUtilisateur(id);
+        return new ResponseEntity<>(utilisateur, HttpStatus.OK);
+    }
 
 }

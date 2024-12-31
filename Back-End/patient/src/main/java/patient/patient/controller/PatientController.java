@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import patient.patient.dto.PatientDTO;
 import patient.patient.model.EmailEvent;
+import patient.patient.model.Patient;
 import patient.patient.model.SmsEvent;
 import patient.patient.service.KafkaProducerService;
 import patient.patient.service.PatientService;
@@ -28,6 +29,36 @@ public class PatientController {
     public ResponseEntity<PatientDTO> createPatient(@RequestBody PatientDTO patientDto){
         PatientDTO createdPatient = patientService.createPatient(patientDto);
         return new ResponseEntity<>(createdPatient, HttpStatus.OK);
+    }
+
+    @GetMapping("/archived")
+    public List<Patient> getArchivedPatients() {
+        return patientService.getArchivedPatients();
+    }
+
+    @GetMapping("/non-archived")
+    public List<Patient> getNonArchivedPatients() {
+        return patientService.getNonArchivedPatients();
+    }
+
+    @PutMapping("/archive/{id}")
+    public ResponseEntity<Patient> archivePatient(@PathVariable Long id) {
+        Patient patient = patientService.archivePatient(id);
+        if (patient != null) {
+            return ResponseEntity.ok(patient);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PutMapping("/unarchive/{id}")
+    public ResponseEntity<Patient> unarchivePatient(@PathVariable Long id) {
+        Patient patient = patientService.unarchivePatient(id);
+        if (patient != null) {
+            return ResponseEntity.ok(patient);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @GetMapping("/all")

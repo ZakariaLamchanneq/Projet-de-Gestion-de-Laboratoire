@@ -10,5 +10,6 @@ export interface Patient{
   adresse : string;
   numTel: number;
   email : string;
+  IsArchived?:Boolean;
   visiblePour: string;
 }

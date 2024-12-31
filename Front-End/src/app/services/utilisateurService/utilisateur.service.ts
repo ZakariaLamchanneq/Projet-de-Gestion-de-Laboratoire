@@ -30,7 +30,25 @@ export class UtilisateurService {
     return this.http.put<Utilisateur>(`${this.apiUrl}/updateUtilisateur/${utilisateurId}`, utilisateur);
   }
 
+  getUtilisateursByLaboratoire(laboratoireId: number): Observable<Utilisateur[]> {
+    return this.http.get<Utilisateur[]>(`${this.apiUrl}/laboratoire/${laboratoireId}`);
+  }
 
+  getUtilisateursNonArchives(): Observable<Utilisateur[]> {
+    return this.http.get<Utilisateur[]>(`${this.apiUrl}/non-archives`);
+  }
+  unarchiveUtilisateur(id: number): Observable<any> {
+    const url = `${this.apiUrl}/${id}/unarchive`;
+    return this.http.put(url, null);
+  }
+  getUtilisateursArchives(): Observable<Utilisateur[]> {
+    return this.http.get<Utilisateur[]>(`${this.apiUrl}/archives`);
+  }
+
+  // Archiver un utilisateur
+  archiveUtilisateur(id: number): Observable<Utilisateur> {
+    return this.http.put<Utilisateur>(`${this.apiUrl}/${id}/archive`, {});
+  }
 
   getUtilisateurs(): Observable<Utilisateur[]> {
     return this.http.get<Utilisateur[]>(this.apiUrl+'/all');

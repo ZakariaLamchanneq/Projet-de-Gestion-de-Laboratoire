@@ -1,0 +1,40 @@
+<h2 class="title">Gestion des Tests des épreuves</h2>
+
+<button nz-button nzType="primary" (click)="showAddTestEpreuveModal()" class="menu-item">
+
+  <span nz-icon nzType="file-add" nzTheme="outline"></span>
+  Ajouter un test d'épreuve
+</button>
+
+<nz-table ngSkipHydration #nzTable [nzData]="listOfDisplayData" nzTableLayout="fixed" class="table-shadow"
+          [nzPageSize]="5" [nzShowPagination]="true" [nzTotal]="listOfDisplayData.length" [(nzPageIndex)]="pageIndex"
+          (nzPageIndexChange)="updatePaginatedData()">
+  <thead>
+  <tr>
+    <th>Nom de l'Épreuve</th>
+    <th>Intervalle Min</th>
+    <th>Intervalle Max</th>
+    <th>Unité de Référence</th>
+    <th>Détails</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let testEpreuve of paginatedData">
+    <td>{{ testEpreuve.nomTest }}</td>
+    <td>{{ testEpreuve.intervalMinDeReference }}</td>
+    <td>{{ testEpreuve.intervalMaxDeReference }}</td>
+    <td>{{ testEpreuve.uniteDeReference }}</td>
+    <td>{{ testEpreuve.Details }}</td>
+    <td>
+      <button (click)="editTestEpreuve(testEpreuve.id)" class="edit-button">
+
+        <span nz-icon nzType="edit" nzTheme="outline"></span>
+      </button>
+      <button (click)="deleteTestEpreuve(testEpreuve.id)" class="delete-button">
+        <span nz-icon nzType="delete" nzTheme="outline"></span>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

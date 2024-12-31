@@ -1,8 +1,12 @@
 package analyse.analyse.service;
 
 import analyse.analyse.dto.EpreuveDTO;
+import analyse.analyse.model.Analyse;
 import analyse.analyse.model.Epreuve;
+import analyse.analyse.model.TestEpreuve;
+import analyse.analyse.repository.AnalyseRepository;
 import analyse.analyse.repository.EpreuveRepository;
+import analyse.analyse.repository.TestEpreuveRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +18,14 @@ public class EpreuveService {
     
     @Autowired
     private EpreuveRepository epreuveRepository;
+
+    @Autowired
+    private AnalyseRepository analyseRepository;
+
+
+    @Autowired
+    private TestEpreuveRepository testEpreuveRepository;
+
 
     public EpreuveDTO createEpreuve (EpreuveDTO epreuveDTO){
         Epreuve Epreuve = convertToEpreuve(epreuveDTO);
@@ -35,10 +47,10 @@ public class EpreuveService {
 
 
     public EpreuveDTO getEpreuveById (Long EpreuveId){
-        Epreuve Epreuve = epreuveRepository.findById(EpreuveId)
+        Epreuve epreuve = epreuveRepository.findById(EpreuveId)
                 .orElseThrow(() -> new RuntimeException("Epreuve introuvable"));
 
-        return convertToDto(Epreuve);
+        return convertToDto(epreuve);
     }
 
     public void deleteEpreuve (Long EpreuveId){
@@ -47,25 +59,66 @@ public class EpreuveService {
 
 
 
+    public EpreuveDTO updateEpreuve(Long id, EpreuveDTO epreuveDTO) {
+        Epreuve epreuve = epreuveRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("epreuve introuvable"));
 
-    public Epreuve convertToEpreuve (EpreuveDTO EpreuveDTO){
-        Epreuve Epreuve = new Epreuve();
-        Epreuve.setId(EpreuveDTO.getId());
-        Epreuve.setNom(EpreuveDTO.getNom());
-        Epreuve.setFkIdDossier(EpreuveDTO.getFkIdDossier());
-        Epreuve.setFkIdDossier(EpreuveDTO.getFkIdDossier());
-        Epreuve.setResultat(EpreuveDTO.getResultat());
-
-        return Epreuve;
+        epreuve.setId(epreuveDTO.getId());
+        epreuve.setNom(epreuveDTO.getNom());
+        epreuve.setIdDossier(epreuveDTO.getIdDossier());
+        epreuve.setResultat(epreuveDTO.getResultat());
+        epreuve.setAnalyse(fetchAnalyseById(epreuveDTO.getFkIdAnalyse()));
+        epreuve.setTestEpreuve(fetchTestEpreuveById(epreuveDTO.getFkIdTestEpreuve()));
+        epreuve = epreuveRepository.save(epreuve);
+        return convertToDto(epreuve);
     }
 
-    public EpreuveDTO convertToDto (Epreuve Epreuve){
-        EpreuveDTO EpreuveDTO = new EpreuveDTO();
-        EpreuveDTO.setId(Epreuve.getId());
-        EpreuveDTO.setNom(Epreuve.getNom());
-        EpreuveDTO.setFkIdDossier(Epreuve.getFkIdDossier());
-        EpreuveDTO.setFkIdDossier(Epreuve.getFkIdDossier());
-        EpreuveDTO.setResultat(Epreuve.getResultat());
-        return EpreuveDTO ;
+
+
+    public Epreuve convertToEpreuve (EpreuveDTO epreuveDTO){
+        Epreuve epreuve = new Epreuve();
+        epreuve.setId(epreuveDTO.getId());
+        epreuve.setNom(epreuveDTO.getNom());
+        epreuve.setIdDossier(epreuveDTO.getIdDossier());
+        epreuve.setResultat(epreuveDTO.getResultat());
+
+        if (epreuveDTO.getFkIdAnalyse() != null) {
+            epreuve.setAnalyse(fetchAnalyseById(epreuveDTO.getFkIdAnalyse()));
+        }
+
+        if (epreuveDTO.getFkIdTestEpreuve() != null) {
+            epreuve.setTestEpreuve(fetchTestEpreuveById(epreuveDTO.getFkIdTestEpreuve()));
+        }
+
+
+        return epreuve;
+    }
+
+    public EpreuveDTO convertToDto (Epreuve epreuve){
+        EpreuveDTO epreuveDTO = new EpreuveDTO();
+        epreuveDTO.setId(epreuve.getId());
+        epreuveDTO.setNom(epreuve.getNom());
+        epreuveDTO.setResultat(epreuve.getResultat());
+        epreuveDTO.setIdDossier(epreuve.getIdDossier());
+        if (epreuve.getAnalyse() != null) {
+            epreuveDTO.setFkIdAnalyse(epreuve.getAnalyse().getId());
+        }
+        if (epreuve.getTestEpreuve() != null) {
+            epreuveDTO.setFkIdTestEpreuve(epreuve.getTestEpreuve().getId());
+        }
+        return epreuveDTO ;
+    }
+
+
+    // Placeholder methods to fetch related entities
+    private Analyse fetchAnalyseById(Long id) {
+        return analyseRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("analyse not found with id " + id));
+    }
+
+
+    private TestEpreuve fetchTestEpreuveById(Long id) {
+        return testEpreuveRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("test Epreuve not found with id " + id));
     }
 }

@@ -15,7 +15,25 @@ export class PatientService {
   getPatients(): Observable<Patient[]> {
     return this.http.get<Patient[]>(this.apiUrl+'/all');
   }
+  // Récupérer les patients archivés
+  getArchivedPatients(): Observable<Patient[]> {
+    return this.http.get<Patient[]>(`${this.apiUrl}/archived`);
+  }
 
+  // Récupérer les patients non archivés
+  getNonArchivedPatients(): Observable<Patient[]> {
+    return this.http.get<Patient[]>(`${this.apiUrl}/non-archived`);
+  }
+
+  // Archiver un patient
+  archivePatient(patientId: number): Observable<Patient> {
+    return this.http.put<Patient>(`${this.apiUrl}/archive/${patientId}`, {});
+  }
+
+  // Désarchiver un patient
+  unarchivePatient(patientId: number): Observable<Patient> {
+    return this.http.put<Patient>(`${this.apiUrl}/unarchive/${patientId}`, {});
+  }
   deletePatient(patientId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/deletePatient/${patientId}`);
   }

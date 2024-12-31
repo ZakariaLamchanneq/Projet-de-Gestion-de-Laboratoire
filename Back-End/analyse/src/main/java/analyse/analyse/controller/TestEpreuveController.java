@@ -16,26 +16,32 @@ public class TestEpreuveController {
     private TestEpreuveService testEpreuveService;
 
     @PostMapping("/add")
-    public ResponseEntity<TestEpreuveDTO> addEpreuve(@RequestBody TestEpreuveDTO testEpreuveDTO){
+    public ResponseEntity<TestEpreuveDTO> addTestEpreuve(@RequestBody TestEpreuveDTO testEpreuveDTO){
         TestEpreuveDTO testEpreuveCreated = testEpreuveService.createTestEpreuve(testEpreuveDTO);
         return new ResponseEntity<>(testEpreuveCreated, HttpStatus.OK);
     }
 
 
     @GetMapping("/all")
-    public ResponseEntity<List<TestEpreuveDTO>> getAllEpreuves(){
+    public ResponseEntity<List<TestEpreuveDTO>> getAllTestEpreuves(){
         List<TestEpreuveDTO> epreuveDTOList = testEpreuveService.getAllTestEpreuves();
         return new ResponseEntity<>(epreuveDTOList,HttpStatus.OK);
     }
 
     @GetMapping("/getEpreuve/{id}")
-    public ResponseEntity<TestEpreuveDTO> getEpreuve(@PathVariable Long id){
+    public ResponseEntity<TestEpreuveDTO> getTestEpreuve(@PathVariable Long id){
         TestEpreuveDTO TestEpreuveDTO = testEpreuveService.getTestEpreuveById(id);
         return new ResponseEntity<>(TestEpreuveDTO,HttpStatus.OK);
     }
 
+    @PutMapping("/updateTestEpreuve/{id}")
+    public ResponseEntity<TestEpreuveDTO> updateTestEpreuve(@PathVariable Long id,@RequestBody TestEpreuveDTO testEpreuveDTO){
+        TestEpreuveDTO testEpreuveDTOUpdated = testEpreuveService.updateTestEpreuve(id,testEpreuveDTO);
+        return new ResponseEntity<>(testEpreuveDTOUpdated,HttpStatus.OK);
+    }
+
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteEpreuve(@PathVariable Long id){
+    public ResponseEntity<Void> deleteTestEpreuve(@PathVariable Long id){
         testEpreuveService.deleteTestEpreuve(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

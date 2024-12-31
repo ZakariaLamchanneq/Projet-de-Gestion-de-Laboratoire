@@ -56,7 +56,7 @@ export class PageLoginComponent {
       next: (response) => {
         console.log('Login successful:', response);
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/patients']);
+        this.router.navigate(['/profile']);
       },
       error: (err) => {
         console.error('Login error:', err);

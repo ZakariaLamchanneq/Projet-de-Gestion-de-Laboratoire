@@ -49,6 +49,26 @@ spring:
           uri: lb://patient-microservice
           predicates:
             - Path=/api/patients/**
+
+        - id: analyse-endpoints
+          uri: lb://analyse-microservice
+          predicates:
+            - Path=/api/analyses/**
+
+        - id: epreuves-endpoints
+          uri: lb://analyse-microservice
+          predicates:
+            - Path=/api/epreuves/**
+
+        - id: testEpreuve-endpoints
+          uri: lb://analyse-microservice
+          predicates:
+            - Path=/api/testEpreuves/**
+
+
+
+
+
 #      # Configuration CORS to connect Front-End
 #      globalcors:
 #        cors-configurations:

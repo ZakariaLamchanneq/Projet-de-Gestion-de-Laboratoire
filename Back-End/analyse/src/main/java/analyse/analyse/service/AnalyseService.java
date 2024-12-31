@@ -53,7 +53,7 @@ public class AnalyseService {
         analyse.setId(analyseDTO.getId());
         analyse.setNom(analyseDTO.getNom());
         analyse.setDesciption(analyseDTO.getDesciption());
-        analyse.setFkIdLaboratoire(analyseDTO.getFkIdLaboratoire());
+        analyse.setIdLaboratoire(analyseDTO.getIdLaboratoire());
         return analyse;
     }
 
@@ -61,7 +61,7 @@ public class AnalyseService {
         AnalyseDTO analyseDTO = new AnalyseDTO();
         analyseDTO.setId(analyse.getId());
         analyseDTO.setNom(analyse.getNom());
-        analyseDTO.setFkIdLaboratoire(analyse.getFkIdLaboratoire());
+        analyseDTO.setIdLaboratoire(analyse.getIdLaboratoire());
         analyseDTO.setDesciption(analyse.getDesciption());
         return analyseDTO ;
     }

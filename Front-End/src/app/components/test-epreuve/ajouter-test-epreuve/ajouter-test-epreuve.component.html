@@ -1,0 +1,77 @@
+<div class="modal-wrapper" (click)="closeModal($event)">
+  <div class="add-test-container" (click)="$event.stopPropagation()">
+    <h2 class="form-title">Ajouter un Test d'Épreuve</h2>
+
+    <form nz-form [nzLayout]="'vertical'" class="test-form">
+
+      <div class="form-group">
+        <label nz-form-label class="menu-item">
+          <span nz-icon nzType="file-text" nzTheme="outline"></span>
+          Nom de l'Épreuve :
+        </label>
+        <input
+          nz-input
+          placeholder="Nom de l'épreuve"
+          [(ngModel)]="newTest.nomTest"
+          name="nomEpreuve" />
+      </div>
+
+      <div class="form-group">
+        <label nz-form-label class="menu-item">
+          <span nz-icon nzType="number" nzTheme="outline"></span>
+          Intervalle Min de Référence :
+        </label>
+        <input
+          nz-input
+          type="number"
+          placeholder="Valeur minimale"
+          [(ngModel)]="newTest.intervalMinDeReference"
+          name="intervalMinDeReference" />
+      </div>
+
+      <div class="form-group">
+        <label nz-form-label class="menu-item">
+          <span nz-icon nzType="number" nzTheme="outline"></span>
+          Intervalle Max de Référence :
+        </label>
+        <input
+          nz-input
+          type="number"
+          placeholder="Valeur maximale"
+          [(ngModel)]="newTest.intervalMaxDeReference"
+          name="intervalMaxDeReference" />
+      </div>
+
+      <div class="form-group">
+        <label nz-form-label class="menu-item">
+          <span nz-icon nzType="tag" nzTheme="outline"></span>
+          Unité de Référence :
+        </label>
+        <input
+          nz-input
+          placeholder="Exemple : g/L, mmol/L"
+          [(ngModel)]="newTest.uniteDeReference"
+          name="uniteDeReference" />
+      </div>
+
+      <div class="form-group">
+        <label nz-form-label class="menu-item">
+          <span nz-icon nzType="file-done" nzTheme="outline"></span>
+          Détails :
+        </label>
+        <textarea
+          nz-input
+          rows="3"
+          placeholder="Ajouter des détails ici"
+          [(ngModel)]="newTest.Details"
+          name="Details">
+        </textarea>
+      </div>
+
+      <div class="modal-footer">
+        <button nz-button nzType="default" (click)="handleCancel()">Annuler</button>
+        <button nz-button nzType="primary" (click)="handleOk()">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>

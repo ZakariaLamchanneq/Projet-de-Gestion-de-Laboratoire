@@ -8,6 +8,8 @@ import {AdresseComponent} from './components/adresse/adresse.component';
 import {ContactLaboratoireComponent} from './components/contact-laboratoire/contact-laboratoire.component';
 import {AuthGuard} from './services/AuthService/AuthGuard';
 import {ResetPasswordComponent} from './components/reset-password/reset-password.component';
+import {TestEpreuveComponent} from './components/test-epreuve/test-epreuve.component';
+import {ProfileComponent} from './components/profile/profile.component';
 
 export const routes: Routes = [
   // Redirect the root to /home
@@ -25,11 +27,14 @@ export const routes: Routes = [
       { path: 'patients', component: PatientComponent},
       { path: 'adresses', component: AdresseComponent },
       { path: 'contacts-laboratoire', component: ContactLaboratoireComponent },
+      { path: 'test-epreuve', component: TestEpreuveComponent},
+      { path: 'profile', component: ProfileComponent },
     ]
   },
   { path: 'reset-password', component: ResetPasswordComponent },
 
-  { path: '**', redirectTo: '' },
+
+  { path: '**', redirectTo: 'login' },
 ];
 
 
