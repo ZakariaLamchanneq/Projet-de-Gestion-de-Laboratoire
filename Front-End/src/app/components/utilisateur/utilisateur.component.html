@@ -1,10 +1,18 @@
 
 <h2 class="title">Gestion Utilisateurs</h2>
 
-<button nz-button nzType="primary" (click)="showAddUserModal()" class="menu-item">
-  <span nz-icon nzType="user-add" nzTheme="outline"></span>
-  Ajouter un utilisateur
-</button>
+
+<div class="button-group">
+  <button nz-button nzType="primary" (click)="showAddUserModal()" class="menu-item">
+    <span nz-icon nzType="user-add" nzTheme="outline"></span>
+    Ajouter un utilisateur
+  </button>
+  <button nz-button (click)="toggleArchived()" class="menu-item">
+    <span nz-icon nzType="swap" nzTheme="outline"></span>
+    {{ isArchived ? 'Afficher Non Archivés' : 'Afficher Archivés' }}
+  </button>
+
+</div>
 
 <nz-table ngSkipHydration #nzTable [nzData]="listOfDisplayData" nzTableLayout="fixed" class="table-shadow"
   [nzPageSize]="5" [nzShowPagination]="true" [nzTotal]="listOfDisplayData.length" [(nzPageIndex)]="pageIndex"
@@ -33,14 +41,26 @@
       <td>{{ user.numTel }}</td>
       <td>{{ user.role }}</td>
       <td>{{ user.laboratoireId != null ? (laboratoireNames[user.laboratoireId] ) : 'Non affecté' }}</td>
+
       <td>
-        <button (click)="editUser (user.id)" class="edit-button">
+        <button *ngIf="!isArchived" (click)="editUser(user.id)" class="edit-button">
           <span nz-icon nzType="edit" nzTheme="outline"></span>
         </button>
-        <button (click)="deleteUser (user.id)" class="delete-button">
+
+
+        <button *ngIf="!isArchived" (click)="user.laboratoireId ? archiveUser (user.id) : deleteUser (user.id)" class="delete-button">
+          <span nz-icon [nzType]="user.laboratoireId ? 'snippets' : 'delete'" nzTheme="outline"></span>
+        </button>
+
+        <button *ngIf="isArchived" (click)="unarchiveUser(user.id)" class="unarchive-button">
+          <span nz-icon nzType="rollback" nzTheme="outline"></span>
+        </button>
+
+        <button *ngIf="isArchived" (click)="deleteUser(user.id)" class="delete-button">
           <span nz-icon nzType="delete" nzTheme="outline"></span>
         </button>
       </td>
+
     </tr>
   </tbody>
 </nz-table>

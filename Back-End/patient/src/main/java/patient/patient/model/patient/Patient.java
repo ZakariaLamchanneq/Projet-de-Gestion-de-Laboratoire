@@ -29,6 +29,7 @@ public class Patient {
     private String adresse;
     private Long numTel;
     private String email;
+    private Boolean isArchived;
     private String visiblePour;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)

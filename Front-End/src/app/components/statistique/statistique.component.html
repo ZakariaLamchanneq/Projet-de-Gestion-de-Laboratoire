@@ -1,0 +1,17 @@
+<h2 class="title">Statistiques</h2>
+<div class="charts-container">
+  <div class="chart-item">
+    <h3><i class="fas fa-users"></i> Statistiques des utilisateurs</h3>
+    <canvas id="utilisateurChart"></canvas>
+  </div>
+
+  <div class="chart-item">
+    <h3><i class="fas fa-stethoscope"></i> Statistiques des patients</h3>
+    <canvas id="patientChart"></canvas>
+  </div>
+
+  <div class="chart-item" *ngIf="role === 'ADMINISTRATEUR'">
+    <h3><i class="fas fa-flask"></i> Statistiques des laboratoires</h3>
+    <canvas id="laboratoireChart"></canvas>
+  </div>
+</div>

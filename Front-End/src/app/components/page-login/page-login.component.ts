@@ -44,6 +44,27 @@ export class PageLoginComponent {
     });
   }
 
+  // login() {
+  //   if (this.loginForm.invalid) {
+  //     return; // Prevent submission if the form is invalid
+  //   }
+  //
+  //   const { email, password } = this.loginForm.value;
+  //   console.log('Login form values:', this.loginForm.value);
+  //
+  //   this.authService.login({ email, password }).subscribe({
+  //     next: (response) => {
+  //       console.log('Login successful:', response);
+  //       localStorage.setItem('token', response.token);
+  //       this.router.navigate(['/profile']);
+  //     },
+  //     error: (err) => {
+  //       console.error('Login error:', err);
+  //       this.errorMessage = 'Invalid email or password';
+  //     }
+  //   });
+  // }
+
   login() {
     if (this.loginForm.invalid) {
       return; // Prevent submission if the form is invalid
@@ -56,7 +77,21 @@ export class PageLoginComponent {
       next: (response) => {
         console.log('Login successful:', response);
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/patients']);
+
+        // Get the role from the AuthService
+        const role = this.authService.getRole();
+
+        // Redirect based on role
+        if (role === 'ADMINISTRATEUR') {
+          this.router.navigate(['/statistique']); // Redirect to /statistique for ADMINISTRATEUR
+        } else if (role === 'ADMIN_LABO') {
+          this.router.navigate(['/profile']); // Redirect to /profile for ADMIN_LABO
+        } else if (role === 'TECHNICIEN') {
+          this.router.navigate(['/patients']); // Redirect to /patient for TECHNICIEN
+        } else {
+          // Redirect to a default or fallback page
+          this.router.navigate(['/']); // Or handle the case where the role is undefined
+        }
       },
       error: (err) => {
         console.error('Login error:', err);
@@ -64,6 +99,7 @@ export class PageLoginComponent {
       }
     });
   }
+
 
   requestReset(): void {
     if (this.resetFormGroup.valid) {

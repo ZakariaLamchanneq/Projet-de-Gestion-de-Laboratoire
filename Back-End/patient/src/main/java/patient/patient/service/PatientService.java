@@ -82,6 +82,36 @@ public class PatientService {
     }
 
 
+    // Récupérer les patients archivés
+    public List<Patient> getArchivedPatients() {
+        return patientRepository.findByIsArchived(true);
+    }
+
+    // Récupérer les patients non archivés
+    public List<Patient> getNonArchivedPatients() {
+        return patientRepository.findByIsArchived(false);
+    }
+
+    // Archiver un patient
+    public Patient archivePatient(Long patientId) {
+        Patient patient = patientRepository.findById(patientId).orElse(null);
+        if (patient != null) {
+            patient.setIsArchived(true);
+            return patientRepository.save(patient);
+        }
+        return null;
+    }
+
+    // Désarchiver un patient
+    public Patient unarchivePatient(Long patientId) {
+        Patient patient = patientRepository.findById(patientId).orElse(null);
+        if (patient != null) {
+            patient.setIsArchived(false);
+            return patientRepository.save(patient);
+        }
+        return null;
+    }
+
     private PatientDTO convertToDTO(Patient patient) {
         PatientDTO patientDto = new PatientDTO();
         patientDto.setId(patient.getId());

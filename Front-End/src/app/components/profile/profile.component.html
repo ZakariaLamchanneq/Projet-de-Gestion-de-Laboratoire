@@ -1,0 +1,38 @@
+<div class="profile-container" *ngIf="!loading">
+  <div class="profile-header">
+    <img [src]="laboratoire?.logo" alt="{{ laboratoire?.nom }} Logo" class="logo" />
+    <div class="header-info">
+      <h1 class="laboratoire-name">{{ laboratoire?.nom }}</h1>
+      <p class="laboratoire-nrc">NRC: {{ laboratoire?.nrc }}</p>
+      <p class="laboratoire-status">Statut: <span [ngClass]="{'active': laboratoire?.active, 'inactive': !laboratoire?.active}">
+        {{ laboratoire?.active ? 'Actif' : 'Inactif' }}
+      </span></p>
+    </div>
+  </div>
+
+  <div class="profile-content">
+    <div class="card">
+      <h2>Date d'activation</h2>
+      <p>{{ laboratoire?.dateActivation | date: 'dd/MM/yyyy' }}</p>
+    </div>
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Téléphone: {{ contact?.numTel }}</p>
+      <p>Fax: {{ contact?.fax }}</p>
+      <p>Email: {{ contact?.email }}</p>
+    </div>
+    <div class="card">
+      <h2>Adresse</h2>
+      <p>{{ adresse?.numVoie }} {{ adresse?.nomVoie }}</p>
+      <p>{{ adresse?.codePostal }} {{ adresse?.ville }}, {{ adresse?.commune }}</p>
+    </div>
+  </div>
+
+  <div class="profile-footer">
+    <button class="edit-button">Modifier le profil</button>
+  </div>
+</div>
+
+<div *ngIf="loading" class="loading">
+  <p>Chargement des informations du laboratoire...</p>
+</div>

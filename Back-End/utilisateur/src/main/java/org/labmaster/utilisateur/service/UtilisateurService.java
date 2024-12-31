@@ -20,6 +20,26 @@ public class UtilisateurService {
         return utilisateurRepository.save(utilisateur);
     }
 
+    public Utilisateur archiveUtilisateur(Long userId) {
+        Utilisateur utilisateur = utilisateurRepository.findById(userId).orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
+        utilisateur.setIsArchived(true);
+        return utilisateurRepository.save(utilisateur);
+    }
+
+    public Utilisateur unarchiveUtilisateur(Long userId) {
+        Utilisateur utilisateur = utilisateurRepository.findById(userId).orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
+        utilisateur.setIsArchived(false);
+        return utilisateurRepository.save(utilisateur);
+    }
+
+    public List<Utilisateur> getUtilisateursNonArchives() {
+        return utilisateurRepository.findByIsArchivedFalse();
+    }
+
+    public List<Utilisateur> getUtilisateursArchives() {
+        return utilisateurRepository.findByIsArchivedTrue();
+    }
+
     public List<Utilisateur> getAllUtilisateurs() {
         return utilisateurRepository.findAll();
     }

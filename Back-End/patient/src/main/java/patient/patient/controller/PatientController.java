@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import patient.patient.dto.PatientDTO;
+import patient.patient.model.patient.Patient;
 import patient.patient.service.PatientService;
 
 import java.util.List;
@@ -23,6 +24,36 @@ public class PatientController {
             return new ResponseEntity<>(createdPatient, HttpStatus.CREATED);
         } catch (Exception e) {
             return handleException(e, "Failed to create patient");
+        }
+    }
+
+    @GetMapping("/archived")
+    public List<Patient> getArchivedPatients() {
+        return patientService.getArchivedPatients();
+    }
+
+    @GetMapping("/non-archived")
+    public List<Patient> getNonArchivedPatients() {
+        return patientService.getNonArchivedPatients();
+    }
+
+    @PutMapping("/archive/{id}")
+    public ResponseEntity<Patient> archivePatient(@PathVariable Long id) {
+        Patient patient = patientService.archivePatient(id);
+        if (patient != null) {
+            return ResponseEntity.ok(patient);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PutMapping("/unarchive/{id}")
+    public ResponseEntity<Patient> unarchivePatient(@PathVariable Long id) {
+        Patient patient = patientService.unarchivePatient(id);
+        if (patient != null) {
+            return ResponseEntity.ok(patient);
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 

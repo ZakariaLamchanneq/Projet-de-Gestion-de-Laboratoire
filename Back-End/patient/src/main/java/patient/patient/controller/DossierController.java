@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import patient.patient.dto.DossierDTO;
 import patient.patient.dto.PatientDTO;
-import patient.patient.model.patient.Patient;
 import patient.patient.service.DossierService;
 
 import java.util.List;

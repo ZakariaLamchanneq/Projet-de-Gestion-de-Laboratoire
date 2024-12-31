@@ -18,7 +18,7 @@ export class LaboratoireService {
   }
 
   getLaboratoireById(id: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
+    return this.http.get(`${this.apiUrl}/find/${id}`);
   }
 
   createLaboratoire(laboratoire: Laboratoire): Observable<Laboratoire> {
