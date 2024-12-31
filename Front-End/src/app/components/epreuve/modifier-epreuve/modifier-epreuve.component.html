@@ -1,0 +1,56 @@
+<form [formGroup]="epreuveForm" (ngSubmit)="onSubmit()" class="epreuve-form">
+  <div class="form-group">
+    <label for="nom">
+      <i nz-icon nzType="idcard"></i>
+      <b> Name:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="nom" formControlName="nom" />
+    </nz-input-group>
+    <div *ngIf="epreuveForm.controls['nom'].invalid && epreuveForm.controls['nom'].touched" class="error-message">
+      Name is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fkIdTestEpreuve">
+      <i nz-icon nzType="experiment"></i>
+      <b> Test Epreuve:</b>
+    </label>
+    <nz-select
+      id="fkIdTestEpreuve"
+      formControlName="fkIdTestEpreuve"
+      nzShowSearch
+      nzAllowClear
+      nzPlaceHolder="Select a test epreuve"
+    >
+      <nz-option *ngFor="let testEpreuve of testEpreuves" [nzValue]="testEpreuve.id" [nzLabel]="testEpreuve.nomTest"></nz-option>
+    </nz-select>
+    <div *ngIf="epreuveForm.controls['fkIdTestEpreuve'].invalid && epreuveForm.controls['fkIdTestEpreuve'].touched" class="error-message">
+      Test Epreuve is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fkIdAnalyse">
+      <i nz-icon nzType="experiment"></i>
+      <b> Analyse:</b>
+    </label>
+    <nz-select
+      id="fkIdAnalyse"
+      formControlName="fkIdAnalyse"
+      nzShowSearch
+      nzAllowClear
+      nzPlaceHolder="Select an analyse"
+    >
+      <nz-option *ngFor="let analyse of analyses" [nzValue]="analyse.id" [nzLabel]="analyse.nom"></nz-option>
+    </nz-select>
+    <div *ngIf="epreuveForm.controls['fkIdAnalyse'].invalid && epreuveForm.controls['fkIdAnalyse'].touched" class="error-message">
+      Analyse is required.
+    </div>
+  </div>
+
+  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="epreuveForm.invalid">
+    Update Epreuve
+  </button>
+</form>

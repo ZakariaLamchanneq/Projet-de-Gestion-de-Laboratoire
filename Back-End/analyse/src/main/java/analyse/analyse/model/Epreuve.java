@@ -14,8 +14,6 @@ public class Epreuve {
     private Long id;
 
     private String nom ;
-    private String resultat;
-    private Long idDossier;
 
     @ManyToOne
     @JoinColumn(name = "fkIdAnalyse", nullable = false)

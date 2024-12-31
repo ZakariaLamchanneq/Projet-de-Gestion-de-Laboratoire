@@ -4,10 +4,12 @@
       <i nz-icon nzType="number"></i>
       <b> Street Number:</b>
     </label>
-    <nz-input-group>
-      <input nz-input id="numVoie" formControlName="numVoie" />
-    </nz-input-group>
-    <div *ngIf="adresseForm.controls['numVoie'].invalid && adresseForm.controls['numVoie'].touched" class="error-message">
+      <nz-input-group>
+        <nz-input-number id="numVoie" style="width: 100%" formControlName="numVoie" [nzMin]="0"></nz-input-number>
+      </nz-input-group>
+
+    <div *ngIf="adresseForm.controls['numVoie'].invalid && adresseForm.controls['numVoie'].touched"
+         class="error-message">
       Street Number is required.
     </div>
   </div>
@@ -18,9 +20,10 @@
       <b> Street Name:</b>
     </label>
     <nz-input-group>
-      <input nz-input id="nomVoie" formControlName="nomVoie" />
+      <input nz-input id="nomVoie" formControlName="nomVoie"/>
     </nz-input-group>
-    <div *ngIf="adresseForm.controls['nomVoie'].invalid && adresseForm.controls['nomVoie'].touched" class="error-message">
+    <div *ngIf="adresseForm.controls['nomVoie'].invalid && adresseForm.controls['nomVoie'].touched"
+         class="error-message">
       Street Name is required.
     </div>
   </div>
@@ -31,9 +34,10 @@
       <b> Postal Code:</b>
     </label>
     <nz-input-group>
-      <input nz-input id="codePostal" formControlName="codePostal" />
+      <input nz-input id="codePostal" formControlName="codePostal"/>
     </nz-input-group>
-    <div *ngIf="adresseForm.controls['codePostal'].invalid && adresseForm.controls['codePostal'].touched" class="error-message">
+    <div *ngIf="adresseForm.controls['codePostal'].invalid && adresseForm.controls['codePostal'].touched"
+         class="error-message">
       Postal Code is required.
     </div>
   </div>
@@ -44,7 +48,7 @@
       <b> City:</b>
     </label>
     <nz-input-group>
-      <input nz-input id="ville" formControlName="ville" />
+      <input nz-input id="ville" formControlName="ville"/>
     </nz-input-group>
     <div *ngIf="adresseForm.controls['ville'].invalid && adresseForm.controls['ville'].touched" class="error-message">
       City is required.
@@ -57,9 +61,10 @@
       <b> Commune:</b>
     </label>
     <nz-input-group>
-      <input nz-input id="commune" formControlName="commune" />
+      <input nz-input id="commune" formControlName="commune"/>
     </nz-input-group>
-    <div *ngIf="adresseForm.controls['commune'].invalid && adresseForm.controls['commune'].touched" class="error-message">
+    <div *ngIf="adresseForm.controls['commune'].invalid && adresseForm.controls['commune'].touched"
+         class="error-message">
       Commune is required.
     </div>
   </div>

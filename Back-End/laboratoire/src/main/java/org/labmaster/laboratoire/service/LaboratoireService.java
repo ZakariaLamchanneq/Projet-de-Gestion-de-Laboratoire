@@ -1,7 +1,9 @@
 package org.labmaster.laboratoire.service;
 
 import lombok.RequiredArgsConstructor;
+import org.labmaster.laboratoire.client.AnalyseClient;
 import org.labmaster.laboratoire.client.UtilisateurClient;
+import org.labmaster.laboratoire.dto.analyse.AnalyseDTO;
 import org.labmaster.laboratoire.dto.laboratoire.LaboratoireDTO;
 import org.labmaster.laboratoire.dto.laboratoire.FullLaboratoireResponse;
 import org.labmaster.laboratoire.exception.ResourceNotFoundException;
@@ -20,6 +22,7 @@ public class LaboratoireService {
 
     private final LaboratoireRepository laboratoireRepository;
     private final UtilisateurClient utilisateurClient;
+    private final AnalyseClient analyseClient;
 
     // Create
     public LaboratoireDTO createLaboratoire(LaboratoireDTO laboratoireDTO){
@@ -94,6 +97,10 @@ public class LaboratoireService {
                 .dateActivation(laboratoire.getDateActivation())
                 .utilisateurs(utilisateurs)
                 .build();
+    }
+
+    public List<AnalyseDTO> getAnalysesByLaboratoireId(Long laboratoireId) {
+        return analyseClient.getAnalysesByLaboratoireId(laboratoireId);
     }
 
     // Convert entity to DTO with Base64 logo conversion

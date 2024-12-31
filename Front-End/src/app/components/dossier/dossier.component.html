@@ -1,0 +1,35 @@
+<h2 class="title">Dossiers List</h2>
+
+<button nz-button nzType="primary" (click)="openCreateForm()" class="menu-item">
+  <span nz-icon nzType="plus"></span> Add Dossier
+</button>
+
+<nz-table #basicTable [nzData]="dossiers" [nzBordered]="true" [nzLoading]="loading">
+  <thead>
+  <tr>
+    <th nzWidth="20%">Dossier Number</th>
+    <th nzWidth="25%">Patient</th>
+    <th nzWidth="25%">Utilisateur Email</th>
+    <th nzWidth="20%">Date</th>
+    <th nzWidth="10%">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let dossier of basicTable.data" nzHover>
+    <td>{{ dossier.numDossier }}</td>
+    <td>{{ dossier.fkIdPatient }}</td>
+    <td>{{ dossier.fkEmailUtilisateur }}</td>
+    <td>{{ dossier.date }}</td>
+    <td>
+      <nz-button-group>
+        <button nz-button nzType="primary" (click)="openEditForm(dossier)">
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button nz-button (click)="deleteDossier(dossier.numDossier)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      </nz-button-group>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

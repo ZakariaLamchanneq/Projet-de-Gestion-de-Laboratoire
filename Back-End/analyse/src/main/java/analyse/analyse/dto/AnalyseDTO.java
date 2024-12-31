@@ -7,6 +7,6 @@ public class AnalyseDTO {
     private Long Id;
 
     private String nom;
-    private String desciption;
-    private Long idLaboratoire ;
+    private String description;
+    private Long fkIdLaboratoire;
 }

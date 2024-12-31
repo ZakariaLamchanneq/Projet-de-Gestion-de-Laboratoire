@@ -1,0 +1,33 @@
+<h2 class="title">Epreuves List</h2>
+
+<button nz-button nzType="primary" (click)="openCreateForm()" class="menu-item">
+  <span nz-icon nzType="plus"></span> Add Epreuve
+</button>
+
+<nz-table #basicTable [nzData]="epreuves" [nzBordered]="true" [nzLoading]="loading">
+  <thead>
+  <tr>
+    <th nzWidth="20%">Name</th>
+    <th nzWidth="25%">Test Epreuve</th>
+    <th nzWidth="20%">Analyse</th>
+    <th nzWidth="15%">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let epreuve of basicTable.data" nzHover>
+    <td>{{ epreuve.nom }}</td>
+    <td>{{ epreuve.fkIdTestEpreuve }}</td>
+    <td>{{ epreuve.fkIdAnalyse }}</td>
+    <td>
+      <nz-button-group>
+        <button nz-button nzType="primary" (click)="openEditForm(epreuve)">
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button nz-button (click)="deleteEpreuve(epreuve.id)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      </nz-button-group>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

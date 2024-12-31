@@ -1,17 +1,20 @@
-package patient.patient.model;
+package patient.patient.model.patient;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import patient.patient.model.dossier.Dossier;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,8 +31,8 @@ public class Patient {
     private String email;
     private String visiblePour;
 
-    public Patient() {
-    }
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Dossier> dossiers;
 
     @Override
     public String toString() {
