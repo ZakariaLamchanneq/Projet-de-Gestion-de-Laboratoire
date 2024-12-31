@@ -28,7 +28,7 @@ public class WebSecurityConfig {
                         .pathMatchers("/api/utilisateurs/reset").permitAll()
                         .pathMatchers("/api/utilisateurs/**").hasAnyRole("ADMINISTRATEUR", "ADMIN_LABO")
                         .pathMatchers("/api/patients/**").hasAnyRole("ADMINISTRATEUR", "TECHNICIEN","ADMIN_LABO") // Access for ADMIN or TECHNICIAN
-                        .pathMatchers("/api/laboratoires/find/{id}").hasAnyRole("ADMIN_LABO","ADMINISTRATEUR") // Access for ADMIN only
+                        .pathMatchers("/api/laboratoires/find/{id}").hasAnyRole("ADMIN_LABO","ADMINISTRATEUR","TECHNICIEN") // Access for ADMIN only
                         .pathMatchers("/api/laboratoires/**").hasRole("ADMINISTRATEUR") // Access for ADMIN only
                         .pathMatchers("/api/adresses/**").hasAnyRole("ADMINISTRATEUR", "TECHNICIEN","ADMIN_LABO")  // Access for ADMIN only
 
