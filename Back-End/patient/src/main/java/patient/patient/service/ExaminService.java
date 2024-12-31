@@ -53,7 +53,7 @@ public class ExaminService {
     }
 
     public List<ExaminDTO> getExaminsByDossierId(Long dossierId) {
-        return examinRepository.findByDossierId(dossierId).stream().map(this::toDTO).collect(Collectors.toList());
+        return examinRepository.findByDossier_NumDossier(dossierId).stream().map(this::toDTO).collect(Collectors.toList());
     }
 
     private ExaminDTO toDTO(Examin examin) {

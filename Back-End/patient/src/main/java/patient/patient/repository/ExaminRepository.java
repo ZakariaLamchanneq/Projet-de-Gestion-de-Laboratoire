@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ExaminRepository extends JpaRepository<Examin, Long> {
-    List<Examin> findByDossierId(Long dossierId);
+    List<Examin> findByDossier_NumDossier(Long numDossier);
 }
