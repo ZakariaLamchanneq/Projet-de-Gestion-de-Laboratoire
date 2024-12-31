@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import patient.patient.dto.PatientDTO;
 import patient.patient.model.EmailEvent;
-import patient.patient.model.Patient;
+import patient.patient.model.patient.Patient;
 import patient.patient.model.SmsEvent;
 import patient.patient.repository.PatientRepository;
 
