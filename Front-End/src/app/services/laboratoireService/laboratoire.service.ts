@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Laboratoire } from '../../models/laboratoire/laboratoire.model';
+import {Analyse} from '../../models/analyse/analyse.model';
+import {LaboratoireFullResponse} from '../../models/laboratoire/laboratoire-full-response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +48,14 @@ export class LaboratoireService {
 
   deleteLaboratoire(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
+  }
+
+  getLaboratoiresWithUsers(laboratoireId: number): Observable<LaboratoireFullResponse> {
+    return this.http.get<LaboratoireFullResponse>(`${this.apiUrl}/with-users/${laboratoireId}`);
+  }
+
+  getAnalysesByLaboratoireId(laboratoireId: number): Observable<Analyse[]> {
+    return this.http.get<Analyse[]>(`${this.apiUrl}/analyses/${laboratoireId}`);
   }
 
 }

@@ -1,0 +1,33 @@
+<h2 class="title">Examin List</h2>
+
+<button nz-button nzType="primary" (click)="openCreateForm()" class="menu-item">
+  <span nz-icon nzType="plus"></span> Add Examin
+</button>
+
+<nz-table #basicTable [nzData]="examins" [nzBordered]="true" [nzLoading]="loading">
+  <thead>
+  <tr>
+    <th nzWidth="20%">Dossier</th>
+    <th nzWidth="25%">Epreuve</th>
+    <th nzWidth="25%">Result</th>
+    <th nzWidth="20%">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let examin of basicTable.data" nzHover>
+    <td>{{ examin.fkNumDossier }}</td>
+    <td>{{ examin.fkIdEpreuve }}</td>
+    <td>{{ examin.resultat }}</td>
+    <td>
+      <nz-button-group>
+        <button nz-button nzType="primary" (click)="openEditForm(examin)">
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button nz-button (click)="deleteExamin(examin.id)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      </nz-button-group>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

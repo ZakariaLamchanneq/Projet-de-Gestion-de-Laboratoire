@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import {NzIconDirective} from 'ng-zorro-antd/icon';
+import {NzInputNumberComponent} from 'ng-zorro-antd/input-number';
 
 @Component({
   selector: 'app-modifier-adresse',
@@ -18,6 +19,7 @@ import {NzIconDirective} from 'ng-zorro-antd/icon';
     NzInputModule,
     NzButtonModule,
     NzIconDirective,
+    NzInputNumberComponent,
   ],
   templateUrl: './modifier-adresse.component.html',
   styleUrls: ['./modifier-adresse.component.css'],

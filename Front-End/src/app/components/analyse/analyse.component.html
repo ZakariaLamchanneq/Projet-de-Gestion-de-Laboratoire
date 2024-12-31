@@ -1,0 +1,33 @@
+<h2 class="title">Analyses List</h2>
+
+<button nz-button nzType="primary" (click)="openCreateForm()" class="menu-item">
+  <span nz-icon nzType="plus"></span> Add Analyse
+</button>
+
+<nz-table #basicTable [nzData]="analyses" [nzBordered]="true" [nzLoading]="loading">
+  <thead>
+  <tr>
+    <th nzWidth="20%">Name</th>
+    <th nzWidth="25%">Description</th>
+    <th nzWidth="20%">Laboratory ID</th>
+    <th nzWidth="15%">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let analyse of basicTable.data" nzHover>
+    <td>{{ analyse.nom }}</td>
+    <td>{{ analyse.description }}</td>
+    <td>{{ analyse.fkIdLaboratoire }}</td>
+    <td>
+      <nz-button-group>
+        <button nz-button nzType="primary" (click)="openEditForm(analyse)">
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button nz-button (click)="deleteAnalyse(analyse.id)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      </nz-button-group>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

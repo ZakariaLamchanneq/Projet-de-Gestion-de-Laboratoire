@@ -1,0 +1,44 @@
+<form [formGroup]="analyseForm" (ngSubmit)="onSubmit()" class="analyse-form">
+  <div class="form-group">
+    <label for="nom">
+      <i nz-icon nzType="idcard"></i>
+      <b> Name:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="nom" formControlName="nom" />
+    </nz-input-group>
+    <div *ngIf="analyseForm.controls['nom'].invalid && analyseForm.controls['nom'].touched" class="error-message">
+      Name is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">
+      <i nz-icon nzType="file-text"></i>
+      <b> Description:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="description" formControlName="description" />
+    </nz-input-group>
+    <div *ngIf="analyseForm.controls['description'].invalid && analyseForm.controls['description'].touched" class="error-message">
+      Description is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fkIdLaboratoire">
+      <i nz-icon nzType="home"></i>
+      <b> Laboratory:</b>
+    </label>
+    <nz-select id="fkIdLaboratoire" formControlName="fkIdLaboratoire" nzShowSearch nzPlaceHolder="Select a laboratory">
+      <nz-option *ngFor="let laboratoire of laboratoires" [nzValue]="laboratoire.id" [nzLabel]="laboratoire.nom"></nz-option>
+    </nz-select>
+    <div *ngIf="analyseForm.controls['fkIdLaboratoire'].invalid && analyseForm.controls['fkIdLaboratoire'].touched" class="error-message">
+      Laboratory is required.
+    </div>
+  </div>
+
+  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="analyseForm.invalid">
+    Update Analyse
+  </button>
+</form>

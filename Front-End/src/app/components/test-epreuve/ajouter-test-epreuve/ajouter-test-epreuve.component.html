@@ -1,0 +1,67 @@
+<form [formGroup]="testEpreuveForm" (ngSubmit)="onSubmit()" class="test-epreuve-form">
+  <div class="form-group">
+    <label for="nomTest">
+      <i nz-icon nzType="number"></i>
+      <b> Test Name:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="nomTest" formControlName="nomTest" />
+    </nz-input-group>
+    <div *ngIf="testEpreuveForm.controls['nomTest'].invalid && testEpreuveForm.controls['nomTest'].touched" class="error-message">
+      Test Name is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="intervalMinDeReference">
+      <i nz-icon nzType="idcard"></i>
+      <b> Min Interval:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="intervalMinDeReference" formControlName="intervalMinDeReference" />
+    </nz-input-group>
+    <div *ngIf="testEpreuveForm.controls['intervalMinDeReference'].invalid && testEpreuveForm.controls['intervalMinDeReference'].touched" class="error-message">
+      Min Interval is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="intervalMaxDeReference">
+      <i nz-icon nzType="mail"></i>
+      <b> Max Interval:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="intervalMaxDeReference" formControlName="intervalMaxDeReference" />
+    </nz-input-group>
+    <div *ngIf="testEpreuveForm.controls['intervalMaxDeReference'].invalid && testEpreuveForm.controls['intervalMaxDeReference'].touched" class="error-message">
+      Max Interval is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="uniteDeReference">
+      <i nz-icon nzType="home"></i>
+      <b> Unit:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="uniteDeReference" formControlName="uniteDeReference" />
+    </nz-input-group>
+    <div *ngIf="testEpreuveForm.controls['uniteDeReference'].invalid && testEpreuveForm.controls['uniteDeReference'].touched" class="error-message">
+      Unit is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="details">
+      <i nz-icon nzType="global"></i>
+      <b> Details:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="details" formControlName="details" />
+    </nz-input-group>
+  </div>
+
+  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="testEpreuveForm.invalid">
+    Create Test Epreuve
+  </button>
+</form>

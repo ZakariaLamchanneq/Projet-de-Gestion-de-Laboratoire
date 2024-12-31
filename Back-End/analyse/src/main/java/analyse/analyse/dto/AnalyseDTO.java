@@ -8,5 +8,5 @@ public class AnalyseDTO {
 
     private String nom;
     private String description;
-    private Long fkIdLaboratoire ;
+    private Long fkIdLaboratoire;
 }

@@ -1,0 +1,44 @@
+<form [formGroup]="examinForm" (ngSubmit)="onSubmit()" class="examin-form">
+  <div class="form-group">
+    <label for="fkNumDossier">
+      <i nz-icon nzType="file"></i>
+      <b> Dossier:</b>
+    </label>
+    <nz-select id="fkNumDossier" formControlName="fkNumDossier" nzShowSearch nzPlaceHolder="Select a dossier">
+      <nz-option *ngFor="let dossier of dossiers" [nzValue]="dossier.numDossier" [nzLabel]="dossier.numDossier"></nz-option>
+    </nz-select>
+    <div *ngIf="examinForm.controls['fkNumDossier'].invalid && examinForm.controls['fkNumDossier'].touched" class="error-message">
+      Dossier is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fkIdEpreuve">
+      <i nz-icon nzType="file-text"></i>
+      <b> Epreuve:</b>
+    </label>
+    <nz-select id="fkIdEpreuve" formControlName="fkIdEpreuve" nzShowSearch nzPlaceHolder="Select an epreuve">
+      <nz-option *ngFor="let epreuve of epreuves" [nzValue]="epreuve.id" [nzLabel]="epreuve.nom"></nz-option>
+    </nz-select>
+    <div *ngIf="examinForm.controls['fkIdEpreuve'].invalid && examinForm.controls['fkIdEpreuve'].touched" class="error-message">
+      Epreuve is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="resultat">
+      <i nz-icon nzType="check-circle"></i>
+      <b> Result:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="resultat" formControlName="resultat" />
+    </nz-input-group>
+    <div *ngIf="examinForm.controls['resultat'].invalid && examinForm.controls['resultat'].touched" class="error-message">
+      Result is required.
+    </div>
+  </div>
+
+  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="examinForm.invalid">
+    Update Examin
+  </button>
+</form>
