@@ -10,6 +10,7 @@ import {AuthGuard} from './services/AuthService/AuthGuard';
 import {ResetPasswordComponent} from './components/reset-password/reset-password.component';
 import {TestEpreuveComponent} from './components/test-epreuve/test-epreuve.component';
 import {ProfileComponent} from './components/profile/profile.component';
+import {StatistiqueComponent} from './components/statistique/statistique.component';
 
 export const routes: Routes = [
   // Redirect the root to /home
@@ -29,6 +30,7 @@ export const routes: Routes = [
       { path: 'contacts-laboratoire', component: ContactLaboratoireComponent },
       { path: 'test-epreuve', component: TestEpreuveComponent},
       { path: 'profile', component: ProfileComponent },
+      { path: 'statistique', component: StatistiqueComponent}
     ]
   },
   { path: 'reset-password', component: ResetPasswordComponent },

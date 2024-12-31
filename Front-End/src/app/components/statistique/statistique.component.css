@@ -1,0 +1,83 @@
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #111111;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.4s ease, transform 0.4s ease;
+  background: linear-gradient(to right, #1890ff, #ff4d4f);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.title:hover {
+  transform: translateY(-5px);
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(to right, #1890ff, #ff4d4f);
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.title:hover::after {
+  width: 100%;
+  left: 0;
+}
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Espacement entre les graphiques */
+  justify-content: center;
+  padding: 20px;
+  background-color: #f4f7fb; /* Couleur de fond douce */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-item {
+  flex: 1 1 calc(33.33% - 20px);
+  max-width: 400px;
+  text-align: center;
+  background-color: #ffffff; /* Fond blanc pour chaque graphique */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+canvas {
+  width: 100% !important;
+  height: 300px; /* Ajuster la taille des graphiques */
+  margin: 20px auto;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.chart-item h3 {
+  font-family: 'Arial', sans-serif;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Ajouter une animation de hover pour les graphiques */
+.chart-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
