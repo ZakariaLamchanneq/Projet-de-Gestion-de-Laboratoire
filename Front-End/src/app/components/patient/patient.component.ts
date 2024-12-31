@@ -97,7 +97,7 @@ export class PatientComponent implements OnInit {
           this.updatePaginatedData();
         });
       }
-    } else if (this.role === 'ADMIN_LABO') {
+    } else if (this.role === 'ADMIN_LABO' || this.role === 'TECHNICIEN' ) {
       // Fetch patients pour un laboratoire spécifique
       if (laboratoireId) {
         this.laboratoireService.getLaboratoireById(laboratoireId).subscribe((laboratoire) => {
