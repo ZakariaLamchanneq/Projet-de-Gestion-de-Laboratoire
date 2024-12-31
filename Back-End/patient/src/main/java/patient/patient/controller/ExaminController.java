@@ -71,6 +71,12 @@ public class ExaminController {
         }
     }
 
+    @GetMapping("/dossier/{dossierId}")
+    public ResponseEntity<List<ExaminDTO>> getExaminsByDossierId(@PathVariable Long dossierId) {
+        List<ExaminDTO> examins = examinService.getExaminsByDossierId(dossierId);
+        return new ResponseEntity<>(examins, HttpStatus.OK);
+    }
+
     private ResponseEntity<String> handleException(Exception e, String message) {
         System.err.println(message + ": " + e.getMessage());
         e.printStackTrace();

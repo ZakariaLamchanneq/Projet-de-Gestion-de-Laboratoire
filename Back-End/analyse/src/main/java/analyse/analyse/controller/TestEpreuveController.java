@@ -1,4 +1,5 @@
 package analyse.analyse.controller;
+
 import analyse.analyse.dto.TestEpreuveDTO;
 import analyse.analyse.service.TestEpreuveService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +22,22 @@ public class TestEpreuveController {
         return new ResponseEntity<>(testEpreuveCreated, HttpStatus.OK);
     }
 
-
     @GetMapping("/all")
     public ResponseEntity<List<TestEpreuveDTO>> getAllEpreuves(){
         List<TestEpreuveDTO> epreuveDTOList = testEpreuveService.getAllTestEpreuves();
-        return new ResponseEntity<>(epreuveDTOList,HttpStatus.OK);
+        return new ResponseEntity<>(epreuveDTOList, HttpStatus.OK);
     }
 
-    @GetMapping("/getEpreuve/{id}")
+    @GetMapping("/find/{id}")
     public ResponseEntity<TestEpreuveDTO> getEpreuve(@PathVariable Long id){
-        TestEpreuveDTO TestEpreuveDTO = testEpreuveService.getTestEpreuveById(id);
-        return new ResponseEntity<>(TestEpreuveDTO,HttpStatus.OK);
+        TestEpreuveDTO testEpreuveDTO = testEpreuveService.getTestEpreuveById(id).orElse(null);
+        return new ResponseEntity<>(testEpreuveDTO, HttpStatus.OK);
+    }
+
+    @PutMapping("/edit/{id}")
+    public ResponseEntity<TestEpreuveDTO> updateEpreuve(@PathVariable Long id, @RequestBody TestEpreuveDTO testEpreuveDTO) {
+        TestEpreuveDTO updatedTestEpreuve = testEpreuveService.updateTestEpreuve(id, testEpreuveDTO);
+        return new ResponseEntity<>(updatedTestEpreuve, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -39,6 +45,4 @@ public class TestEpreuveController {
         testEpreuveService.deleteTestEpreuve(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
-
 }

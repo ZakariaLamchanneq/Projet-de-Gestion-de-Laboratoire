@@ -7,7 +7,7 @@ public class TestEpreuveDTO {
 
     private Long id;
 
-    private String nomEpreuve;
+    private String nomTest;
     private Long intervalMinDeReference;
     private Long intervalMaxDeReference;
     private String uniteDeReference;

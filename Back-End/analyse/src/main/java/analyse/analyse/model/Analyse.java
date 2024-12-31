@@ -16,7 +16,7 @@ public class Analyse {
 
     private String nom;
     private String desciption;
-    private Long idLaboratoire ;
+    private Long fkIdLaboratoire ;
 
     @OneToMany(mappedBy = "analyse", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Epreuve> epreuves;

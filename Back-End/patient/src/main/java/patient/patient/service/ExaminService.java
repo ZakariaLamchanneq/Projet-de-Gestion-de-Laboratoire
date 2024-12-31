@@ -10,6 +10,7 @@ import patient.patient.repository.ExaminRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -49,6 +50,10 @@ public class ExaminService {
         }
         examinRepository.deleteById(id);
         return true;
+    }
+
+    public List<ExaminDTO> getExaminsByDossierId(Long dossierId) {
+        return examinRepository.findByDossierId(dossierId).stream().map(this::toDTO).collect(Collectors.toList());
     }
 
     private ExaminDTO toDTO(Examin examin) {

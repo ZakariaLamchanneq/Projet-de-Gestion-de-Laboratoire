@@ -15,7 +15,7 @@ public class Examin {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "fkIdDossier", nullable = false)
+    @JoinColumn(name = "fkNumDossier", nullable = false)
     private Dossier dossier;
 
     private Long fkIdEpreuve;

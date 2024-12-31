@@ -13,7 +13,6 @@ import java.util.List;
 @RequestMapping("/api/epreuves")
 public class EpreuveController {
 
-
     @Autowired
     private EpreuveService epreuveService;
 
@@ -23,17 +22,22 @@ public class EpreuveController {
         return new ResponseEntity<>(epreuveCreated, HttpStatus.OK);
     }
 
-
     @GetMapping("/all")
     public ResponseEntity<List<EpreuveDTO>> getAllEpreuves(){
         List<EpreuveDTO> epreuveDTOList = epreuveService.getAllEpreuves();
-        return new ResponseEntity<>(epreuveDTOList,HttpStatus.OK);
+        return new ResponseEntity<>(epreuveDTOList, HttpStatus.OK);
     }
 
-    @GetMapping("/getEpreuve/{id}")
+    @GetMapping("/find/{id}")
     public ResponseEntity<EpreuveDTO> getEpreuve(@PathVariable Long id){
-        EpreuveDTO epreuveDTO = epreuveService.getEpreuveById(id);
-        return new ResponseEntity<>(epreuveDTO,HttpStatus.OK);
+        EpreuveDTO epreuveDTO = epreuveService.getEpreuveById(id).orElse(null);
+        return new ResponseEntity<>(epreuveDTO, HttpStatus.OK);
+    }
+
+    @PutMapping("/edit/{id}")
+    public ResponseEntity<EpreuveDTO> updateEpreuve(@PathVariable Long id, @RequestBody EpreuveDTO epreuveDTO) {
+        EpreuveDTO updatedEpreuve = epreuveService.updateEpreuve(id, epreuveDTO);
+        return new ResponseEntity<>(updatedEpreuve, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -42,7 +46,9 @@ public class EpreuveController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-
-
-
+    @GetMapping("/analyse/{analyseId}")
+    public ResponseEntity<List<EpreuveDTO>> getEpreuvesByAnalyseId(@PathVariable Long analyseId) {
+        List<EpreuveDTO> epreuves = epreuveService.getEpreuvesByAnalyseId(analyseId);
+        return new ResponseEntity<>(epreuves, HttpStatus.OK);
+    }
 }

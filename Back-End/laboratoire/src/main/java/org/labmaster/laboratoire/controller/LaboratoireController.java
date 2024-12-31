@@ -1,6 +1,7 @@
 package org.labmaster.laboratoire.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.labmaster.laboratoire.dto.analyse.AnalyseDTO;
 import org.labmaster.laboratoire.dto.laboratoire.FullLaboratoireResponse;
 import org.labmaster.laboratoire.dto.laboratoire.LaboratoireDTO;
 import org.labmaster.laboratoire.exception.ResourceNotFoundException;
@@ -87,5 +88,11 @@ public class LaboratoireController {
     public ResponseEntity<FullLaboratoireResponse> getAllLaboratoires(@PathVariable("laboratoire-id") Long laboratoireId) {
         FullLaboratoireResponse laboratoiresWithUsers = laboratoireService.getLaboratoiresWithUsers(laboratoireId);
         return new ResponseEntity<>(laboratoiresWithUsers, HttpStatus.OK);
+    }
+
+    @GetMapping("/{laboratoireId}/analyses")
+    public ResponseEntity<List<AnalyseDTO>> getAnalysesByLaboratoireId(@PathVariable Long laboratoireId) {
+        List<AnalyseDTO> analyses = laboratoireService.getAnalysesByLaboratoireId(laboratoireId);
+        return new ResponseEntity<>(analyses, HttpStatus.OK);
     }
 }
