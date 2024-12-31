@@ -24,12 +24,12 @@ public class PatientService {
 
 
     @Transactional
-    public PatientDTO createPatient (PatientDTO patientDto){
+    public PatientDTO createPatient(PatientDTO patientDto) {
         Patient patient = convertToEntity(patientDto);
         patientRepository.save(patient);
         // Send Kafka messages for email and SMS
         EmailEvent emailEvent = new EmailEvent(patient.getEmail(), "Welcome!", "Your account has been successfully created.");
-        SmsEvent smsEvent = new SmsEvent(String.valueOf(patient.getNumTel()),"Welcome! Your account has been successfully created.");
+        SmsEvent smsEvent = new SmsEvent(String.valueOf(patient.getNumTel()), "Welcome! Your account has been successfully created.");
 
         try {
             kafkaProducerService.sendEmail(emailEvent.getRecipient(), emailEvent.getSubject(), emailEvent.getBody());
@@ -41,15 +41,15 @@ public class PatientService {
         return convertToDTO(patient);
     }
 
-    public List<PatientDTO> getAllPatients(){
+    public List<PatientDTO> getAllPatients() {
         return patientRepository.findAll().stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    public PatientDTO getPatientById(Long id){
+    public PatientDTO getPatientById(Long id) {
         Patient patient = patientRepository.findById(id)
-                        .orElseThrow(() -> new RuntimeException("Patient introuvable"));
+                .orElseThrow(() -> new RuntimeException("Patient introuvable"));
         return convertToDTO(patient);
     }
 
@@ -73,14 +73,16 @@ public class PatientService {
         return convertToDTO(patient);
     }
 
-    public void deletePatient(Long id){
+    public boolean deletePatient(Long id) {
+        if (!patientRepository.existsById(id)) {
+            return false;
+        }
         patientRepository.deleteById(id);
+        return true;
     }
 
 
-
-
-    private PatientDTO convertToDTO (Patient patient){
+    private PatientDTO convertToDTO(Patient patient) {
         PatientDTO patientDto = new PatientDTO();
         patientDto.setId(patient.getId());
         patientDto.setNomComplet(patient.getNomComplet());
@@ -96,7 +98,7 @@ public class PatientService {
         return patientDto;
     }
 
-    private Patient convertToEntity (PatientDTO patientDto){
+    private Patient convertToEntity(PatientDTO patientDto) {
         Patient patient = new Patient();
         patient.setId(patientDto.getId());
         patient.setNomComplet(patientDto.getNomComplet());

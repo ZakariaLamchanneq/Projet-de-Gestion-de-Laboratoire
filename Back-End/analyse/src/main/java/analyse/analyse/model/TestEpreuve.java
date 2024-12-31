@@ -17,7 +17,7 @@ public class TestEpreuve {
     private Long intervalMinDeReference;
     private Long intervalMaxDeReference;
     private String uniteDeReference;
-    private String Details;
+    private String details;
 
     @OneToOne(mappedBy = "testEpreuve")
     private Epreuve epreuve;

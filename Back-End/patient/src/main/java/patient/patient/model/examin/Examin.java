@@ -9,6 +9,7 @@ import patient.patient.model.dossier.Dossier;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"fkNumDossier", "fkIdEpreuve"})})
 public class Examin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

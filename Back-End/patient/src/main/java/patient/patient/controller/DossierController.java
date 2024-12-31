@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import patient.patient.dto.DossierDTO;
+import patient.patient.dto.PatientDTO;
 import patient.patient.model.patient.Patient;
 import patient.patient.service.DossierService;
 
@@ -75,7 +76,7 @@ public class DossierController {
     @GetMapping("/patients/{email}")
     public ResponseEntity<?> getPatientsByUtilisateurEmail(@PathVariable String email) {
         try {
-            List<Patient> patients = dossierService.getPatientsByUtilisateurEmail(email);
+            List<PatientDTO> patients = dossierService.getPatientsByUtilisateurEmail(email);
             return new ResponseEntity<>(patients, HttpStatus.OK);
         } catch (Exception e) {
             return handleException(e, "Failed to retrieve patients for utilisateur with email " + email);

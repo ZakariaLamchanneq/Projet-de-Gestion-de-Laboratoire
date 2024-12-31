@@ -11,6 +11,6 @@ public class TestEpreuveDTO {
     private Long intervalMinDeReference;
     private Long intervalMaxDeReference;
     private String uniteDeReference;
-    private String Details;
+    private String details;
 
 }

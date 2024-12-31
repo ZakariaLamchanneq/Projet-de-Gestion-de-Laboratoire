@@ -35,7 +35,7 @@ public class AnalyseService {
                 .orElseThrow(() -> new RuntimeException("Analyse not found with id " + id));
 
         analyse.setNom(analyseDTO.getNom());
-        analyse.setDesciption(analyseDTO.getDesciption());
+        analyse.setDescription(analyseDTO.getDescription());
         analyse.setFkIdLaboratoire(analyseDTO.getFkIdLaboratoire());
 
         Analyse updatedAnalyse = analyseRepository.save(analyse);
@@ -58,7 +58,7 @@ public class AnalyseService {
         AnalyseDTO dto = new AnalyseDTO();
         dto.setId(analyse.getId());
         dto.setNom(analyse.getNom());
-        dto.setDesciption(analyse.getDesciption());
+        dto.setDescription(analyse.getDescription());
         dto.setFkIdLaboratoire(analyse.getFkIdLaboratoire());
         return dto;
     }
@@ -67,7 +67,7 @@ public class AnalyseService {
         Analyse analyse = new Analyse();
         analyse.setId(dto.getId());
         analyse.setNom(dto.getNom());
-        analyse.setDesciption(dto.getDesciption());
+        analyse.setDescription(dto.getDescription());
         analyse.setFkIdLaboratoire(dto.getFkIdLaboratoire());
         return analyse;
     }

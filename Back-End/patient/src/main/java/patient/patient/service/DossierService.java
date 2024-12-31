@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import patient.patient.client.UtilisateurClient;
 import patient.patient.dto.DossierDTO;
+import patient.patient.dto.PatientDTO;
 import patient.patient.dto.UtilisateurDTO;
 import patient.patient.model.dossier.Dossier;
 import patient.patient.model.patient.Patient;
@@ -20,7 +21,6 @@ public class DossierService {
 
     private final DossierRepository dossierRepository;
     private final PatientRepository patientRepository;
-    private final UtilisateurClient utilisateurClient;
 
     public List<DossierDTO> getAllDossiers() {
         return dossierRepository.findAll().stream().map(this::toDTO).toList();
@@ -55,19 +55,33 @@ public class DossierService {
         return true;
     }
 
-    public List<Patient> getPatientsByUtilisateurEmail(String email) {
-        UtilisateurDTO utilisateur = fetchUtilisateurByEmail(email);
-        return dossierRepository.findAll().stream()
-                .filter(dossier -> dossier.getFkEmailUtilisateur().equals(email))
-                .map(Dossier::getPatient)
+    public List<PatientDTO> getPatientsByUtilisateurEmail(String email) {
+        return dossierRepository.findByFkEmailUtilisateur(email).stream()
+                .map(dossier -> toPatientDTO(dossier.getPatient()))
                 .collect(Collectors.toList());
+    }
+
+    private PatientDTO toPatientDTO(Patient patient) {
+        PatientDTO dto = new PatientDTO();
+        dto.setId(patient.getId());
+        dto.setNomComplet(patient.getNomComplet());
+        dto.setDateNaissance(patient.getDateNaissance());
+        dto.setLieuDeNaissance(patient.getLieuNaissance());
+        dto.setSexe(patient.getSexe());
+        dto.setTypePieceIdentite(patient.getTypePieceIdentite());
+        dto.setNumPieceIdentite(patient.getNumPieceIdentite());
+        dto.setAdresse(patient.getAdresse());
+        dto.setNumTel(patient.getNumTel());
+        dto.setEmail(patient.getEmail());
+        dto.setVisiblePour(patient.getVisiblePour());
+        return dto;
     }
 
     private DossierDTO toDTO(Dossier dossier) {
         DossierDTO dto = new DossierDTO();
         dto.setNumDossier(dossier.getNumDossier());
         dto.setFkEmailUtilisateur(dossier.getFkEmailUtilisateur());
-        dto.setFkNumPatient(dossier.getPatient().getId());
+        dto.setFkIdPatient(dossier.getPatient().getId());
         dto.setDate(dossier.getDate());
         return dto;
     }
@@ -77,16 +91,14 @@ public class DossierService {
         dossier.setNumDossier(dto.getNumDossier());
         dossier.setFkEmailUtilisateur(dto.getFkEmailUtilisateur());
         dossier.setDate(dto.getDate());
-        dossier.setPatient(fetchPatientById(dto.getFkNumPatient()));
+        dossier.setPatient(fetchPatientById(dto.getFkIdPatient()));
         return dossier;
     }
+
 
     private Patient fetchPatientById(Long id) {
         return patientRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Patient not found with id " + id));
     }
 
-    private UtilisateurDTO fetchUtilisateurByEmail(String email) {
-        return utilisateurClient.getUtilisateurByEmail(email);
-    }
 }

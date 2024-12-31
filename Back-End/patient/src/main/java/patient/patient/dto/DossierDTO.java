@@ -8,6 +8,6 @@ import java.time.LocalDate;
 public class DossierDTO {
     private Long numDossier;
     private String fkEmailUtilisateur;
-    private Long fkNumPatient;
+    private Long fkIdPatient;
     private LocalDate date;
 }

@@ -10,6 +10,6 @@ import java.util.List;
 @FeignClient(name = "analyse-microservice", url = "${application.config.analyses-url}")
 public interface AnalyseClient {
 
-    @GetMapping("/api/analyses/laboratoire/{laboratoireId}")
+    @GetMapping("/laboratoire/{laboratoireId}")
     List<AnalyseDTO> getAnalysesByLaboratoireId(@PathVariable("laboratoireId") Long laboratoireId);
 }

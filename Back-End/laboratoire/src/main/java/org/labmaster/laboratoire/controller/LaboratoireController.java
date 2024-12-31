@@ -90,7 +90,7 @@ public class LaboratoireController {
         return new ResponseEntity<>(laboratoiresWithUsers, HttpStatus.OK);
     }
 
-    @GetMapping("/{laboratoireId}/analyses")
+    @GetMapping("/analyses/{laboratoireId}")
     public ResponseEntity<List<AnalyseDTO>> getAnalysesByLaboratoireId(@PathVariable Long laboratoireId) {
         List<AnalyseDTO> analyses = laboratoireService.getAnalysesByLaboratoireId(laboratoireId);
         return new ResponseEntity<>(analyses, HttpStatus.OK);

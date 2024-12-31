@@ -9,7 +9,6 @@ import java.time.LocalDate;
 @Data
 public class LaboratoireDTO {
     private Long id;
-    @Column(nullable = false)
     private String nom;
     private String nrc;
     private Boolean active;
