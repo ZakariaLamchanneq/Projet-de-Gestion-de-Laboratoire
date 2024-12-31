@@ -43,6 +43,12 @@ public class EpreuveController {
     }
 
 
+    @PutMapping("/updateEpreuve/{id}")
+    public ResponseEntity<EpreuveDTO> updateEpreuve(@PathVariable Long id , @RequestBody EpreuveDTO epreuveDTO){
+        EpreuveDTO epreuveDTOUpdated =epreuveService.updateEpreuve(id,epreuveDTO);
+        return new ResponseEntity<>(epreuveDTOUpdated,HttpStatus.OK);
+    }
+
 
 
 }

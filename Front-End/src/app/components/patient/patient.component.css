@@ -165,3 +165,70 @@ tbody tr:hover {
   word-wrap: break-word; /* Assure le retour à la ligne pour les très longs mots */
 
 }
+
+
+
+
+.archive-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.3s;
+}
+
+.archive-button:hover {
+  color: blue;
+}
+
+.archive-button span {
+  font-size: 18px;
+}
+
+
+
+.unarchive-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.3s;
+}
+
+.unarchive-button:hover {
+  color: blue;
+}
+
+.unarchive-button span {
+  font-size: 18px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.3s;
+}
+
+.delete-button:hover {
+  color: red;
+}
+
+.delete-button span {
+  font-size: 18px;
+}
+
+.email-column {
+  white-space: normal; /* Permet le retour à la ligne */
+  overflow-wrap: break-word; /* Gère le retour à la ligne si le mot est trop long */
+  word-wrap: break-word; /* Assure le retour à la ligne pour les très longs mots */
+
+}
+
+.button-group {
+  display: flex;
+  gap: 10px; /* Espacement entre les boutons */
+  margin-bottom: 15px; /* Espacement sous les boutons */
+}
+

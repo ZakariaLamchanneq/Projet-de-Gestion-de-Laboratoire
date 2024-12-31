@@ -13,11 +13,12 @@ public class TestEpreuve {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nomEpreuve;
+    private String nomTest;
     private Long intervalMinDeReference;
     private Long intervalMaxDeReference;
     private String uniteDeReference;
     private String Details;
+    private Long fkIdEpreuve;
 
     @OneToOne(mappedBy = "testEpreuve")
     private Epreuve epreuve;
