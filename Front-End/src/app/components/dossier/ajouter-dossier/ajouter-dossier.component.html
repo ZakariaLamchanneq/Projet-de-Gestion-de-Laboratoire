@@ -1,0 +1,57 @@
+<form [formGroup]="dossierForm" (ngSubmit)="onSubmit()" class="dossier-form">
+  <div class="form-group">
+    <label for="numDossier">
+      <i nz-icon nzType="number"></i>
+      <b> Dossier Number:</b>
+    </label>
+    <nz-input-group>
+      <input nz-input id="numDossier" formControlName="numDossier" />
+    </nz-input-group>
+    <div *ngIf="dossierForm.controls['numDossier'].invalid && dossierForm.controls['numDossier'].touched" class="error-message">
+      Dossier Number is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fkIdPatient">
+      <i nz-icon nzType="user"></i>
+      <b> Patient:</b>
+    </label>
+    <nz-select id="fkIdPatient" formControlName="fkIdPatient" nzShowSearch nzPlaceHolder="Select a patient">
+      <nz-option *ngFor="let patient of patients" [nzValue]="patient.id" [nzLabel]="patient.email"></nz-option>
+    </nz-select>
+    <div *ngIf="dossierForm.controls['fkIdPatient'].invalid && dossierForm.controls['fkIdPatient'].touched" class="error-message">
+      Patient is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fkEmailUtilisateur">
+      <i nz-icon nzType="mail"></i>
+      <b> Utilisateur Email:</b>
+    </label>
+    <nz-select id="fkEmailUtilisateur" formControlName="fkEmailUtilisateur" nzShowSearch nzPlaceHolder="Select a utilisateur">
+      <nz-option *ngFor="let utilisateur of utilisateurs" [nzValue]="utilisateur.email" [nzLabel]="utilisateur.email"></nz-option>
+    </nz-select>
+    <div *ngIf="dossierForm.controls['fkEmailUtilisateur'].invalid && dossierForm.controls['fkEmailUtilisateur'].touched" class="error-message">
+      Utilisateur Email is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="date">
+      <i nz-icon nzType="calendar"></i>
+      <b> Date:</b>
+    </label>
+    <nz-input-group>
+      <nz-date-picker formControlName="date" nzFormat="yyyy-MM-dd"></nz-date-picker>
+    </nz-input-group>
+    <div *ngIf="dossierForm.controls['date'].invalid && dossierForm.controls['date'].touched" class="error-message">
+      Date is required.
+    </div>
+  </div>
+
+  <button nz-button nzType="primary" type="submit" [nzLoading]="loading" [disabled]="dossierForm.invalid">
+    Create Dossier
+  </button>
+</form>

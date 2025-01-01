@@ -5,7 +5,7 @@
       <b> Street Number:</b>
     </label>
     <nz-input-group>
-      <input nz-input id="numVoie" formControlName="numVoie" />
+      <nz-input-number id="numVoie" style="width: 100%" formControlName="numVoie" [nzMin]="0"></nz-input-number>
     </nz-input-group>
     <div *ngIf="adresseForm.controls['numVoie'].invalid && adresseForm.controls['numVoie'].touched" class="error-message">
       Street Number is required.

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import patient.patient.dto.PatientDTO;
 import patient.patient.model.EmailEvent;
-import patient.patient.model.Patient;
+import patient.patient.model.patient.Patient;
 import patient.patient.model.SmsEvent;
 import patient.patient.repository.PatientRepository;
 
@@ -24,12 +24,12 @@ public class PatientService {
 
 
     @Transactional
-    public PatientDTO createPatient (PatientDTO patientDto){
+    public PatientDTO createPatient(PatientDTO patientDto) {
         Patient patient = convertToEntity(patientDto);
         patientRepository.save(patient);
         // Send Kafka messages for email and SMS
         EmailEvent emailEvent = new EmailEvent(patient.getEmail(), "Welcome!", "Your account has been successfully created.");
-        SmsEvent smsEvent = new SmsEvent(String.valueOf(patient.getNumTel()),"Welcome! Your account has been successfully created.");
+        SmsEvent smsEvent = new SmsEvent(String.valueOf(patient.getNumTel()), "Welcome! Your account has been successfully created.");
 
         try {
             kafkaProducerService.sendEmail(emailEvent.getRecipient(), emailEvent.getSubject(), emailEvent.getBody());
@@ -41,15 +41,15 @@ public class PatientService {
         return convertToDTO(patient);
     }
 
-    public List<PatientDTO> getAllPatients(){
+    public List<PatientDTO> getAllPatients() {
         return patientRepository.findAll().stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    public PatientDTO getPatientById(Long id){
+    public PatientDTO getPatientById(Long id) {
         Patient patient = patientRepository.findById(id)
-                        .orElseThrow(() -> new RuntimeException("Patient introuvable"));
+                .orElseThrow(() -> new RuntimeException("Patient introuvable"));
         return convertToDTO(patient);
     }
 
@@ -73,14 +73,46 @@ public class PatientService {
         return convertToDTO(patient);
     }
 
-    public void deletePatient(Long id){
+    public boolean deletePatient(Long id) {
+        if (!patientRepository.existsById(id)) {
+            return false;
+        }
         patientRepository.deleteById(id);
+        return true;
     }
 
 
+    // Récupérer les patients archivés
+    public List<Patient> getArchivedPatients() {
+        return patientRepository.findByIsArchived(true);
+    }
 
+    // Récupérer les patients non archivés
+    public List<Patient> getNonArchivedPatients() {
+        return patientRepository.findByIsArchived(false);
+    }
 
-    private PatientDTO convertToDTO (Patient patient){
+    // Archiver un patient
+    public Patient archivePatient(Long patientId) {
+        Patient patient = patientRepository.findById(patientId).orElse(null);
+        if (patient != null) {
+            patient.setIsArchived(true);
+            return patientRepository.save(patient);
+        }
+        return null;
+    }
+
+    // Désarchiver un patient
+    public Patient unarchivePatient(Long patientId) {
+        Patient patient = patientRepository.findById(patientId).orElse(null);
+        if (patient != null) {
+            patient.setIsArchived(false);
+            return patientRepository.save(patient);
+        }
+        return null;
+    }
+
+    private PatientDTO convertToDTO(Patient patient) {
         PatientDTO patientDto = new PatientDTO();
         patientDto.setId(patient.getId());
         patientDto.setNomComplet(patient.getNomComplet());
@@ -96,7 +128,7 @@ public class PatientService {
         return patientDto;
     }
 
-    private Patient convertToEntity (PatientDTO patientDto){
+    private Patient convertToEntity(PatientDTO patientDto) {
         Patient patient = new Patient();
         patient.setId(patientDto.getId());
         patient.setNomComplet(patientDto.getNomComplet());

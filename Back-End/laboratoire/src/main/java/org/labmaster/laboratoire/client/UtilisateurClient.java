@@ -10,7 +10,7 @@ import java.util.List;
 @FeignClient(name = "utilisateur-microservice", url = "${application.config.utilisateurs-url}")
 public interface UtilisateurClient {
 
-        @GetMapping("/laboratoire/{laboratoire-id}")
+    @GetMapping("/laboratoire/{laboratoire-id}")
     List<Utilisateur> getUtilisateursByLaboratoire(@PathVariable("laboratoire-id") Long laboratoireId);
 
 }

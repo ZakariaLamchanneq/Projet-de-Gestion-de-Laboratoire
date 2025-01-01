@@ -1,0 +1,36 @@
+<h2 class="title">Test Epreuves List</h2>
+
+<button nz-button nzType="primary" (click)="openCreateForm()" class="menu-item">
+  <span nz-icon nzType="plus"></span> Add Test Epreuve
+</button>
+
+<nz-table #basicTable [nzData]="testEpreuves" [nzBordered]="true" [nzLoading]="loading">
+  <thead>
+  <tr>
+    <th nzWidth="20%">Name</th>
+    <th nzWidth="20%">Min Interval</th>
+    <th nzWidth="20%">Max Interval</th>
+    <th nzWidth="20%">Unit</th>
+    <th nzWidth="20%">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let testEpreuve of basicTable.data" nzHover>
+    <td>{{ testEpreuve.nomTest }}</td>
+    <td>{{ testEpreuve.intervalMinDeReference }}</td>
+    <td>{{ testEpreuve.intervalMaxDeReference }}</td>
+    <td>{{ testEpreuve.uniteDeReference }}</td>
+
+    <td>
+      <nz-button-group>
+        <button nz-button nzType="primary" (click)="openEditForm(testEpreuve)">
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button nz-button (click)="deleteTestEpreuve(testEpreuve.id)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      </nz-button-group>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

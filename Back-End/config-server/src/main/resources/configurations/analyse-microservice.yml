@@ -1,0 +1,31 @@
+eureka:
+  instance:
+    hostname: ${ANALYSE_HOSTNAME:localhost}
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOSTNAME:localhost}:8761/eureka
+
+
+server:
+  port: 0 # Allow dynamic port allocation
+spring:
+  application:
+    name: analyse-microservice
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOSTNAME:localhost}:3306/analyses
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+
+

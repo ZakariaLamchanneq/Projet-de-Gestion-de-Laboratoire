@@ -22,6 +22,10 @@ spring:
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
 
+application:
+  config:
+    utilisateurs-url: http://${GATEWAY_HOSTNAME:localhost}:8222/api/utilisateurs
+
 management:
   tracing:
     sampling:

@@ -8,6 +8,13 @@ import {AdresseComponent} from './components/adresse/adresse.component';
 import {ContactLaboratoireComponent} from './components/contact-laboratoire/contact-laboratoire.component';
 import {AuthGuard} from './services/AuthService/AuthGuard';
 import {ResetPasswordComponent} from './components/reset-password/reset-password.component';
+import {TestEpreuveComponent} from './components/test-epreuve/test-epreuve.component';
+import {AnalyseComponent} from './components/analyse/analyse.component';
+import {EpreuveComponent} from './components/epreuve/epreuve.component';
+import {DossierComponent} from './components/dossier/dossier.component';
+import {ExaminComponent} from './components/examin/examin.component';
+import {ProfileComponent} from './components/profile/profile.component';
+import {StatistiqueComponent} from './components/statistique/statistique.component';
 
 export const routes: Routes = [
   // Redirect the root to /home
@@ -25,11 +32,19 @@ export const routes: Routes = [
       { path: 'patients', component: PatientComponent},
       { path: 'adresses', component: AdresseComponent },
       { path: 'contacts-laboratoire', component: ContactLaboratoireComponent },
+      { path: 'test-epreuves', component: TestEpreuveComponent },
+      { path: 'epreuves', component: EpreuveComponent },
+      { path: 'analyses', component: AnalyseComponent },
+      { path: 'dossiers', component: DossierComponent },
+      { path: 'examins', component: ExaminComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'statistique', component: StatistiqueComponent}
     ]
   },
   { path: 'reset-password', component: ResetPasswordComponent },
 
-  { path: '**', redirectTo: '' },
+
+  { path: '**', redirectTo: 'login' },
 ];
 
 

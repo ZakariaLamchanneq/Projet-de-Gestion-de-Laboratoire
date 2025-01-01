@@ -38,6 +38,7 @@ public class AuthController {
                 String token = Jwts.builder()
                         .setSubject(user.getEmail())
                         .claim("role", user.getRole())
+                        .claim("laboratoireId", user.getLaboratoireId())
                         .setIssuedAt(new Date())
                         .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // 24 heures
                         .signWith(SignatureAlgorithm.HS256, SECRET_KEY)

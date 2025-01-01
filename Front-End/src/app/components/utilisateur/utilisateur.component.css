@@ -90,7 +90,7 @@ tbody tr:hover {
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-
+  color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
@@ -143,6 +143,42 @@ tbody tr:hover {
   font-size: 18px;
 }
 
+
+
+.archive-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.3s;
+}
+
+.archive-button:hover {
+  color: blue;
+}
+
+.archive-button span {
+  font-size: 18px;
+}
+
+
+
+.unarchive-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.3s;
+}
+
+.unarchive-button:hover {
+  color: blue;
+}
+
+.unarchive-button span {
+  font-size: 18px;
+}
+
 .delete-button {
   background: none;
   border: none;
@@ -165,3 +201,10 @@ tbody tr:hover {
   word-wrap: break-word; /* Assure le retour à la ligne pour les très longs mots */
 
 }
+
+.button-group {
+  display: flex;
+  gap: 10px; /* Espacement entre les boutons */
+  margin-bottom: 15px; /* Espacement sous les boutons */
+}
+

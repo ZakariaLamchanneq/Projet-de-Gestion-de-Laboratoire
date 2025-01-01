@@ -23,7 +23,7 @@ public class Utilisateur {
     private String role;
     private Long laboratoireId;
     private String password;
-
+    private Boolean isArchived;
 
 
     public Utilisateur() {

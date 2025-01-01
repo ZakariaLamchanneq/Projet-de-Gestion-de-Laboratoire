@@ -26,6 +26,7 @@ spring:
 application:
   config:
     utilisateurs-url: http://${GATEWAY_HOSTNAME:localhost}:8222/api/utilisateurs
+    analyses-url: http://${GATEWAY_HOSTNAME:localhost}:8222/api/analyses
 
 management:
   tracing:

@@ -45,10 +45,35 @@ spring:
           predicates:
             - Path=/api/utilisateurs/**
 
-        - id: patient-microservice
+        - id: patient-endpoints
           uri: lb://patient-microservice
           predicates:
             - Path=/api/patients/**
+
+        - id: examin-endpoints
+          uri: lb://patient-microservice
+          predicates:
+            - Path=/api/examins/**
+
+        - id: dossier-endpoints
+          uri: lb://patient-microservice
+          predicates:
+            - Path=/api/dossiers/**
+
+        - id: analyse-enpoints
+          uri: lb://analyse-microservice
+          predicates:
+            - Path=/api/analyses/**
+
+        - id: test-epreuve-enpoints
+          uri: lb://analyse-microservice
+          predicates:
+            - Path=/api/testEpreuves/**
+
+        - id: epreuve-enpoints
+          uri: lb://analyse-microservice
+          predicates:
+            - Path=/api/epreuves/**
 #      # Configuration CORS to connect Front-End
 #      globalcors:
 #        cors-configurations:

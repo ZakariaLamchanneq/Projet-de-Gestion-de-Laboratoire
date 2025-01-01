@@ -4,14 +4,13 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzImageModule } from 'ng-zorro-antd/image';
-
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {NzTooltipDirective} from 'ng-zorro-antd/tooltip';
-import {AuthService} from '../../../services/AuthService/auth-service.service';
-import {NzAvatarComponent} from 'ng-zorro-antd/avatar';
-import {NzButtonComponent} from 'ng-zorro-antd/button';
-import {NzDropDownDirective, NzDropdownMenuComponent} from 'ng-zorro-antd/dropdown';
+import { NzTooltipDirective } from 'ng-zorro-antd/tooltip';
+import { AuthService } from '../../../services/AuthService/auth-service.service';
+import { NzAvatarComponent } from 'ng-zorro-antd/avatar';
+import { NzButtonComponent } from 'ng-zorro-antd/button';
+import { NzDropDownDirective, NzDropdownMenuComponent } from 'ng-zorro-antd/dropdown';
 
 @Component({
   selector: 'app-layout',
@@ -31,22 +30,26 @@ import {NzDropDownDirective, NzDropdownMenuComponent} from 'ng-zorro-antd/dropdo
     NzDropdownMenuComponent,
   ],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css',
+  styleUrls: ['./layout.component.css'],
 })
 export class LayoutComponent {
-
-  isCollapsed = false;
+  isCollapsed = true;
   logo = 'assets/images/logo1.png';
   role: string | null = null;
   visible = false;
 
-
   constructor(private authService: AuthService) {
     this.role = this.authService.getRole();
+    const storedCollapsedState = localStorage.getItem('isCollapsed');
+    this.isCollapsed = storedCollapsedState === 'true';
+  }
+
+  toggleCollapse(): void {
+    this.isCollapsed = !this.isCollapsed;
+    localStorage.setItem('isCollapsed', this.isCollapsed.toString());
   }
 
   logout(): void {
-   this.authService.logout();
+    this.authService.logout();
   }
-
 }

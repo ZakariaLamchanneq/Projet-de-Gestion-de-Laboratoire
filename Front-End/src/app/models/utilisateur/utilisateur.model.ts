@@ -7,4 +7,5 @@ export interface Utilisateur {
   signature: string;
   role: string;
   laboratoireId?: number;
+  isArchived?:Boolean;
 }
