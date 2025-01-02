@@ -1,12 +1,12 @@
 spring:
   application:
-    name: laboratoire-microservice
+    name: analyse-microservice
   cloud:
     config:
       enabled: false # Disable Config Server
   datasource:
-    driver-class-name: org.h2.Driver # Use in-memory H2 database for tests
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver # Use in-memory H2 database for testing
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE # In-memory database
     username: sa
     password:
   jpa:
@@ -22,14 +22,9 @@ eureka:
 server:
   port: 0 # Use a random port for testing
 
-application:
-  config:
-    utilisateurs-url: http://localhost:8080/api/utilisateurs # Mock Gateway URL
-    analyses-url: http://localhost:8081/api/analyses
-
 management:
   endpoints:
     enabled-by-default: false # Disable management endpoints during tests
   tracing:
     sampling:
-      probability: 0.0 # Disable tracing for test environment
+      probability: 0.0 # Disable tracing for the test environment

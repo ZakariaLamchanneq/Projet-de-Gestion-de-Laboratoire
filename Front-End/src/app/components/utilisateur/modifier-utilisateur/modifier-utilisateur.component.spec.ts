@@ -1,9 +1,5 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-
-import {ModifierUtilisateurComponent} from './modifier-utilisateur.component';
-import {UtilisateurService} from '../../../services/utilisateurService/utilisateur.service';
-import {provideHttpClient, withFetch} from '@angular/common/http';
-import {NzModalRef} from 'ng-zorro-antd/modal';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ModifierUtilisateurComponent } from './modifier-utilisateur.component';
 
 describe('ModifierUtilisateurComponent', () => {
   let component: ModifierUtilisateurComponent;
@@ -11,18 +7,14 @@ describe('ModifierUtilisateurComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModifierUtilisateurComponent],
-      providers: [UtilisateurService,
-        provideHttpClient(withFetch()),
-        {provide: NzModalRef, useValue: {}}
-      ]
-
-    })
-      .compileComponents();
+      imports: [ModifierUtilisateurComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ModifierUtilisateurComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    jest.spyOn(console, 'log').mockImplementation(() => {});
   });
 
   it('should create', () => {
