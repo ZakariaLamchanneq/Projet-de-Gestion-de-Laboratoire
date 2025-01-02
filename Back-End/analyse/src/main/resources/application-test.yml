@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: analyse-microservice
+  cloud:
+    config:
+      enabled: false # Disable Config Server
+  datasource:
+    driver-class-name: org.h2.Driver # Use in-memory H2 database for testing
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE # In-memory database
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Recreate schema for each test
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+
+eureka:
+  client:
+    enabled: false # Disable Eureka client
+
+server:
+  port: 0 # Use a random port for testing
+
+management:
+  endpoints:
+    enabled-by-default: false # Disable management endpoints during tests
+  tracing:
+    sampling:
+      probability: 0.0 # Disable tracing for the test environment

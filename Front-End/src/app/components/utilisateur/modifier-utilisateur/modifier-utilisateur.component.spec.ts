@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ModifierUtilisateurComponent } from './modifier-utilisateur.component';
 
 describe('ModifierUtilisateurComponent', () => {
@@ -9,12 +8,13 @@ describe('ModifierUtilisateurComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ModifierUtilisateurComponent]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ModifierUtilisateurComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    jest.spyOn(console, 'log').mockImplementation(() => {});
   });
 
   it('should create', () => {
