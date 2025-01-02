@@ -45,6 +45,8 @@ services:
       GATEWAY_HOSTNAME: gateway
       LABORATOIRE_HOSTNAME: laboratoire-microservice
       UTILISATEUR_HOSTNAME: utilisateur-microservice
+      ANALYSE_HOSTNAME: analyse-microservice
+      PATIENT_HOSTNAME: patient-microservice
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
       interval: 10s
@@ -100,7 +102,47 @@ services:
       CONFIG_SERVER_URL: http://config-server:8888
       EUREKA_HOSTNAME: discovery
       MYSQL_HOSTNAME: mysql
-      LABORATOIRE_HOSTNAME: laboratoire-microservice
+      LABORATOIRE_HOSTNAME: analyse-microservice
+    depends_on:
+      config-server:
+        condition: service_healthy
+      discovery:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    networks:
+      - lab-network
+
+  analyse-microservice:
+    container_name: analyse-microservice
+    build:
+      context: ./Back-End/analyse
+    image: hikaru420/lab-master-analyse-microservice:latest
+    environment:
+      CONFIG_SERVER_URL: http://config-server:8888
+      EUREKA_HOSTNAME: discovery
+      MYSQL_HOSTNAME: mysql
+      ANALYSE_HOSTNAME: analyse-microservice
+    depends_on:
+      config-server:
+        condition: service_healthy
+      discovery:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    networks:
+      - lab-network
+
+  patient-microservice:
+    container_name: patient-microservice
+    build:
+      context: ./Back-End/patient
+    image: hikaru420/lab-master-patient-microservice:latest
+    environment:
+      CONFIG_SERVER_URL: http://config-server:8888
+      EUREKA_HOSTNAME: discovery
+      MYSQL_HOSTNAME: mysql
+      PATIENT_HOSTNAME: patient-microservice
     depends_on:
       config-server:
         condition: service_healthy

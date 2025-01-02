@@ -15,6 +15,8 @@ describe('ResetPasswordComponent', () => {
     fixture = TestBed.createComponent(ResetPasswordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    jest.spyOn(console, 'log').mockImplementation(() => {});
   });
 
   it('should create', () => {
