@@ -24,6 +24,8 @@ jobs:
           - utilisateur
           - gateway
           - patient
+          - analyse
+          - messaging-service
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
