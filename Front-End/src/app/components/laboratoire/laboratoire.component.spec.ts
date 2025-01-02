@@ -1,8 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LaboratoireComponent } from './laboratoire.component';
-import { LaboratoireService } from '../../services/laboratoireService/laboratoire.service';
-import { provideHttpClient, withFetch } from '@angular/common/http';
 
 describe('LaboratoireComponent', () => {
   let component: LaboratoireComponent;
@@ -10,10 +7,8 @@ describe('LaboratoireComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LaboratoireComponent],
-      providers: [LaboratoireService, provideHttpClient(withFetch())]
-    })
-    .compileComponents();
+      imports: [LaboratoireComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LaboratoireComponent);
     component = fixture.componentInstance;

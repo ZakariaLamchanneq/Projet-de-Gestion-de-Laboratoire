@@ -1,7 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PatientComponent } from './patient.component';
-import {UtilisateurService} from '../../services/utilisateurService/utilisateur.service';
+import {PatientComponent} from './patient.component';
 import {provideHttpClient, withFetch} from '@angular/common/http';
 import {PatientService} from '../../services/patientService/patient.service';
 
@@ -13,9 +12,8 @@ describe('PatientComponent', () => {
     await TestBed.configureTestingModule({
       imports: [PatientComponent],
       providers: [PatientService, provideHttpClient(withFetch())]
-
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PatientComponent);
     component = fixture.componentInstance;

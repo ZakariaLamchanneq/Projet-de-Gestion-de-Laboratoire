@@ -49,6 +49,8 @@ describe('ResetPasswordComponent', () => {
     messageService = TestBed.inject(NzMessageService) as jest.Mocked<NzMessageService>;
     router = TestBed.inject(Router) as jest.Mocked<Router>;
     fixture.detectChanges();
+
+    jest.spyOn(console, 'log').mockImplementation(() => {});
   });
 
   it('should create', () => {
