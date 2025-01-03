@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: patient-microservice
+  cloud:
+    config:
+      enabled: false # Disable Config Server
+  datasource:
+    driver-class-name: org.h2.Driver # Use in-memory H2 database for tests
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE # In-memory database for testing
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Recreate schema for each test
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+
+eureka:
+  client:
+    enabled: false # Disable Eureka client
+
+server:
+  port: 0 # Use random port for testing
+
+application:
+  config:
+    utilisateurs-url: http://localhost:8080/api/utilisateurs
+
+
+management:
+  endpoints:
+    enabled-by-default: false # Disable unnecessary management endpoints during tests
+  tracing:
+    sampling:
+      probability: 0.0 # Disable tracing for test environment

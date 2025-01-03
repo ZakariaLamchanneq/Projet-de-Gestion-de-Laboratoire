@@ -57,7 +57,7 @@ class LaboratoireTest {
         byte[] logo = {1, 2, 3};
         LocalDate date = LocalDate.now();
         Laboratoire laboratoire = new Laboratoire("Test Lab", logo, "12345", true, date);
-        String expected = "Laboratoire{id=null, nom='Test Lab', logo=[1, 2, 3], nrc='12345', active=true, dateActivation=" + date + "}";
+        String expected = "Laboratoire{id=null, nom='Test Lab', logo=[1, 2, 3], nrc='12345', active=true, dateActivation=" + date + ", contacts=null}";
         assertEquals(expected, laboratoire.toString());
     }
 }

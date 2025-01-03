@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 import { AjouterLaboratoireComponent } from './ajouter-laboratoire.component';
+import { LaboratoireService } from '../../../services/laboratoireService/laboratoire.service';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 describe('AjouterLaboratoireComponent', () => {
   let component: AjouterLaboratoireComponent;
@@ -8,9 +11,14 @@ describe('AjouterLaboratoireComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AjouterLaboratoireComponent]
+      imports: [AjouterLaboratoireComponent],
+      providers: [
+        LaboratoireService,
+        provideHttpClient(withFetch()),
+        { provide: NzModalRef, useValue: {} }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AjouterLaboratoireComponent);
     component = fixture.componentInstance;

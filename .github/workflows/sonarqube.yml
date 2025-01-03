@@ -1,0 +1,64 @@
+name: SonarQube Analysis
+
+on:
+  push:
+    branches:
+      - main
+      - testing
+  pull_request:
+
+env:
+  SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+jobs:
+  backend-analysis:
+    name: Backend SonarQube Analysis
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        service:
+          - config-server
+          - discovery
+          - laboratoire
+          - utilisateur
+          - gateway
+          - patient
+          - analyse
+          - messaging-service
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
+      - name: Build Project with Maven
+        run: mvn clean package -DskipTests --file Back-End/${{ matrix.service }}/pom.xml
+
+      - name: Run SonarQube Scanner
+        shell: powershell
+        run: |
+          cd Back-End/${{ matrix.service }}
+          sonar-scanner "-Dsonar.projectKey=labmaster.backend.${{ matrix.service }}" "-Dsonar.sources=src/main/java" "-Dsonar.java.binaries=target/classes" "-Dsonar.host.url=$env:SONAR_HOST_URL" "-Dsonar.token=$env:SONAR_TOKEN"
+
+  frontend-analysis:
+    name: Frontend SonarQube Analysis
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Run SonarQube Scanner for Front-End
+        shell: powershell
+        run: |
+          cd Front-End
+          sonar-scanner -Dsonar.projectKey=labmaster.frontend -Dsonar.sources=src -Dsonar.typescript.tsconfigPath=tsconfig.json -Dsonar.host.url=$env:SONAR_HOST_URL -Dsonar.token=$env:SONAR_TOKEN
