@@ -23,8 +23,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public",
-                "output": "/assets/"
+                "input": "public"
               },
               {
                 "glob": "**/*",
@@ -91,7 +90,12 @@
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "setupFile": ["src/setup-jest.ts"],
-            "assets": ["public"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
             "styles": ["src/styles.css", "src/theme.less"],
             "scripts": []
           }
