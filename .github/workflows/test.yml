@@ -7,10 +7,6 @@ on:
       - testing
   pull_request:
 
-env:
-  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-  DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-
 jobs:
   backend:
     name: Backend Testing
@@ -62,25 +58,3 @@ jobs:
 
       - name: Build Frontend
         run: npm run build --prefix Front-End
-
-  docker:
-    name: Build and Push Docker Images
-    runs-on: ubuntu-latest
-    needs: [ backend, frontend ]
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/testing'
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Install Docker Compose
-        run: |
-          sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-          sudo chmod +x /usr/local/bin/docker-compose
-
-      - name: Log in to Docker Hub
-        run: echo ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
-
-      - name: Build and Push Docker Images
-        run: |
-          docker-compose -f docker-compose.yml build
-          docker-compose -f docker-compose.yml push
