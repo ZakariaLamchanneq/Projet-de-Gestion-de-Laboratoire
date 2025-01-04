@@ -2,11 +2,13 @@ services:
   mysql:
     container_name: mysql
     image: mysql:8.0
+    command: --init-file=/docker-entrypoint-initdb.d/create_databases.sql
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./mysql-init:/docker-entrypoint-initdb.d
+      - ./mysql-init:/docker-entrypoint-initdb.d/
+
     networks:
       - lab-network
     healthcheck:
@@ -38,11 +40,11 @@ services:
     environment:
       EUREKA_HOSTNAME: discovery
       MYSQL_HOSTNAME: mysql
-      GATEWAY_HOSTNAME: gateway
-      LABORATOIRE_HOSTNAME: laboratoire-microservice
-      UTILISATEUR_HOSTNAME: utilisateur-microservice
-      ANALYSE_HOSTNAME: analyse-microservice
-      PATIENT_HOSTNAME: patient-microservice
+#      GATEWAY_HOSTNAME: gateway
+#      LABORATOIRE_HOSTNAME: laboratoire-microservice
+#      UTILISATEUR_HOSTNAME: utilisateur-microservice
+#      ANALYSE_HOSTNAME: analyse-microservice
+#      PATIENT_HOSTNAME: patient-microservice
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
       interval: 10s
@@ -80,15 +82,18 @@ services:
       - "8222:8222"
     depends_on:
       - utilisateur-microservice
+      - laboratoire-microservice
+      - analyse-microservice
+      - patient-microservice
     environment:
       GATEWAY_HOSTNAME: gateway
       CONFIG_SERVER_URL: http://config-server:8888
       EUREKA_HOSTNAME: discovery
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8222/actuator/health"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:8222/actuator/health"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
     networks:
       - lab-network
 
@@ -101,7 +106,7 @@ services:
       CONFIG_SERVER_URL: http://config-server:8888
       EUREKA_HOSTNAME: discovery
       MYSQL_HOSTNAME: mysql
-      LABORATOIRE_HOSTNAME: analyse-microservice
+      LABORATOIRE_HOSTNAME: laboratoire-microservice
     depends_on:
       config-server:
         condition: service_healthy
@@ -179,9 +184,9 @@ services:
     image: hikaru420/lab-master-frontend:latest
     ports:
       - "4200:80"
-    depends_on:
-      gateway:
-        condition: service_healthy
+#    depends_on:
+#      gateway:
+#        condition: service_healthy
     networks:
       - lab-network
 
