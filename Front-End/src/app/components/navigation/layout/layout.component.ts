@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {Router, RouterLink, RouterModule} from '@angular/router';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -38,7 +38,8 @@ export class LayoutComponent {
   role: string | null = null;
   visible = false;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              private router: Router) {
     this.role = this.authService.getRole();
     const storedCollapsedState = localStorage.getItem('isCollapsed');
     this.isCollapsed = storedCollapsedState === 'true';
@@ -51,5 +52,9 @@ export class LayoutComponent {
 
   logout(): void {
     this.authService.logout();
+  }
+
+  profile(): void {
+    this.router.navigate(['/profile']);
   }
 }

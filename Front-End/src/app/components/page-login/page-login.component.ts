@@ -83,9 +83,9 @@ export class PageLoginComponent {
 
         // Redirect based on role
         if (role === 'ADMINISTRATEUR') {
-          this.router.navigate(['/statistique']); // Redirect to /statistique for ADMINISTRATEUR
+          this.router.navigate(['/home']); // Redirect to /statistique for ADMINISTRATEUR
         } else if (role === 'ADMIN_LABO') {
-          this.router.navigate(['/profile']); // Redirect to /profile for ADMIN_LABO
+          this.router.navigate(['/home']); // Redirect to /profile for ADMIN_LABO
         } else if (role === 'TECHNICIEN') {
           this.router.navigate(['/patients']); // Redirect to /patient for TECHNICIEN
         } else {

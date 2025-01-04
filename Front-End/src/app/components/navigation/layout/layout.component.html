@@ -7,14 +7,14 @@
     </div>
 
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li *ngIf="role === 'TECHNICIEN' || role === 'ADMINISTRATEUR' || role === 'ADMIN_LABO'" nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Home">
+      <li *ngIf="role === 'ADMINISTRATEUR' || role === 'ADMIN_LABO'" nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Home">
         <a routerLink="/home">
           <span nz-icon nzType="home"></span>
           <span>Home</span>
         </a>
       </li>
 
-      <li nz-submenu nzTitle="Management" nzIcon="setting">
+      <li nz-submenu nzTitle="Management" *ngIf="role === 'ADMINISTRATEUR' || role === 'ADMIN_LABO'" nzIcon="setting">
         <ul>
           <li *ngIf="role === 'ADMINISTRATEUR' || role === 'ADMIN_LABO'" nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Utilisateurs">
             <a routerLink="/utilisateurs">
@@ -22,13 +22,13 @@
               <span>Utilisateurs</span>
             </a>
           </li>
-          <li *ngIf="role === 'TECHNICIEN' || role === 'ADMINISTRATEUR' || role === 'ADMIN_LABO'" nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Laboratoires">
+          <li *ngIf=" role === 'ADMINISTRATEUR' " nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Laboratoires">
             <a routerLink="/laboratoires">
               <span nz-icon nzType="experiment"></span>
               <span>Laboratoires</span>
             </a>
           </li>
-          <li *ngIf="role === 'TECHNICIEN' || role === 'ADMINISTRATEUR' || role === 'ADMIN_LABO'" nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Contacts Laboratoire">
+          <li *ngIf="role === 'ADMINISTRATEUR' " nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Contacts Laboratoire">
             <a routerLink="/contacts-laboratoire">
               <span nz-icon nzType="contacts"></span>
               <span>Contacts Laboratoire</span>
@@ -83,7 +83,7 @@
         </ul>
       </li>
 
-      <li *ngIf="role === 'TECHNICIEN' || role === 'ADMINISTRATEUR' || role === 'ADMIN_LABO'" nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Adresses">
+      <li *ngIf=" role === 'ADMINISTRATEUR' || role === 'ADMIN_LABO'" nz-menu-item nzMatchRouter nz-tooltip nzTooltipPlacement="right" nzTooltipTitle="Adresses">
         <a routerLink="/adresses">
           <span nz-icon nzType="environment"></span>
           <span>Adresses</span>
@@ -103,8 +103,7 @@
         </a>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
-            <li nz-menu-item>Profile</li>
-            <li nz-menu-item>Settings</li>
+            <li nz-menu-item (click)="profile()" *ngIf=" role === 'TECHNICIEN' || role === 'ADMIN_LABO'" >Profile</li>
             <li nz-menu-item (click)="logout()">Logout</li>
           </ul>
         </nz-dropdown-menu>

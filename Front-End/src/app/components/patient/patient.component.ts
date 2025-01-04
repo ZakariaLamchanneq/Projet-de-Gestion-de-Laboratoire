@@ -67,18 +67,6 @@ export class PatientComponent implements OnInit {
   }
 
 
-
-
-
-  //
-  // fetchUsers(): void {
-  //   this.patientService.getPatients().subscribe((data) => {
-  //     this.listOfData = data;
-  //     this.listOfDisplayData = [...this.listOfData];
-  //     this.updatePaginatedData();
-  //   });
-  // }
-
   fetchUsers(): void {
     const laboratoireId = this.authService.getLaboratoireId(); // Récupérer l'ID du laboratoire de l'utilisateur depuis le token
 

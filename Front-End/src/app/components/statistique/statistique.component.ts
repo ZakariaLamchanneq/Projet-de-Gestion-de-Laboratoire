@@ -263,6 +263,7 @@ export class StatistiqueComponent implements OnInit, AfterViewInit {
     this.utilisateurService.getUtilisateursArchives().subscribe(() => {
       this.createCharts();
     });
+
   }
 
   createCharts(): void {
