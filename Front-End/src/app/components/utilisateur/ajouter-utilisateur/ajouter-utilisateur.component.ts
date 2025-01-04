@@ -53,6 +53,8 @@ export class AjouterUtilisateurComponent implements OnInit{
     signature: '',
     role: '',
     laboratoireId:0,
+    isArchived:false
+
   };
 
   constructor(
