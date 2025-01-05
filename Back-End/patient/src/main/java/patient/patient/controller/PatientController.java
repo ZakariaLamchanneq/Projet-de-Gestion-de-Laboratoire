@@ -27,34 +27,29 @@ public class PatientController {
         }
     }
 
+
+    // Endpoint to get archived patients
     @GetMapping("/archived")
-    public List<Patient> getArchivedPatients() {
+    public List<PatientDTO> getArchivedPatients() {
         return patientService.getArchivedPatients();
     }
 
+    // Endpoint to get non-archived patients
     @GetMapping("/non-archived")
-    public List<Patient> getNonArchivedPatients() {
+    public List<PatientDTO> getNonArchivedPatients() {
         return patientService.getNonArchivedPatients();
     }
 
-    @PutMapping("/archive/{id}")
-    public ResponseEntity<Patient> archivePatient(@PathVariable Long id) {
-        Patient patient = patientService.archivePatient(id);
-        if (patient != null) {
-            return ResponseEntity.ok(patient);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    // Endpoint to archive a patient
+    @PutMapping("/{id}/archive")
+    public PatientDTO archivePatient(@PathVariable Long id) {
+        return patientService.archivePatient(id);
     }
 
-    @PutMapping("/unarchive/{id}")
-    public ResponseEntity<Patient> unarchivePatient(@PathVariable Long id) {
-        Patient patient = patientService.unarchivePatient(id);
-        if (patient != null) {
-            return ResponseEntity.ok(patient);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    // Endpoint to unarchive a patient
+    @PutMapping("/{id}/unarchive")
+    public PatientDTO unarchivePatient(@PathVariable Long id) {
+        return patientService.unarchivePatient(id);
     }
 
     @GetMapping("/all")

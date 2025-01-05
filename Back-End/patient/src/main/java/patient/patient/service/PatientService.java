@@ -83,31 +83,37 @@ public class PatientService {
 
 
     // Récupérer les patients archivés
-    public List<Patient> getArchivedPatients() {
-        return patientRepository.findByIsArchived(true);
+    public List<PatientDTO> getArchivedPatients() {
+        return patientRepository.findByIsArchived(true).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 
     // Récupérer les patients non archivés
-    public List<Patient> getNonArchivedPatients() {
-        return patientRepository.findByIsArchived(false);
+    public List<PatientDTO> getNonArchivedPatients() {
+        return patientRepository.findByIsArchived(false).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 
     // Archiver un patient
-    public Patient archivePatient(Long patientId) {
+    public PatientDTO archivePatient(Long patientId) {
         Patient patient = patientRepository.findById(patientId).orElse(null);
         if (patient != null) {
             patient.setIsArchived(true);
-            return patientRepository.save(patient);
+            patient = patientRepository.save(patient);
+            return convertToDTO(patient);
         }
         return null;
     }
 
     // Désarchiver un patient
-    public Patient unarchivePatient(Long patientId) {
+    public PatientDTO unarchivePatient(Long patientId) {
         Patient patient = patientRepository.findById(patientId).orElse(null);
         if (patient != null) {
             patient.setIsArchived(false);
-            return patientRepository.save(patient);
+            patient = patientRepository.save(patient);
+            return convertToDTO(patient);
         }
         return null;
     }
