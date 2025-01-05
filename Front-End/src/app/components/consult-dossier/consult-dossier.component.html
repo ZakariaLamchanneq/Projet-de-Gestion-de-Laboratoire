@@ -8,6 +8,7 @@
       <p class="pdf-text"><strong>Utilisateur:</strong> {{ dossierData.utilisateur.nomComplet }}</p>
     </div>
     <p class="pdf-text"><strong>Patient:</strong> {{ dossierData.patient.nomComplet }}</p>
+    <p class="pdf-text"><strong>Email Patient:</strong> {{ dossierData.patient.email }}</p>
     <p class="pdf-text"><strong>Sexe:</strong> {{ dossierData.patient.sexe }}</p>
     <p class="pdf-text"><strong>Age:</strong> {{ calculateAge(dossierData.patient.dateNaissance) }}</p>
     <p class="pdf-text"><strong>Num Tel:</strong> {{ dossierData.patient.numTel }}</p>
