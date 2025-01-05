@@ -77,8 +77,6 @@ public class UtilisateurController {
     }
 
 
-
-
     @PostMapping("/add")
     public ResponseEntity<?> createUtilisateur(@RequestBody Utilisateur utilisateur) {
         Utilisateur userCreated = utilisateurService.createUtilisateur(utilisateur);
@@ -95,6 +93,20 @@ public class UtilisateurController {
     public ResponseEntity<List<Utilisateur>> getAllUtilisateurs() {
         List<Utilisateur> utilisateurs = utilisateurService.getAllUtilisateurs();
         return new ResponseEntity<>(utilisateurs, HttpStatus.OK);
+    }
+
+    @GetMapping("/find/{email}")
+    public ResponseEntity<?> getUtilisateurByEmail(@PathVariable String email) {
+        try {
+            Optional<Utilisateur> utilisateur = utilisateurService.getUtilisateurByEmail(email);
+            if (utilisateur.isPresent()) {
+                return new ResponseEntity<>(utilisateur.get(), HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(Collections.singletonMap("error", "Utilisateur not found"), HttpStatus.NOT_FOUND);
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<>(Collections.singletonMap("error", "An error occurred while retrieving the utilisateur"), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/laboratoire/{laboratoire-id}")

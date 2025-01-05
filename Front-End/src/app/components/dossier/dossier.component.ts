@@ -8,6 +8,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
 import { AjouterDossierComponent } from './ajouter-dossier/ajouter-dossier.component';
 import { ModifierDossierComponent } from './modifier-dossier/modifier-dossier.component';
+import {ConsultDossierComponent} from '../consult-dossier/consult-dossier.component';
 
 @Component({
   selector: 'app-dossier',
@@ -95,6 +96,26 @@ export class DossierComponent implements OnInit {
             this.message.error('Failed to delete dossier.');
           },
         }),
+    });
+  }
+
+  openConsultModal(numDossier: number): void {
+    const modal = this.modalService.create({
+      nzTitle: 'Consult Dossier',
+      nzContent: ConsultDossierComponent,
+      nzFooter: null,
+      nzWidth: '80%'
+    });
+
+    const instance = modal.getContentComponent();
+    if (instance) {
+      instance.numDossier = numDossier;
+    }
+
+    modal.afterClose.subscribe(result => {
+      if (result === 'success') {
+        this.loadDossiers();
+      }
     });
   }
 }

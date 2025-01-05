@@ -1,7 +1,13 @@
 package patient.patient.service;
 
+import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.messaging.MessagingException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import patient.patient.client.UtilisateurClient;
 import patient.patient.dto.DossierDTO;
 import patient.patient.dto.PatientDTO;
@@ -11,9 +17,11 @@ import patient.patient.model.patient.Patient;
 import patient.patient.repository.DossierRepository;
 import patient.patient.repository.PatientRepository;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Value;
 
 @Service
 @RequiredArgsConstructor
@@ -21,6 +29,12 @@ public class DossierService {
 
     private final DossierRepository dossierRepository;
     private final PatientRepository patientRepository;
+    private final JavaMailSender javaMailSender;
+
+    @Value("${spring.mail.username}")
+    private String senderEmail;
+
+
 
     public List<DossierDTO> getAllDossiers() {
         return dossierRepository.findAll().stream().map(this::toDTO).toList();
@@ -59,6 +73,18 @@ public class DossierService {
         return dossierRepository.findByFkEmailUtilisateur(email).stream()
                 .map(dossier -> toPatientDTO(dossier.getPatient()))
                 .collect(Collectors.toList());
+    }
+
+    public void sendDossierPdfByEmail(MultipartFile file, String recipientEmail) throws MessagingException, jakarta.mail.MessagingException {
+        MimeMessage message = javaMailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message, true);
+        helper.setFrom(senderEmail);
+        helper.setTo(recipientEmail);
+        helper.setSubject("Analyse Résultat");
+        helper.setText("Veuillez trouver ci-joint le résultat de l'analyse demandée. Merci pour votre confiance.");
+        helper.addAttachment(file.getOriginalFilename(), file);
+
+        javaMailSender.send(message);
     }
 
     private PatientDTO toPatientDTO(Patient patient) {

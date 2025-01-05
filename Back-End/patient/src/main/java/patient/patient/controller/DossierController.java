@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.multipart.MultipartFile;
 import patient.patient.dto.DossierDTO;
 import patient.patient.dto.PatientDTO;
 import patient.patient.service.DossierService;
@@ -80,6 +82,21 @@ public class DossierController {
         } catch (Exception e) {
             return handleException(e, "Failed to retrieve patients for utilisateur with email " + email);
         }
+    }
+
+    @PostMapping("/send-email")
+    public ResponseEntity<?> sendDossierPdfByEmail(@RequestParam("file") MultipartFile file, @RequestParam("email") String email) {
+        try {
+            dossierService.sendDossierPdfByEmail(file, email);
+            return ResponseEntity.ok("Email sent successfully!");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Failed to send email: " + e.getMessage());
+        }
+    }
+
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    public ResponseEntity<String> handleMaxSizeException(MaxUploadSizeExceededException exc) {
+        return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body("File size exceeds the maximum limit!");
     }
 
     private ResponseEntity<String> handleException(Exception e, String message) {

@@ -1,4 +1,8 @@
 spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
   application:
     name: patient-microservice
   config:
@@ -8,3 +12,14 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: elakhirioussama1@gmail.com
+    password: cgmu kmoy ljjg bfsk
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
