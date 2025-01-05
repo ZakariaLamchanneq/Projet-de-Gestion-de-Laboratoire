@@ -72,6 +72,9 @@ public class UtilisateurService {
         }
     }
 
+    public Optional<Utilisateur> getUtilisateurByEmail(String email) {
+        return utilisateurRepository.findByEmail(email);
+    }
 
     public Optional<Utilisateur> getUtilisateurById(Long id) {
         return utilisateurRepository.findById(id);

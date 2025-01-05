@@ -1,0 +1,37 @@
+<div class="consult-dossier-container">
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  <div *ngIf="dossierData" id="dossier-details" class="pdf-container">
+    <h2 class="pdf-title">Dossier Details</h2>
+    <div class="right-info">
+      <p class="pdf-text"><strong>Num Dossier:</strong> {{ numDossier }}</p>
+      <p class="pdf-text"><strong>Date:</strong> {{ dossierData.date }}</p>
+      <p class="pdf-text"><strong>Utilisateur:</strong> {{ dossierData.utilisateur.nomComplet }}</p>
+    </div>
+    <p class="pdf-text"><strong>Patient:</strong> {{ dossierData.patient.nomComplet }}</p>
+    <p class="pdf-text"><strong>Sexe:</strong> {{ dossierData.patient.sexe }}</p>
+    <p class="pdf-text"><strong>Age:</strong> {{ calculateAge(dossierData.patient.dateNaissance) }}</p>
+    <p class="pdf-text"><strong>Num Tel:</strong> {{ dossierData.patient.numTel }}</p>
+    <p class="pdf-text"><strong>CIN:</strong> {{ dossierData.patient.numPieceIdentite }}</p>
+    <div *ngFor="let analyse of dossierData.analyses">
+      <h3 class="pdf-section-title">Analyse: {{ analyse.nom }}</h3>
+      <table class="pdf-table">
+        <thead>
+        <tr>
+          <th>Epreuve</th>
+          <th>Result</th>
+          <th>Normal Values</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let epreuve of getEpreuvesByAnalyseId(analyse.id)">
+          <td>{{ epreuve.nom }}</td>
+          <td>{{ getResultsByEpreuveId(epreuve.id) }} {{ getTestEpreuve(epreuve.fkIdTestEpreuve).uniteDeReference }}</td>
+          <td>{{ getTestEpreuve(epreuve.fkIdTestEpreuve).intervalMinDeReference }} - {{ getTestEpreuve(epreuve.fkIdTestEpreuve).intervalMaxDeReference }} {{ getTestEpreuve(epreuve.fkIdTestEpreuve).uniteDeReference }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button nz-button nzType="primary" class="form-button" (click)="generatePDF()">Generate PDF</button>
+  <button nz-button nzType="primary" class="form-button" (click)="generatePDFAndSendEmail()">Send PDF via Email</button>
+</div>

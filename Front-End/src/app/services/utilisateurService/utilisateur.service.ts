@@ -26,6 +26,10 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(`${this.apiUrl}/getUser/${utilisateurId}`);
   }
 
+  getUtilisateurByEmail(email: string): Observable<Utilisateur> {
+    return this.http.get<Utilisateur>(`${this.apiUrl}/find/${email}`);
+  }
+
   updateUtilisateur(utilisateurId: number | undefined, utilisateur: Utilisateur): Observable<Utilisateur> {
     return this.http.put<Utilisateur>(`${this.apiUrl}/updateUtilisateur/${utilisateurId}`, utilisateur);
   }
